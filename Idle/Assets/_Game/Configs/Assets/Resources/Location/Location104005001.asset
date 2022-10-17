@@ -1,0 +1,26 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 00ea3f82922d645ff9b3c63e6f5be98d, type: 3}
+  m_Name: Location104005001
+  m_EditorClassIdentifier: 
+  Id: 104005001
+  Name: "amigo\u5496\u5561\u5385"
+  Image: {fileID: 0}
+  ImageRef:
+    m_AssetGUID: 
+    m_SubObjectName: 
+    m_SubObjectType: 
+  note: 
+  MapRef:
+    m_AssetGUID: 5e28ad1a5ed538548aa43f304a12374b
+    m_SubObjectName: 
+    m_SubObjectType: 

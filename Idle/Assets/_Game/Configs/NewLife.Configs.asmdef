@@ -1,0 +1,22 @@
+{
+    "name": "NewLife.Configs",
+    "rootNamespace": "",
+    "references": [
+        "HelloMeow",
+        "NewLife.Defined",
+        "Zenject",
+        "ParadoxNotion",
+        "Unity.Addressables",
+        "NewLife.BasicInterfaces",
+        "UnityEngine.Purchasing"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}

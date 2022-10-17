@@ -1,0 +1,13 @@
+using UnityEngine;
+using HM.GameBase;
+
+namespace $[Namespace]
+{
+    [System.Serializable]
+    [CreateAssetMenu(fileName = "$[ConfigName]", menuName = "Config/$[ConfigName]")]
+    public class $[ConfigName]Config : $[InheritFrom]
+    {
+        // Id和Name在BaseConfig已有定义，不需要重复定义
+        // 其他类型请自行定义↓↓↓
+    }
+}

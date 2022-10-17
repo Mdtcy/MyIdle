@@ -1,0 +1,31 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9640398c600db44b9a28eb0abee211a3, type: 3}
+  m_Name: Memory114001015
+  m_EditorClassIdentifier: 
+  Id: 114001015
+  Name: "\u300A\u7F8E\u72C4\u4E9A\u300B"
+  Image: {fileID: 0}
+  ImageRef:
+    m_AssetGUID: b163234316508d149ba7719336ea3d82
+    m_SubObjectName: memory015
+    m_SubObjectType: UnityEngine.Sprite, UnityEngine.CoreModule, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
+  note: 
+  Owner: {fileID: 11400000, guid: 4b325a883c42a4f49a9ee6ad930d6f2f, type: 2}
+  lockDescription: "\u884C\u7A0B\uFF1A\u7B56\u5212\u78B0\u5934\u4F1A\u89E3\u9501"
+  OccurrenceTime: 2012/01/03
+  Dialogue: {fileID: 11400000, guid: bfd6fe98f45fe9c48aa0453d39685e5e, type: 2}
+  Hp:
+    Currency: {fileID: 11400000, guid: bda8e65d4be7e154e8e4e98b2f5a4a86, type: 2}
+    Num: 0
+  Order: 3

@@ -1,0 +1,28 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5668a6c6c86b4ec42be618f5d8659674, type: 3}
+  m_Name: Line129002010
+  m_EditorClassIdentifier: 
+  Id: 129002010
+  Name: "\u6C42\u9976"
+  Image: {fileID: 0}
+  ImageRef:
+    m_AssetGUID: 
+    m_SubObjectName: 
+    m_SubObjectType: 
+  note: 
+  IsAutoUnlock: 0
+  UnlockCommodity: {fileID: 11400000, guid: 559772f6dcea9b74982a2de00b26ac8c, type: 2}
+  StrDesc: "\u6211\u53EF\u4EE5\u62D2\u7EDD\u5417\uFF1F"
+  Order: 9
+  strLine: "\u73B0\u5728\u6C42\u9976\u8FD8\u6765\u5F97\u53CA\u5417\uFF1F"
+  strLockedName: "\u73B0\u5728\u6C42\u9976\u8FD8\u6765\u5F97\u53CA\u2026\u2026"

@@ -1,0 +1,17 @@
+{
+    "name": "PoolManagerEditor",
+    "references": [
+        "GUID:38f974cc432974b4a83fcccb6799562d"
+    ],
+    "includePlatforms": [
+        "Editor"
+    ],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}

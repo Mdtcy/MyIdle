@@ -1,0 +1,52 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 73055a9ecb8af4871b5f0f94503d8a4f, type: 3}
+  m_Name: Player102003001
+  m_EditorClassIdentifier: 
+  Id: 102003001
+  Name: "\u6797\u654F\u6069"
+  Image: {fileID: 0}
+  ImageRef:
+    m_AssetGUID: 
+    m_SubObjectName: 
+    m_SubObjectType: 
+  note: 
+  Description: "\u5B87\u6069\u7F8E\u5986\u8054\u5408\u521B\u59CB\u4EBA\uFF0C\u66FE\u662F\u96F7\u5389\u98CE\u884C\u7684\u804C\u4E1A\u5973\u6027\uFF0C\u73B0\u5728\u5BB6\u5907\u5B55\u3002\u548C\u4E08\u592B\u8D75\u6CFD\u5B87\u662F\u6A21\u8303\u592B\u59BB\u3002\u624D\u534E\u6A2A\u6EA2\uFF0C\u70ED\u7231\u521B\u4F5C\u3002"
+  AvatarRef:
+    m_AssetGUID: df204ba6fd330724cb3cce18387afef7
+    m_SubObjectName: 
+    m_SubObjectType: 
+  PortraitRef:
+    m_AssetGUID: 0d601777955d90440b9a26ee88f4c5a4
+    m_SubObjectName: halfchar_lme_1
+    m_SubObjectType: UnityEngine.Sprite, UnityEngine.CoreModule, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
+  ContactDetailPortraitRef:
+    m_AssetGUID: 
+    m_SubObjectName: 
+    m_SubObjectType: 
+  Leads: []
+  AllowToFollowAnonymously: 0
+  Age: 29
+  Birthday: 
+  PhoneNo: 500709
+  blockedScenario: 3
+  Properties:
+  - {fileID: 11400000, guid: d5d931083723b41cc8fcd53a698485b2, type: 2}
+  - {fileID: 11400000, guid: 6e9b5b709a8224e55810c9ba23ebe5ff, type: 2}
+  - {fileID: 11400000, guid: c0629063feef30e469604210ba25604c, type: 2}
+  JobTitle: "\u5168\u804C\u592A\u592A"
+  AnonymousName: "\u5C0F\u4E38\u5B50"
+  AboutMePortraitRef:
+    m_AssetGUID: 18e34507e7f41fe4faa8e0cae0871077
+    m_SubObjectName: 
+    m_SubObjectType: 

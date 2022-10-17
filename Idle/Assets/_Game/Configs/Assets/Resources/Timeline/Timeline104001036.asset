@@ -1,0 +1,47 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 358ffe76783d24679a800a4dd1acf973, type: 3}
+  m_Name: Timeline104001036
+  m_EditorClassIdentifier: 
+  Id: 104001036
+  Name: "\u70F9\u996A\u65E5\u5E38"
+  Image: {fileID: 0}
+  ImageRef:
+    m_AssetGUID: 
+    m_SubObjectName: 
+    m_SubObjectType: 
+  note: 
+  Publisher: {fileID: 11400000, guid: 2336d534d9029d441b5615c4c6c689b8, type: 2}
+  Text:
+    IsClue: 0
+    Id: 637859788670914860
+    TipAfterUnlock: 
+    Text: "\u80A0\u9053\u517B\u62A4\u63A8\u8350\u98DF\u8C31\uFF0C\u751C\u5FC3\u9999\u8549\u997C\u3002\r\n\u4E09\u6839\u9999\u8549\u53BB\u76AE\uFF0C\u8F97\u6210\u9999\u8549\u6CE5\r\n\u52A0\u5165\u9E21\u86CB3\u4E2A\uFF0C\u725B\u5976100ml\uFF0C\u767D\u7CD6\u4E09\u52FA\uFF0C\u62CC\u5300\r\n\u5012\u5165\u9762\u7C89\uFF0C\u548C\u6210\u9762\u7CCA\r\n\u5012\u5165\u5E73\u5E95\u9505\uFF0C\u4E2D\u5C0F\u706B\u714E\u81F3\u91D1\u9EC4"
+    Indices: []
+  Pic:
+    IsClue: 0
+    Id: 637859788670917390
+    TipAfterUnlock: 
+    ImageRef:
+      m_AssetGUID: 6908d813415436e48871a59139b2c124
+      m_SubObjectName: timeline_bananacake
+      m_SubObjectType: UnityEngine.Sprite, UnityEngine.CoreModule, Version=0.0.0.0,
+        Culture=neutral, PublicKeyToken=null
+    ImageName: 
+    CommodityConfig: {fileID: 0}
+  Location: {fileID: 0}
+  ReplyForest: {fileID: 11400000, guid: 38b9d39cad638e545bbe13295d81ca11, type: 2}
+  CommandsOnSessionFinished: []
+  CommandsOnAllCluesFound: []
+  PriorClueTip: 
+  PostClueTip: 
+  Clues: []

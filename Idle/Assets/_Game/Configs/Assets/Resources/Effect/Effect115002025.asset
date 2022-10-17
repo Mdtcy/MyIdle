@@ -1,0 +1,23 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7993978ffed6d30489b9ca5cb886854a, type: 3}
+  m_Name: Effect115002025
+  m_EditorClassIdentifier: 
+  Id: 115002025
+  Name: "\u55B5\u4FE1-\u55B5\u5708-\u5C55\u5F00\u533F\u540D\u5173\u6CE8"
+  Image: {fileID: 0}
+  ImageRef:
+    m_AssetGUID: 
+    m_SubObjectName: 
+    m_SubObjectType: 
+  note: 
+  AudioClip: {fileID: 0}

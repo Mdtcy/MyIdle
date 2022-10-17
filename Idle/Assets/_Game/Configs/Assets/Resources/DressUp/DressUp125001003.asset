@@ -1,0 +1,32 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 253a07ac45684b14d9efadfdb4baed2e, type: 3}
+  m_Name: DressUp125001003
+  m_EditorClassIdentifier: 
+  Id: 125001003
+  Name: "\u8D75\u6CFD\u6167"
+  Image: {fileID: 0}
+  ImageRef:
+    m_AssetGUID: 
+    m_SubObjectName: 
+    m_SubObjectType: 
+  note: 
+  DefaultCloth: {fileID: 11400000, guid: bf045f47087409a47b4d716f3a5d9bfc, type: 2}
+  DefaultBackground: {fileID: 11400000, guid: c463e3f822d69f641a8719189cfa9593, type: 2}
+  DefaultLine: {fileID: 11400000, guid: 8fe0e5d40d949804080aff04a518d203, type: 2}
+  DefaultExpression: {fileID: 11400000, guid: 68444c101f339b545aadb86ff15d46fa, type: 2}
+  Cloths:
+  - {fileID: 11400000, guid: bf045f47087409a47b4d716f3a5d9bfc, type: 2}
+  Lines:
+  - {fileID: 11400000, guid: 8fe0e5d40d949804080aff04a518d203, type: 2}
+  Expressions:
+  - {fileID: 11400000, guid: 68444c101f339b545aadb86ff15d46fa, type: 2}

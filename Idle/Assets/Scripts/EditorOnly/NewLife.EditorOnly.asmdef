@@ -1,0 +1,28 @@
+{
+    "name": "NewLife.EditorOnly",
+    "rootNamespace": "",
+    "references": [
+        "HelloMeow",
+        "NewLife.Configs",
+        "NewLife.Defined",
+        "NewLife.Business",
+        "ParadoxNotion",
+        "Unity.Addressables",
+        "Unity.Addressables.Editor",
+        "LeanTransition",
+        "DOTween.Modules",
+        "NewLife.UI",
+        "Zenject",
+        "MEC",
+        "NewLife.Support"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}

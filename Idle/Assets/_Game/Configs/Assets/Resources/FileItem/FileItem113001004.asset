@@ -1,0 +1,25 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: db84b9d5aadcd48d98a7e21656f5ddfe, type: 3}
+  m_Name: FileItem113001004
+  m_EditorClassIdentifier: 
+  Id: 113001004
+  Name: "\u517B\u751F\u4FDD\u6E29\u676F"
+  Image: {fileID: 0}
+  ImageRef:
+    m_AssetGUID: 7f5d8047cec5a4446a7f70f79934c17c
+    m_SubObjectName: item_baowenbei
+    m_SubObjectType: UnityEngine.Sprite, UnityEngine.CoreModule, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
+  note: 
+  Description: "\u517B\u751F\u4ECE\u4FDD\u6E29\u676F\u91CC\u6CE1\u67B8\u675E\u5F00\u59CB\u3002"
+  CommodityConfig: {fileID: 0}

@@ -1,0 +1,53 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 358ffe76783d24679a800a4dd1acf973, type: 3}
+  m_Name: Timeline104001034
+  m_EditorClassIdentifier: 
+  Id: 104001034
+  Name: "\u4E86\u65E0\u75D5"
+  Image: {fileID: 0}
+  ImageRef:
+    m_AssetGUID: 
+    m_SubObjectName: 
+    m_SubObjectType: 
+  note: 
+  Publisher: {fileID: 11400000, guid: e5dd26030fa6e4dae9ba03311d1287d6, type: 2}
+  Text:
+    IsClue: 0
+    Id: 637859788670898250
+    TipAfterUnlock: 
+    Text: "\u4ECE\u4ECA\u4EE5\u540E\uFF0C\u662F\u7EDD\u5BF9\u7684\u81EA\u7531\uFF0C\u518D\u89C1\u4E86\u670B\u53CB\u4EEC\u3002"
+    Indices: []
+  Pic:
+    IsClue: 0
+    Id: 637859788670900610
+    TipAfterUnlock: 
+    ImageRef:
+      m_AssetGUID: 
+      m_SubObjectName: 
+      m_SubObjectType: 
+    ImageName: 
+    CommodityConfig: {fileID: 0}
+  Location: {fileID: 0}
+  ReplyForest: {fileID: 11400000, guid: de30f809660fc794eb64350a0fff5e0f, type: 2}
+  CommandsOnSessionFinished:
+  - CommandType: 3
+    CustomScript: 
+    Target: {fileID: 11400000, guid: 60f8f434d354acc45b3369d95103eca6, type: 2}
+    TargetName: 
+    Num: 1
+    PropertyType: 0
+    ScheduleState: 2
+  CommandsOnAllCluesFound: []
+  PriorClueTip: 
+  PostClueTip: 
+  Clues: []

@@ -1,0 +1,50 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fec452e4c6fc440a7af443d4e0511187, type: 3}
+  m_Name: ReplyForest104006030
+  m_EditorClassIdentifier: 
+  Id: 104006030
+  Name: 
+  Image: {fileID: 0}
+  ImageRef:
+    m_AssetGUID: 
+    m_SubObjectName: 
+    m_SubObjectType: 
+  note: 
+  ReplyLeaves:
+  - Config: {fileID: 11400000, guid: ea98a1647a5cb6146bf1d135ac2e09a2, type: 2}
+    ChildIndices: 01000000
+    m_canvasRect:
+      serializedVersion: 2
+      x: 526
+      y: 172
+      width: 150
+      height: 48
+  - Config: {fileID: 11400000, guid: 16b85c32454345d41b3f5cb99e3518c8, type: 2}
+    ChildIndices: 02000000
+    m_canvasRect:
+      serializedVersion: 2
+      x: 524
+      y: 273
+      width: 150
+      height: 48
+  - Config: {fileID: 11400000, guid: f69a1ebbe2765fe4798098dad61b95b6, type: 2}
+    ChildIndices: 
+    m_canvasRect:
+      serializedVersion: 2
+      x: 523
+      y: 393
+      width: 150
+      height: 48
+  RootIndices: 00000000
+  PlayerRoot: 0
+  AutoReplies: {fileID: 0}

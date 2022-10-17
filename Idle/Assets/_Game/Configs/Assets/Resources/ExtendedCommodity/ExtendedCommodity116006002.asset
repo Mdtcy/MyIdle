@@ -1,0 +1,56 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2fd8563a2ca943f4988659e523679790, type: 3}
+  m_Name: ExtendedCommodity116006002
+  m_EditorClassIdentifier: 
+  Id: 116006002
+  Name: "\u7B2C1\u5B63\u7B49\u4EF7\u7535\u6C60\u5305"
+  Image: {fileID: 21300000, guid: c05514b9d44c13246bf55c3be0f3d1f2, type: 3}
+  ImageRef:
+    m_AssetGUID: 
+    m_SubObjectName: 
+    m_SubObjectType: 
+  note: 
+  Payment:
+    PaymentType: 1
+    AdsInfo:
+      UnitType: 1
+    RechargeInfo:
+      ProductIdIOS: com.hellomeow.niai.ios.195battery
+      ProductIdIOSOld: 
+      ProductIdAndroid: u4Uhkf5I
+      ProductType: 0
+      Price: 60
+      FakePrice: 60
+    GCoinInfo:
+      Config: {fileID: 0}
+      Num: 0
+    HpInfo:
+      Config: {fileID: 0}
+      Num: 0
+  Order: 4
+  productType: 0
+  Description: "\u5185\u542B\u7B2C1\u5B63\u4E3B\u7EBF\u9664\u8D60\u9001\u90E8\u5206\u5916\u6240\u9700\u7684195\u5C0F\u7535\u6C60"
+  JumpToShoppingLinkConfig: {fileID: 0}
+  IsAutoUnlocked: 1
+  IsGoldenFingerCommodity: 1
+  IsShowNiAiLogo: 0
+  UnlockedDescription: 
+  ShowPreferential: 1
+  ShowInShop: 1
+  PurchasedItems:
+  - Target: {fileID: 11400000, guid: bda8e65d4be7e154e8e4e98b2f5a4a86, type: 2}
+    Weights:
+    - Range: {x: 195, y: 195}
+      Weight: 1
+  ResetType: 0
+  PurchaseLimit: 1

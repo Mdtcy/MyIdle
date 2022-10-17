@@ -1,0 +1,30 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9640398c600db44b9a28eb0abee211a3, type: 3}
+  m_Name: Memory114001018
+  m_EditorClassIdentifier: 
+  Id: 114001018
+  Name: "\u98CE\u6CE2\u4E4B\u540E"
+  Image: {fileID: 0}
+  ImageRef:
+    m_AssetGUID: 460286ed513440d44a05ef77361e910e
+    m_SubObjectName: 
+    m_SubObjectType: 
+  note: 
+  Owner: {fileID: 11400000, guid: ec5fc36ad7b874215b0b75f335cd1dee, type: 2}
+  lockDescription: "\u884C\u7A0B\uFF1A\u590D\u76D8\u60C5\u62A5\u89E3\u9501"
+  OccurrenceTime: 2015/04/04
+  Dialogue: {fileID: 11400000, guid: 8d34cd803a83ec5458951279e57d9ec4, type: 2}
+  Hp:
+    Currency: {fileID: 11400000, guid: bda8e65d4be7e154e8e4e98b2f5a4a86, type: 2}
+    Num: 3
+  Order: 41

@@ -1,0 +1,26 @@
+{
+    "name": "HelloMeow",
+    "rootNamespace": "",
+    "references": [
+        "GUID:68195ce9c66324a09bbe0870fbbb4927",
+        "GUID:5d339f65ea91a4fb5982ccbecf672486",
+        "GUID:9e24947de15b9834991c9d8411ea37cf",
+        "GUID:84651a3751eca9349aac36a66bba901b",
+        "GUID:a92a6a067a9cd492790320fcb9f7817b",
+        "GUID:76e486b79c67b40199a08dda2f83591a",
+        "GUID:0d8beb7f090555447a6cf5ce9e54dbb4",
+        "GUID:e613c9674e2e84658afbbe7063bc548c",
+        "GUID:c6496433b2190422c8f470d2cc0daef2",
+        "GUID:570288d68c06d364a82f87aca0bc1a34",
+        "GUID:38f974cc432974b4a83fcccb6799562d"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}

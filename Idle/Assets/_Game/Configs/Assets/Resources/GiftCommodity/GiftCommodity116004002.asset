@@ -1,0 +1,51 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cde29dbe4384bc2419469232d015a381, type: 3}
+  m_Name: GiftCommodity116004002
+  m_EditorClassIdentifier: 
+  Id: 116004002
+  Name: "\u529B\u654C\u5343\u94A7\u5927\u9524"
+  Image: {fileID: 21300000, guid: 4709d689ad0f8674a8369bf80df30137, type: 3}
+  ImageRef:
+    m_AssetGUID: 
+    m_SubObjectName: 
+    m_SubObjectType: 
+  note: 
+  Payment:
+    PaymentType: 1
+    AdsInfo:
+      UnitType: 0
+    RechargeInfo:
+      ProductIdIOS: com.hellomeow.niai.ios.hammer
+      ProductIdIOSOld: 
+      ProductIdAndroid: C8qVnnHr
+      ProductType: 1
+      Price: 1
+      FakePrice: 3
+    GCoinInfo:
+      Config: {fileID: 0}
+      Num: 0
+    HpInfo:
+      Config: {fileID: 0}
+      Num: 0
+  Order: 1
+  productType: 1
+  Description: "\u5728\u975E\u5E38\u4E0D\u723D\u7684\u65F6\u5019\u8FDB\u884C\u9009\u8D2D\uFF0C\u7528\u4E8E\u8C03\u6559\u8BE5\u6B7B\u7684\u6E38\u620F\u5236\u4F5C\u7EC4\u3002"
+  JumpToShoppingLinkConfig: {fileID: 0}
+  IsAutoUnlocked: 1
+  IsGoldenFingerCommodity: 0
+  IsShowNiAiLogo: 0
+  UnlockedDescription: 
+  ShowPreferential: 1
+  ShowInShop: 1
+  Schedule: {fileID: 11400000, guid: d67e586295dcb2440849eae335510b77, type: 2}
+  ContactConfig: {fileID: 11400000, guid: 5071a409911336a43a32b094f595c977, type: 2}

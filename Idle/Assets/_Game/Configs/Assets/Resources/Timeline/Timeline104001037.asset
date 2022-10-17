@@ -1,0 +1,47 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 358ffe76783d24679a800a4dd1acf973, type: 3}
+  m_Name: Timeline104001037
+  m_EditorClassIdentifier: 
+  Id: 104001037
+  Name: "\u6253\u5361\u52A8\u6001"
+  Image: {fileID: 0}
+  ImageRef:
+    m_AssetGUID: 
+    m_SubObjectName: 
+    m_SubObjectType: 
+  note: 
+  Publisher: {fileID: 11400000, guid: ec5fc36ad7b874215b0b75f335cd1dee, type: 2}
+  Text:
+    IsClue: 0
+    Id: 637859788670922650
+    TipAfterUnlock: 
+    Text: "\u597D\u4E45\u6CA1\u6765\u8FD9\u5BB6\u5E97\u4E86\uFF0C\u7ADF\u7136\u6709\u70B9\u5C0F\u6FC0\u52A8"
+    Indices: []
+  Pic:
+    IsClue: 0
+    Id: 637859788670925310
+    TipAfterUnlock: 
+    ImageRef:
+      m_AssetGUID: 57052aadfa1b41a40aae21df804936a2
+      m_SubObjectName: timeline_salad
+      m_SubObjectType: UnityEngine.Sprite, UnityEngine.CoreModule, Version=0.0.0.0,
+        Culture=neutral, PublicKeyToken=null
+    ImageName: 
+    CommodityConfig: {fileID: 0}
+  Location: {fileID: 0}
+  ReplyForest: {fileID: 11400000, guid: 80a3bb1e954b9864d86e1cd92e45c7b1, type: 2}
+  CommandsOnSessionFinished: []
+  CommandsOnAllCluesFound: []
+  PriorClueTip: 
+  PostClueTip: 
+  Clues: []

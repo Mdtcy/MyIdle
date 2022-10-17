@@ -1,0 +1,24 @@
+{
+    "name": "NewLife.Configs.Editor",
+    "rootNamespace": "",
+    "references": [
+        "HelloMeow.Config.Editor",
+        "NewLife.Configs",
+        "HelloMeow",
+        "HelloMeowEditor",
+        "NewLife.Defined",
+        "Unity.Addressables",
+        "ParadoxNotion"
+    ],
+    "includePlatforms": [
+        "Editor"
+    ],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}

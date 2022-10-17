@@ -1,0 +1,37 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8a4f163bd56fa4e6f8e920fabe847a9a, type: 3}
+  m_Name: Schedule109001245
+  m_EditorClassIdentifier: 
+  Id: 109001245
+  Name: "\u501F\u6545\u52A0\u73ED"
+  Image: {fileID: 0}
+  ImageRef:
+    m_AssetGUID: 
+    m_SubObjectName: 
+    m_SubObjectType: 
+  note: 
+  ScheduleType: 2
+  Description: "\u5F88\u96BE\u5FD8\u8BB0\u7684\u5F80\u4E8B"
+  Dialogue: {fileID: 11400000, guid: a3a8d00309be6ab4eb9113f186d50c2d, type: 2}
+  Hp:
+    Currency: {fileID: 11400000, guid: 1e7bb415d4617574d89b834cb8c35611, type: 2}
+    Num: 3
+  JumpTarget: 10
+  ItemAutoUnlocked: {fileID: 0}
+  GiftTarget: {fileID: 0}
+  S1: {fileID: 0}
+  S2: {fileID: 0}
+  Chat1: {fileID: 0}
+  Chat2: {fileID: 0}
+  Chat3: {fileID: 0}
+  CommandsAfterFinish: []

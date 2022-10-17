@@ -1,0 +1,47 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 358ffe76783d24679a800a4dd1acf973, type: 3}
+  m_Name: Timeline104001035
+  m_EditorClassIdentifier: 
+  Id: 104001035
+  Name: "\u7F8E\u5986\u65B0\u4EA7\u54C1"
+  Image: {fileID: 0}
+  ImageRef:
+    m_AssetGUID: 
+    m_SubObjectName: 
+    m_SubObjectType: 
+  note: 
+  Publisher: {fileID: 11400000, guid: 22b7a5da3a7564302a401b00315da3d0, type: 2}
+  Text:
+    IsClue: 0
+    Id: 637859788670908030
+    TipAfterUnlock: 
+    Text: "\u65B0\u4EA7\u54C1\u53D1\u5E03\uFF0C\u5F00\u542FIP\u8054\u540D\u4EA7\u54C1\u77E9\u9635\u8425\u9500\u5143\u5E74\u3002"
+    Indices: []
+  Pic:
+    IsClue: 0
+    Id: 637859788670910430
+    TipAfterUnlock: 
+    ImageRef:
+      m_AssetGUID: 2d7278b4cbe05e34282efc518f632cb0
+      m_SubObjectName: timeline_maquillage
+      m_SubObjectType: UnityEngine.Sprite, UnityEngine.CoreModule, Version=0.0.0.0,
+        Culture=neutral, PublicKeyToken=null
+    ImageName: 
+    CommodityConfig: {fileID: 0}
+  Location: {fileID: 0}
+  ReplyForest: {fileID: 11400000, guid: 743b06f3f3d38624ab43a686f3331989, type: 2}
+  CommandsOnSessionFinished: []
+  CommandsOnAllCluesFound: []
+  PriorClueTip: 
+  PostClueTip: 
+  Clues: []

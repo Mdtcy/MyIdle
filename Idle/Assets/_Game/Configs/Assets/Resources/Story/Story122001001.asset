@@ -1,0 +1,33 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1c29c3c237dcad248871e883b0f38063, type: 3}
+  m_Name: Story122001001
+  m_EditorClassIdentifier: 
+  Id: 122001001
+  Name: "\u5077\u7AA5\u72C2\u7684\u79D8\u5BC6\u4E00"
+  Image: {fileID: 0}
+  ImageRef:
+    m_AssetGUID: 
+    m_SubObjectName: 
+    m_SubObjectType: 
+  note: 
+  InitSchedules:
+  - {fileID: 11400000, guid: 05d7ce3448a9c83418e9c9f4f0ca36a3, type: 2}
+  Schedules:
+  - {fileID: 11400000, guid: 05d7ce3448a9c83418e9c9f4f0ca36a3, type: 2}
+  - {fileID: 11400000, guid: b246f342848c1c44aab37e23e62459ea, type: 2}
+  - {fileID: 11400000, guid: 91f62a47989c24a48bff7b2746ccdfbb, type: 2}
+  - {fileID: 11400000, guid: c2859a5a2c9220a489418c5ecf75dbf2, type: 2}
+  - {fileID: 11400000, guid: c5440a5ff0b07f34ab721f08caec2470, type: 2}
+  - {fileID: 11400000, guid: ba59dd4542b41754da548a3d801f6ec8, type: 2}
+  BelongContact: {fileID: 11400000, guid: ba96fd9ddf9d33a4f8f496fdf9d8bfb9, type: 2}
+  IsAutoUnlock: 0

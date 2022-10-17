@@ -1,0 +1,40 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 245c2537ae49e43269bd6f06871454bd, type: 3}
+  m_Name: Detective102004006
+  m_EditorClassIdentifier: 
+  Id: 102004006
+  Name: "\u59DC\u4E3D\u62C9"
+  Image: {fileID: 0}
+  ImageRef:
+    m_AssetGUID: 
+    m_SubObjectName: 
+    m_SubObjectType: 
+  note: 
+  PortraitRef:
+    m_AssetGUID: ff3baa8740d216d479a165f5ac041eda
+    m_SubObjectName: touxiang_zhentan_jianglila
+    m_SubObjectType: UnityEngine.Sprite, UnityEngine.CoreModule, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
+  ProgressListPortrait: {fileID: 21300000, guid: 2e3f493b4bdcd754cb86d2402b3f17ae,
+    type: 3}
+  InvestigationResultPortrait: {fileID: 21300000, guid: 58bc24fb5f752654d8a643edaaf1f3ed,
+    type: 3}
+  Seal: {fileID: 21300000, guid: d8b729b083bedb34781f6debacdd1de9, type: 3}
+  Description: "\u6700\u8FD1\u5F88\u53D7\u6B22\u8FCE\u7684\u5C11\u5973\u4FA6\u63A2\uFF0C\u201C\u8C01\u8BF4\u7A7F\u5C0F\u88D9\u5B50\u5C31\u4E0D\u80FD\u8C03\u67E5\u7EBF\u7D22\u4E86\uFF0C\u8FD9\u53EF\u662F\u6211\u7684\u6218\u888D\uFF0C\u6709buff\u52A0\u6210\u7684\u3002\u201D"
+  InvestigationDuration: 35
+  InvestigationFees:
+    Currency: {fileID: 11400000, guid: 24292cabfc093af4798ca4ad94e3da18, type: 2}
+    Num: 1188
+  MaxInvestigateTimesForTrueLead: 2
+  TrueLeadChance: 100
+  FalseLeadChance: 100

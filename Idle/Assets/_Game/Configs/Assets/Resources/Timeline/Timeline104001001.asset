@@ -1,0 +1,61 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 358ffe76783d24679a800a4dd1acf973, type: 3}
+  m_Name: Timeline104001001
+  m_EditorClassIdentifier: 
+  Id: 104001001
+  Name: "\u6CFD\u5B87\u52A8\u6001\u4E03\u5E74\u4E4B\u75D2"
+  Image: {fileID: 0}
+  ImageRef:
+    m_AssetGUID: 
+    m_SubObjectName: 
+    m_SubObjectType: 
+  note: 
+  Publisher: {fileID: 11400000, guid: 22b7a5da3a7564302a401b00315da3d0, type: 2}
+  Text:
+    IsClue: 0
+    Id: 637859788670497110
+    TipAfterUnlock: 
+    Text: "\u4E03\u5E74\u4E4B\u75D2\u7684\u79D8\u5BC6\u7EDD\u62DB\u3002"
+    Indices: []
+  Pic:
+    IsClue: 0
+    Id: 637859788670500240
+    TipAfterUnlock: 
+    ImageRef:
+      m_AssetGUID: 3b828c9336ebf7e41923d2a80f0819b8
+      m_SubObjectName: 
+      m_SubObjectType: UnityEngine.Sprite, UnityEngine.CoreModule, Version=0.0.0.0,
+        Culture=neutral, PublicKeyToken=null
+    ImageName: 
+    CommodityConfig: {fileID: 0}
+  Location: {fileID: 11400000, guid: aa3903e99f6b142578695d9c257b066d, type: 2}
+  ReplyForest: {fileID: 11400000, guid: 0ae4cb0b0e5aa492e96476393216e2d4, type: 2}
+  CommandsOnSessionFinished:
+  - CommandType: 3
+    CustomScript: 
+    Target: {fileID: 11400000, guid: 2de6d4461e16e2646a490db2b4583464, type: 2}
+    TargetName: 
+    Num: 1
+    PropertyType: 0
+    ScheduleState: 2
+  - CommandType: 1
+    CustomScript: 
+    Target: {fileID: 11400000, guid: d431cf7e258268944a5d07ee1e31a6c8, type: 2}
+    TargetName: 
+    Num: 1
+    PropertyType: 0
+    ScheduleState: 0
+  CommandsOnAllCluesFound: []
+  PriorClueTip: 
+  PostClueTip: 
+  Clues: []

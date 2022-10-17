@@ -1,0 +1,29 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 72516e23b236e0b4088c500a314cbca7, type: 3}
+  m_Name: ReplyPack104007042
+  m_EditorClassIdentifier: 
+  Id: 104007042
+  Name: "\u75AF\u72C2\u52A0\u73ED"
+  Image: {fileID: 0}
+  ImageRef:
+    m_AssetGUID: 
+    m_SubObjectName: 
+    m_SubObjectType: 
+  note: 
+  Replies:
+  - {fileID: 11400000, guid: 83609a893dada8c46b0d2f5d63d8fdd6, type: 2}
+  - {fileID: 11400000, guid: 3eab1ed51b5d7f34f8d1c3028e1878d1, type: 2}
+  - {fileID: 11400000, guid: 2300546fe30eb0b4e82618082e6f0170, type: 2}
+  - {fileID: 11400000, guid: bf9cee88d16929442b4df50702efe599, type: 2}
+  - {fileID: 11400000, guid: 23ebf83c4a9b25e4b8e5caefe2b40516, type: 2}
+  - {fileID: 11400000, guid: 17b79606787b7be448a18633f1929fd5, type: 2}

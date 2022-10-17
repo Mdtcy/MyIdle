@@ -1,0 +1,58 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 358ffe76783d24679a800a4dd1acf973, type: 3}
+  m_Name: Timeline104001026
+  m_EditorClassIdentifier: 
+  Id: 104001026
+  Name: MQ604ZYA
+  Image: {fileID: 0}
+  ImageRef:
+    m_AssetGUID: 
+    m_SubObjectName: 
+    m_SubObjectType: 
+  note: 
+  Publisher: {fileID: 11400000, guid: 22b7a5da3a7564302a401b00315da3d0, type: 2}
+  Text:
+    IsClue: 1
+    Id: 637858986588553130
+    TipAfterUnlock: "\u8FD9\u7B97\u662F\u628A\u6211\u7684\u75C5\u60C5\u662D\u544A\u5929\u4E0B\u4E86\uFF0C\u662F\u8981\u65AD\u4E86\u6211\u7684\u540E\u8DEF\u5427\u3002"
+    Text: "\u5E0C\u671B\u8001\u5A46\u7684\u7CBE\u795E\u72B6\u6001\u65E9\u65E9\u597D\u8D77\u6765\u3002\u6211\u4EEC\u7B49\u7740\u4F60\u5065\u5EB7\u5F52\u6765\u3002"
+    Indices:
+    - Start: 5
+      Length: 4
+  Pic:
+    IsClue: 0
+    Id: 637859788670808350
+    TipAfterUnlock: 
+    ImageRef:
+      m_AssetGUID: c474c0fe9bca85643bbd7287a9a50893
+      m_SubObjectName: 
+      m_SubObjectType: 
+    ImageName: 
+    CommodityConfig: {fileID: 0}
+  Location: {fileID: 0}
+  ReplyForest: {fileID: 11400000, guid: 26b3fbdbcb9cd6f4d8e0c67f62e0f903, type: 2}
+  CommandsOnSessionFinished: []
+  CommandsOnAllCluesFound:
+  - CommandType: 3
+    CustomScript: 
+    Target: {fileID: 11400000, guid: f6ebd0e43c9e97143b68cf93b1d68bc6, type: 2}
+    TargetName: 
+    Num: 1
+    PropertyType: 0
+    ScheduleState: 2
+  PriorClueTip: "\u8D75\u6CFD\u5B87\u7684\u55B5\u5708\u603B\u662F\u53D1\u5F97\u5F88\u201C\u8BB2\u7A76\u201D\uFF0C\u63E3\u6469\u4E00\u4E0B\u4ED6\u7684\u7528\u610F\u5427\u3002"
+  PostClueTip: "\u544A\u8BC9\u6240\u6709\u4EBA\u6211\u7684\u7CBE\u795E\u72B6\u6001\u4E0D\u597D\uFF0C\u8FD9\u5BF9\u6211\u56DE\u5F52\u804C\u573A\u548C\u53D6\u4FE1\u4E8E\u4EBA\u90FD\u662F\u963B\u788D\u3002"
+  Clues:
+  - IsClue: 1
+    Id: 637858986588553130
+    TipAfterUnlock: "\u8FD9\u7B97\u662F\u628A\u6211\u7684\u75C5\u60C5\u662D\u544A\u5929\u4E0B\u4E86\uFF0C\u662F\u8981\u65AD\u4E86\u6211\u7684\u540E\u8DEF\u5427\u3002"

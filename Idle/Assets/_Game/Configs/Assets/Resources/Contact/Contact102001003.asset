@@ -1,0 +1,52 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9df6180da6fc647cbb69037d63501942, type: 3}
+  m_Name: Contact102001003
+  m_EditorClassIdentifier: 
+  Id: 102001003
+  Name: "\u7164\u7403\u513F"
+  Image: {fileID: 0}
+  ImageRef:
+    m_AssetGUID: 
+    m_SubObjectName: 
+    m_SubObjectType: 
+  note: 
+  Description: "\u5370\u8C61\u91CC\u4E00\u76F4\u662F\u6709\u70B9\u76AE\u7684\u5C0F\u5B66\u5F1F\uFF0C\u53CC\u5B50\u5EA7\uFF0C\u5BB6\u5EAD\u80CC\u666F\u795E\u795E\u79D8\u79D8\u7684\u3002\u5927\u5B66\u65F6\u662F\u6211\u5728\u620F\u5267\u793E\u7684\u94C1\u6746\u7C89\u4E1D\uFF0C\u90A3\u65F6\u5019\u5E94\u8BE5\u5F88\u559C\u6B22\u6211\u5427\u2026\u2026\u6700\u8FD1\u624D\u56DE\u56FD\u7684\u4ED6\uFF0C\u4F3C\u4E4E\u548C\u4EE5\u524D\u4E0D\u592A\u4E00\u6837\u4E86\uFF1F"
+  AvatarRef:
+    m_AssetGUID: 2e027ffda8e607b43a7b1363fb964ded
+    m_SubObjectName: avatar_contact_meiqiuer
+    m_SubObjectType: UnityEngine.Sprite, UnityEngine.CoreModule, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
+  PortraitRef:
+    m_AssetGUID: 199a648036cb2c24ba1f884f5c42fa33
+    m_SubObjectName: halfchar_mq_1
+    m_SubObjectType: UnityEngine.Sprite, UnityEngine.CoreModule, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
+  ContactDetailPortraitRef:
+    m_AssetGUID: d2973a51b9126004ab27b1dee312ecf2
+    m_SubObjectName: char_mq_1_normal
+    m_SubObjectType: UnityEngine.Sprite, UnityEngine.CoreModule, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
+  Leads:
+  - {fileID: 11400000, guid: 7ae45e8656788a84084a1e3abe9fabff, type: 2}
+  - {fileID: 11400000, guid: 950c1bd755a576e4fb0a85f944f5a662, type: 2}
+  - {fileID: 11400000, guid: 6622612411fa43e458f6ddf5cfd3b9af, type: 2}
+  - {fileID: 11400000, guid: 3ccd9c4c7e1060041ba016198bc25ec6, type: 2}
+  AllowToFollowAnonymously: 0
+  Age: 28
+  Birthday: "6\u67081\u65E5"
+  PhoneNo: 264014
+  blockedScenario: 0
+  Properties:
+  - {fileID: 11400000, guid: bec73496233274671ba6aebead4db922, type: 2}
+  ContactPropertyInitValues: []
+  JobTitle: "\uFF1F\uFF1F\uFF1F"

@@ -1,0 +1,41 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 49e821b9009c03e4ea4baf57b9f2bd78, type: 3}
+  m_Name: UnlockItemCommodity116007044
+  m_EditorClassIdentifier: 
+  Id: 116007044
+  Name: "\u63A5\u6536wink~"
+  Image: {fileID: 0}
+  ImageRef:
+    m_AssetGUID: 
+    m_SubObjectName: 
+    m_SubObjectType: 
+  note: 
+  Payment:
+    PaymentType: 1
+    AdsInfo:
+      UnitType: 0
+    RechargeInfo:
+      ProductIdIOS: com.hellomeow.niai.ios.dlwink
+      ProductIdAndroid: Oi8UHMR2
+      ProductType: 1
+      Price: 1
+      FakePrice: 1
+    GCoinInfo:
+      Config: {fileID: 0}
+      Num: 0
+    HpInfo:
+      Config: {fileID: 0}
+      Num: 0
+  Order: 0
+  productType: 1
+  Target: {fileID: 11400000, guid: d205c61ebc6d91e489a96a381918ee80, type: 2}

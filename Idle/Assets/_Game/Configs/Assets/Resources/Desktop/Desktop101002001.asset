@@ -1,0 +1,41 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a77f48bc36e2470e9798740f6b564af, type: 3}
+  m_Name: Desktop101002001
+  m_EditorClassIdentifier: 
+  Id: 101002001
+  Name: "\u684C\u9762"
+  Image: {fileID: 0}
+  ImageRef:
+    m_AssetGUID: 
+    m_SubObjectName: 
+    m_SubObjectType: 
+  note: "\u684C\u9762\u4E0D\u9700\u8981icon\u4FE1\u606F"
+  AppIconConfig: {fileID: 0}
+  IsFakeApp: 0
+  UiPrefab: {fileID: 8713954649293371737, guid: 78842854e3fb34092acfd5579575eb6b,
+    type: 3}
+  IsFullScreen: 0
+  UrlScheme: 
+  AppConfigs:
+  - {fileID: 11400000, guid: 65993c2b05a8e400bae4946a0f04a9f8, type: 2}
+  - {fileID: 11400000, guid: 6a7ef108b896c4a4ab7099e3b33e5323, type: 2}
+  - {fileID: 11400000, guid: e06a6452565d2fa4a93ae88e1a1f4137, type: 2}
+  - {fileID: 11400000, guid: 3adb5a644859a1a45bac8f7bf40cf609, type: 2}
+  - {fileID: 11400000, guid: 86d22257ee2325542951662ec832c60d, type: 2}
+  - {fileID: 11400000, guid: e55567cad2af3df4aae837f969bf28f0, type: 2}
+  - {fileID: 11400000, guid: d525631c52e04a044b8061cd9a50ca61, type: 2}
+  - {fileID: 11400000, guid: 6eb4afb31e9d88b4f873deafa7c6ffd2, type: 2}
+  - {fileID: 11400000, guid: 47e62019c09ab414897d8fdd7e3ba3aa, type: 2}
+  - {fileID: 11400000, guid: 11727e4f613ff4b469e508dd06050962, type: 2}
+  - {fileID: 11400000, guid: 3f62d0794578484419c6215e9de99339, type: 2}
+  - {fileID: 11400000, guid: 755c121b9493fcd4c874c8213202868b, type: 2}

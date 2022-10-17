@@ -1,0 +1,26 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fec452e4c6fc440a7af443d4e0511187, type: 3}
+  m_Name: ReplyForest104006049
+  m_EditorClassIdentifier: 
+  Id: 104006049
+  Name: 
+  Image: {fileID: 0}
+  ImageRef:
+    m_AssetGUID: 
+    m_SubObjectName: 
+    m_SubObjectType: 
+  note: 
+  ReplyLeaves: []
+  RootIndices: 
+  PlayerRoot: -1
+  AutoReplies: {fileID: 11400000, guid: 57d7f90be94e8e64f95766228c2fa5c1, type: 2}

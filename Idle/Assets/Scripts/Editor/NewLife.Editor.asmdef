@@ -1,0 +1,26 @@
+{
+    "name": "NewLife.Editor",
+    "rootNamespace": "",
+    "references": [
+        "HelloMeow",
+        "NewLife.Defined",
+        "NewLife.Configs",
+        "ParadoxNotion",
+        "NewLife.Business",
+        "XNodeEditor",
+        "XNode",
+        "NewLife.BasicInterfaces",
+        "Unity.Addressables.Editor"
+    ],
+    "includePlatforms": [
+        "Editor"
+    ],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}

@@ -1,0 +1,51 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c5cd8837576e54692ae83eba07a6963b, type: 3}
+  m_Name: Chat107001005
+  m_EditorClassIdentifier: 
+  Id: 107001005
+  Name: "\u6CFD\u5B87\u5F52\u671F"
+  Image: {fileID: 0}
+  ImageRef:
+    m_AssetGUID: 
+    m_SubObjectName: 
+    m_SubObjectType: 
+  note: 
+  Hp:
+    Currency: {fileID: 11400000, guid: bda8e65d4be7e154e8e4e98b2f5a4a86, type: 2}
+    Num: 1
+  Contact: {fileID: 11400000, guid: 22b7a5da3a7564302a401b00315da3d0, type: 2}
+  Dialogue: {fileID: 11400000, guid: f8caf8e99d626b14c94e6788dc670d2a, type: 2}
+  CommandsOnAllCluesFound:
+  - CommandType: 3
+    CustomScript: 
+    Target: {fileID: 11400000, guid: d58561b0507a3234d896c2157a6ba023, type: 2}
+    TargetName: 
+    Num: 1
+    PropertyType: 0
+    ScheduleState: 2
+  - CommandType: 4
+    CustomScript: 
+    Target: {fileID: 11400000, guid: ea337e8232a016b42be927dd97541ffd, type: 2}
+    TargetName: 
+    Num: 1
+    PropertyType: 0
+    ScheduleState: 0
+  PriorClueTip: "\u6CFD\u5B87\u7684\u8BDD\u548C\u4ED6\u5C0F\u53F7\u7684\u55B5\u5708\u5185\u5BB9\u4F3C\u4E4E\u6709\u4E9B\u51FA\u5165\uFF0C\u518D\u4ED4\u7EC6\u770B\u770B\u6D88\u606F\u627E\u7EBF\u7D22\u5427\u3002"
+  PostClueTip: "\u73B0\u5728\u53EA\u80FD\u7B49\u4ED6\u660E\u665A\u56DE\u6765\u4E86\uFF0C\u6CFD\u6167\u77E5\u4E0D\u77E5\u9053\u8FD9\u4EF6\u4E8B\u5462\uFF1F"
+  Clues:
+  - IsClue: 1
+    Id: 637859097612091860
+    TipAfterUnlock: "\u7A7F\u4E86\u7FBD\u7ED2\u670D\uFF0C\u662F\u8FD8\u5728\u4EF0\u5B89\u7684\u610F\u601D\u5417\uFF1F\r"
+  - IsClue: 1
+    Id: 637859097612095080
+    TipAfterUnlock: "\u53EF\u662F\u4ED6\u7684\u5C0F\u53F7\u5374\u8BF4\u4ECA\u5929\u5DF2\u7ECF\u79BB\u5F00\u4E86\uFF0C\u4E3A\u4EC0\u4E48\u8981\u9A97\u6211\u5462\uFF1F"

@@ -1,0 +1,25 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: db84b9d5aadcd48d98a7e21656f5ddfe, type: 3}
+  m_Name: FileItem113001010
+  m_EditorClassIdentifier: 
+  Id: 113001010
+  Name: "\u94F6\u884C\u5361"
+  Image: {fileID: 0}
+  ImageRef:
+    m_AssetGUID: e016fd2c2d5a20a499f95a58892a3151
+    m_SubObjectName: item_yinhangka
+    m_SubObjectType: UnityEngine.Sprite, UnityEngine.CoreModule, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
+  note: 
+  Description: "\u7528\u6765\u63A5\u6728\u5170\u82B1\u516C\u53F8\u5206\u7EA2\u7684\u94F6\u884C\u5361\u3002"
+  CommodityConfig: {fileID: 0}

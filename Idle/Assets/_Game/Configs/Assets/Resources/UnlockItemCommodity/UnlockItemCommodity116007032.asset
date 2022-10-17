@@ -1,0 +1,41 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 49e821b9009c03e4ea4baf57b9f2bd78, type: 3}
+  m_Name: UnlockItemCommodity116007032
+  m_EditorClassIdentifier: 
+  Id: 116007032
+  Name: "\u5C0F\u5B9D\u8D1D\u5728\u4E0D\u5728"
+  Image: {fileID: 0}
+  ImageRef:
+    m_AssetGUID: 
+    m_SubObjectName: 
+    m_SubObjectType: 
+  note: 
+  Payment:
+    PaymentType: 3
+    AdsInfo:
+      UnitType: 0
+    RechargeInfo:
+      ProductIdIOS: 
+      ProductIdAndroid: 
+      ProductType: 1
+      Price: 3
+      FakePrice: 3
+    GCoinInfo:
+      Config: {fileID: 11400000, guid: 24292cabfc093af4798ca4ad94e3da18, type: 2}
+      Num: 520
+    HpInfo:
+      Config: {fileID: 0}
+      Num: 0
+  Order: 0
+  productType: 0
+  Target: {fileID: 11400000, guid: 53dccfcbe8cad894bb23fa188796f080, type: 2}

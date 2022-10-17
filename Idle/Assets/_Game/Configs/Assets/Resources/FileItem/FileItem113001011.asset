@@ -1,0 +1,25 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: db84b9d5aadcd48d98a7e21656f5ddfe, type: 3}
+  m_Name: FileItem113001011
+  m_EditorClassIdentifier: 
+  Id: 113001011
+  Name: "\u7ED3\u5A5A\u6212\u6307"
+  Image: {fileID: 0}
+  ImageRef:
+    m_AssetGUID: 6797962eaf048b845b7103880005b5b4
+    m_SubObjectName: item_hunjie
+    m_SubObjectType: UnityEngine.Sprite, UnityEngine.CoreModule, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
+  note: 
+  Description: "\u9020\u578B\u6734\u7D20\u7684\u5B9A\u5236\u5A5A\u6212\uFF0C\u662F\u4E00\u5BF9\uFF0C\u5185\u5708\u523B\u7740\u201C\u8D75\u6CFD\u5B87\u201D\u4E0E\u201C\u6797\u654F\u6069\u201D\u7684\u59D3\u6C0F\u9996\u5B57\u6BCD\uFF0C\u201CZ&L\u201D\u3002"
+  CommodityConfig: {fileID: 0}

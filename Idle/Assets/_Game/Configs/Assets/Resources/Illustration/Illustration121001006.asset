@@ -1,0 +1,28 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 97c0996e96a148e48953a4ec7ca5373e, type: 3}
+  m_Name: Illustration121001006
+  m_EditorClassIdentifier: 
+  Id: 121001006
+  Name: "\u79D8\u5883\u4E4B\u94A5"
+  Image: {fileID: 0}
+  ImageRef:
+    m_AssetGUID: 97f9ad2ece8106940be4bed9c17350fe
+    m_SubObjectName: 
+    m_SubObjectType: 
+  note: 
+  Description: "\u6CFD\u5B87\u4E70\u8FD9\u6B3E\u6C90\u6D74\u9732\u9001\u7ED9\u8C01\uFF1F"
+  UnlockCondition: "\u884C\u7A0B\uFF1A\u5C0F\u53F7\u7684\u70AB\u8000\u89E3\u9501"
+  ScheduleUnlockBy: {fileID: 11400000, guid: 4eb6b2de975459440ab9e859730fd13a, type: 2}
+  VentPropUnlockBy: {fileID: 0}
+  Order: 3
+  IllustrationType: 1

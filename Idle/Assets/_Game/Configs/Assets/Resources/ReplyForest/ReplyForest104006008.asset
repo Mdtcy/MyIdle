@@ -1,0 +1,98 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fec452e4c6fc440a7af443d4e0511187, type: 3}
+  m_Name: ReplyForest104006008
+  m_EditorClassIdentifier: 
+  Id: 104006008
+  Name: 
+  Image: {fileID: 0}
+  ImageRef:
+    m_AssetGUID: 
+    m_SubObjectName: 
+    m_SubObjectType: 
+  note: 
+  ReplyLeaves:
+  - Config: {fileID: 11400000, guid: 4063b4df59ce09444a1d237f27c4c044, type: 2}
+    ChildIndices: 0100000005000000
+    m_canvasRect:
+      serializedVersion: 2
+      x: 1064.8351
+      y: 432.967
+      width: 150
+      height: 48
+  - Config: {fileID: 11400000, guid: fa33dbd40058a734b8f1a036568d7a39, type: 2}
+    ChildIndices: 02000000
+    m_canvasRect:
+      serializedVersion: 2
+      x: 916.48346
+      y: 525.2747
+      width: 150
+      height: 48
+  - Config: {fileID: 11400000, guid: c626fe6c1a63d4443ba3ab3b6c1ae6b8, type: 2}
+    ChildIndices: 03000000
+    m_canvasRect:
+      serializedVersion: 2
+      x: 894.49536
+      y: 622.9357
+      width: 150
+      height: 48
+  - Config: {fileID: 11400000, guid: 1ec0f528608f82e43ab5d4acf06af8e4, type: 2}
+    ChildIndices: 04000000
+    m_canvasRect:
+      serializedVersion: 2
+      x: 866.9726
+      y: 718.3487
+      width: 150
+      height: 48
+  - Config: {fileID: 11400000, guid: 36cd2149d17a51e45af862bf033fc8df, type: 2}
+    ChildIndices: 
+    m_canvasRect:
+      serializedVersion: 2
+      x: 854.1284
+      y: 818.34863
+      width: 150
+      height: 48
+  - Config: {fileID: 11400000, guid: 7cfcb777f4fdc534eb73b561b31fa592, type: 2}
+    ChildIndices: 06000000
+    m_canvasRect:
+      serializedVersion: 2
+      x: 1133.9451
+      y: 532.11005
+      width: 150
+      height: 48
+  - Config: {fileID: 11400000, guid: 1a6b33f0c4e177343b881d6cea68e28e, type: 2}
+    ChildIndices: 07000000
+    m_canvasRect:
+      serializedVersion: 2
+      x: 1139.4495
+      y: 623.85315
+      width: 150
+      height: 48
+  - Config: {fileID: 11400000, guid: af1882ac008417446ae69cc452412874, type: 2}
+    ChildIndices: 08000000
+    m_canvasRect:
+      serializedVersion: 2
+      x: 1129.3578
+      y: 709.1743
+      width: 150
+      height: 48
+  - Config: {fileID: 11400000, guid: 6ed329eae968ed5469a4229cfe2d181e, type: 2}
+    ChildIndices: 
+    m_canvasRect:
+      serializedVersion: 2
+      x: 1106.422
+      y: 802.7523
+      width: 150
+      height: 48
+  RootIndices: 00000000
+  PlayerRoot: 0
+  AutoReplies: {fileID: 11400000, guid: 51578669eba47564e8772217313b8a03, type: 2}

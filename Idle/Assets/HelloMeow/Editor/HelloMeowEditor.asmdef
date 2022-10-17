@@ -1,0 +1,19 @@
+{
+    "name": "HelloMeowEditor",
+    "rootNamespace": "",
+    "references": [
+        "HelloMeow",
+        "ParadoxNotion"
+    ],
+    "includePlatforms": [
+        "Editor"
+    ],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}

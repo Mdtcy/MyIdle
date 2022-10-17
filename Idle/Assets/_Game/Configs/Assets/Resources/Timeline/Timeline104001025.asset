@@ -1,0 +1,56 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 358ffe76783d24679a800a4dd1acf973, type: 3}
+  m_Name: Timeline104001025
+  m_EditorClassIdentifier: 
+  Id: 104001025
+  Name: "\u5E9F\u5F03"
+  Image: {fileID: 0}
+  ImageRef:
+    m_AssetGUID: 
+    m_SubObjectName: 
+    m_SubObjectType: 
+  note: 
+  Publisher: {fileID: 11400000, guid: e5dd26030fa6e4dae9ba03311d1287d6, type: 2}
+  Text:
+    IsClue: 0
+    Id: 637859788670795090
+    TipAfterUnlock: 
+    Text: "\u4E0D\u662F\u5F88\u61C2\uFF0C\u4E3A\u4EC0\u4E48\u8FD9\u4E9B\u957F\u5F97\u4E00\u6A21\u4E00\u6837\u7684\u5305\u4EF7\u683C\u5374\u5343\u5DEE\u4E07\u522B\uFF1F"
+    Indices: []
+  Pic:
+    IsClue: 0
+    Id: 637859788670797300
+    TipAfterUnlock: 
+    ImageRef:
+      m_AssetGUID: 
+      m_SubObjectName: 
+      m_SubObjectType: 
+    ImageName: 
+    CommodityConfig: {fileID: 0}
+  Location: {fileID: 0}
+  ReplyForest: {fileID: 11400000, guid: 48162ad92cc22b44eb8a6bf1de59852a, type: 2}
+  CommandsOnSessionFinished: []
+  CommandsOnAllCluesFound:
+  - CommandType: 3
+    CustomScript: 
+    Target: {fileID: 11400000, guid: a58550554f9c81d4eb2f01bd0ead5f9c, type: 2}
+    TargetName: 
+    Num: 1
+    PropertyType: 0
+    ScheduleState: 2
+  PriorClueTip: "\u8D75\u6CFD\u5B87\u5728\u5C0F\u53F7\u4E0A\u7684\u6001\u5EA6\u9010\u6E10\u5F20\u626C\u8D77\u6765\uFF0C\u66B4\u9732\u4E86\u66F4\u591A\u7684\u5F31\u70B9\u2026\u2026\r"
+  PostClueTip: "\u6309\u76EE\u524D\u4ED6\u82B1\u94B1\u7684\u901F\u5EA6\u6765\u770B\uFF0C\u7164\u7403\u513F\u4E00\u65E6\u53D1\u96BE\uFF0C\u77ED\u65F6\u95F4\u5185\u8D75\u6CFD\u5B87\u7EDD\u5BF9\u65E0\u6CD5\u586B\u8865\u6F0F\u6D1E\uFF0C\u4ED6\u5DF2\u7ECF\u6210\u4E3A\u4E86\u74EE\u4E2D\u4E4B\u9CD6\u3002\r"
+  Clues:
+  - IsClue: 1
+    Id: 637859752492568050
+    TipAfterUnlock: "\u770B\u6765\u65AF\u9EDB\u4E3D\u628A\u4ED6\u54C4\u5F97\u5F88\u597D\uFF0C\u4ED6\u5728\u6E29\u67D4\u4E61\u91CC\u9010\u6E10\u8FF7\u5931\u4E86\u81EA\u6211\u3002"

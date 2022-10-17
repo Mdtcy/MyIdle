@@ -1,0 +1,56 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 358ffe76783d24679a800a4dd1acf973, type: 3}
+  m_Name: Timeline104001023
+  m_EditorClassIdentifier: 
+  Id: 104001023
+  Name: "\u5E9F\u5F03"
+  Image: {fileID: 0}
+  ImageRef:
+    m_AssetGUID: 
+    m_SubObjectName: 
+    m_SubObjectType: 
+  note: 
+  Publisher: {fileID: 11400000, guid: e5dd26030fa6e4dae9ba03311d1287d6, type: 2}
+  Text:
+    IsClue: 0
+    Id: 637859788670772240
+    TipAfterUnlock: 
+    Text: "\u5BCC\u4E8C\u4EE3\u7A7A\u964D\u5175\uFF1F\u771F\u662F\u53EF\u7B11\uFF0C\u73B0\u5728\u8981\u51ED\u5B9E\u529B\u8BF4\u8BDD\u3002"
+    Indices: []
+  Pic:
+    IsClue: 0
+    Id: 637859788670774710
+    TipAfterUnlock: 
+    ImageRef:
+      m_AssetGUID: 
+      m_SubObjectName: 
+      m_SubObjectType: 
+    ImageName: 
+    CommodityConfig: {fileID: 0}
+  Location: {fileID: 0}
+  ReplyForest: {fileID: 11400000, guid: dee3ea3b0802dfb47aab2fe7cf9cae33, type: 2}
+  CommandsOnSessionFinished: []
+  CommandsOnAllCluesFound:
+  - CommandType: 3
+    CustomScript: 
+    Target: {fileID: 11400000, guid: 9060ceeacd0f03c4a89dcfa6f24c82e7, type: 2}
+    TargetName: 
+    Num: 1
+    PropertyType: 0
+    ScheduleState: 2
+  PriorClueTip: "\u8D75\u6CFD\u5B87\u5BF9\u745E\u946B\u7684\u53D8\u52A8\u5E76\u975E\u4E00\u65E0\u6240\u77E5\uFF0C\u5E76\u4E14\u6709\u81EA\u5DF1\u7684\u8003\u8651\u2026\u2026\r"
+  PostClueTip: "\u7B49\u6211\u548C\u65AF\u9EDB\u4E3D\u51B3\u88C2\u7684\u6D88\u606F\u4F20\u51FA\uFF0C\u8D75\u6CFD\u5B87\u4E00\u5B9A\u4F1A\u66F4\u52A0\u8086\u65E0\u5FCC\u60EE\uFF0C\u800C\u90A3\u65F6\uFF0C\u7164\u7403\u513F\u4E5F\u8BE5\u884C\u52A8\u4E86\u3002\r"
+  Clues:
+  - IsClue: 1
+    Id: 637859752492564580
+    TipAfterUnlock: "\u65AF\u9EDB\u4E3D\u8BF1\u60D1\u8D75\u6CFD\u5B87\u5927\u8086\u8D2A\u6C61\uFF0C\u8FD9\u7ED9\u745E\u946B\u7684\u5BA1\u8BA1\u884C\u52A8\u589E\u52A0\u4E86\u5B9E\u8D28\u6027\u7684\u8BC1\u636E\u3002"

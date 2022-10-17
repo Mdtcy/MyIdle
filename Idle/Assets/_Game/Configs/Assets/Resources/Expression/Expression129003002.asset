@@ -1,0 +1,35 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f06d5baa413bc1a4c8d4914a410e1fdd, type: 3}
+  m_Name: Expression129003002
+  m_EditorClassIdentifier: 
+  Id: 129003002
+  Name: "\u6B6A\u5634"
+  Image: {fileID: 0}
+  ImageRef:
+    m_AssetGUID: 
+    m_SubObjectName: 
+    m_SubObjectType: 
+  note: 
+  CanNotPurchased: 0
+  IsAutoUnlock: 0
+  UnlockCommodity: {fileID: 11400000, guid: 692b5922f36f88d4b969b45bbfb7d396, type: 2}
+  StrDesc: "\u8FD9\u6837\u53EF\u4EE5\u5417\uFF1F"
+  Order: 1
+  StrCanNotPurchasedShortDesc: 
+  StrCanNotPurchasedDesc: 
+  ExpressionRef:
+    m_AssetGUID: 7404e1f03f6eace44b9c7d117de52ce9
+    m_SubObjectName: 
+    m_SubObjectType: UnityEngine.Sprite, UnityEngine.CoreModule, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
+  CommodityIcon: {fileID: 21300000, guid: 4f84f6ee8841f93478f556f975c6157f, type: 3}

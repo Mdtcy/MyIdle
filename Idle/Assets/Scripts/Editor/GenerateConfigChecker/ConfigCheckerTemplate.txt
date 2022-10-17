@@ -1,0 +1,9 @@
+using HM.GameBase;
+
+namespace $[namespace]
+{
+	public partial class ConfigChecker : IConfigChecker
+	{
+$[content]
+	}
+}

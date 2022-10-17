@@ -1,0 +1,150 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 43ddeb062dce4aa091329df3317fa769, type: 3}
+  m_Name: GameDefaultSetting
+  m_EditorClassIdentifier: 
+  firstLoginCommands:
+  - CommandType: 1
+    CustomScript: 
+    Target: {fileID: 11400000, guid: bda8e65d4be7e154e8e4e98b2f5a4a86, type: 2}
+    TargetName: 
+    Num: 0
+    PropertyType: 0
+    ScheduleState: 0
+  - CommandType: 1
+    CustomScript: 
+    Target: {fileID: 11400000, guid: 24292cabfc093af4798ca4ad94e3da18, type: 2}
+    TargetName: 
+    Num: 0
+    PropertyType: 0
+    ScheduleState: 0
+  - CommandType: 1
+    CustomScript: 
+    Target: {fileID: 11400000, guid: 6eb4afb31e9d88b4f873deafa7c6ffd2, type: 2}
+    TargetName: 
+    Num: 1
+    PropertyType: 0
+    ScheduleState: 0
+  - CommandType: 1
+    CustomScript: 
+    Target: {fileID: 11400000, guid: 4b44460237ddb094384791dde07330fa, type: 2}
+    TargetName: 
+    Num: 1
+    PropertyType: 0
+    ScheduleState: 0
+  - CommandType: 4
+    CustomScript: 
+    Target: {fileID: 11400000, guid: 7e8b7f115cd3bca40be60b00d1f313cf, type: 2}
+    TargetName: 
+    Num: 1
+    PropertyType: 0
+    ScheduleState: 0
+  - CommandType: 1
+    CustomScript: 
+    Target: {fileID: 11400000, guid: 47e62019c09ab414897d8fdd7e3ba3aa, type: 2}
+    TargetName: 
+    Num: 1
+    PropertyType: 0
+    ScheduleState: 0
+  newbieSchedule: {fileID: 11400000, guid: 0b28ffb6acc17de47a7184e4ba0c614e, type: 2}
+  hintCd: 10
+  hpNeeded: 1
+  coinNeeded: 200
+  messagePreviewLength: 16
+  previewDetectiveDuration: 1
+  previewDetectiveEase: 16
+  changeSpriteInterval: 5
+  scrollDuration: 0.51
+  DialogueTreeControllerTag: DialogueTreeController
+  ChangeBackgroundCoroutineTag: ChangedBackground
+  accelerationPriceInfo:
+    Currency: {fileID: 11400000, guid: 24292cabfc093af4798ca4ad94e3da18, type: 2}
+    Num: 266
+  accelerationTimeByConsumeCoin: 10
+  strGoldenFingerPageTip: "\u9664\u8D60\u9001\u90E8\u5206\u5916\uFF0C\u5B8C\u6574\u4F53\u9A8C\u5F53\u524D\u7248\u672C\u4E3B\u7EBF\u9700\u989D\u5916\u83B7\u53D6\u5C0F\u7535\u6C60201"
+  strGiftPageTip: "\u8D60\u793C\u7CBE\u5FC3\u914D\u9001\uFF0C\u7B49\u5F85TA\u7684\u55B5\u4FE1\u56DE\u5E94\uFF0C\u6216\u8BB8\u4F1A\u5524\u9192\u5C18\u5C01\u7684\u56DE\u5FC6"
+  sendNormalFlowerInteractionPoint: 1
+  flowerConfig: {fileID: 11400000, guid: 8f44008f72229244794d2ad8e1721a1c, type: 2}
+  interactionRoomContactSetting:
+    contactSettings:
+    - ContactConfig: {fileID: 11400000, guid: 22b7a5da3a7564302a401b00315da3d0, type: 2}
+      SpEntranceIcon: {fileID: 21300000, guid: 2afba247309ef8640830aaf71033249e, type: 3}
+      DressUpConfig: {fileID: 11400000, guid: 81023291faa55c040817f6db0ddbe5df, type: 2}
+      RelatedContactConfigs:
+      - {fileID: 11400000, guid: b93218e6696e10845a018578f44cd8c8, type: 2}
+      - {fileID: 11400000, guid: 28a88391466eae847a81f25e52bff159, type: 2}
+      - {fileID: 11400000, guid: 7b6ce57097f6f9b40933bd3f6a6f652d, type: 2}
+      ContactPropertyType: 5
+      EntranceTypes: 03000100050002000700
+    - ContactConfig: {fileID: 11400000, guid: ec5fc36ad7b874215b0b75f335cd1dee, type: 2}
+      SpEntranceIcon: {fileID: 21300000, guid: 08409d70f2d47584ebeb076949d6dbbe, type: 3}
+      DressUpConfig: {fileID: 11400000, guid: 14bbf3b0862ba4f4398bece43ab66e71, type: 2}
+      RelatedContactConfigs: []
+      ContactPropertyType: 8
+      EntranceTypes: 010005000200
+    - ContactConfig: {fileID: 11400000, guid: 2336d534d9029d441b5615c4c6c689b8, type: 2}
+      SpEntranceIcon: {fileID: 21300000, guid: 9c52fb5160fdfd749867890a239669cd, type: 3}
+      DressUpConfig: {fileID: 11400000, guid: e8ee3d91d228109478f042a9047b4c9d, type: 2}
+      RelatedContactConfigs:
+      - {fileID: 11400000, guid: 22b7a5da3a7564302a401b00315da3d0, type: 2}
+      - {fileID: 11400000, guid: 989286f2df32945df80765c403ee1c84, type: 2}
+      ContactPropertyType: 7
+      EntranceTypes: 03000100
+    - ContactConfig: {fileID: 11400000, guid: ba96fd9ddf9d33a4f8f496fdf9d8bfb9, type: 2}
+      SpEntranceIcon: {fileID: 21300000, guid: 02a942b106835f64d83919950e02ed9c, type: 3}
+      DressUpConfig: {fileID: 11400000, guid: 9fc327e2f64b6d644a7aa54fecb51412, type: 2}
+      RelatedContactConfigs:
+      - {fileID: 11400000, guid: d418a41a119707342a0bf161a235fd2e, type: 2}
+      - {fileID: 11400000, guid: 28a88391466eae847a81f25e52bff159, type: 2}
+      ContactPropertyType: 6
+      EntranceTypes: 03000100
+    - ContactConfig: {fileID: 11400000, guid: c493bc854bea9a0478a463679d52af4a, type: 2}
+      SpEntranceIcon: {fileID: 21300000, guid: 101eae89410fd9c4c863363de69d4e26, type: 3}
+      DressUpConfig: {fileID: 11400000, guid: be8a4740f80ad324db45e48ca116235e, type: 2}
+      RelatedContactConfigs: []
+      ContactPropertyType: 0
+      EntranceTypes: 
+  strokeCatConfig:
+    currencyConfig: {fileID: 11400000, guid: 24292cabfc093af4798ca4ad94e3da18, type: 2}
+    GCoinRange: {x: 600, y: 801}
+    SFX: {fileID: 8300000, guid: 611a0744bbc692841b08b21cbc988d96, type: 3}
+    FirstStrokeLines:
+    - "\u654F\u6069\u597D\u670B\u53CB\uFF0C\u54C8\u9C81\u79C1\u85CF\u7684\u5B9D\u8D1D\u90FD\u7ED9\u4F60\uFF01"
+    - "\u654F\u6069\u597D\u670B\u53CB\uFF0C\u54C8\u9C81\u53D1\u73B0\u5B9D\u8D1D\u7684\u65F6\u5019\uFF0C\u7ACB\u523B\u60F3\u5230\u4E86\u4F60\uFF0C\u7ED9\uFF01"
+    - "\u4ECA\u5929\u4E5F\u60F3\u9001\u654F\u6069\u597D\u670B\u53CB\u4E00\u4EFD\u793C\u7269\uFF0C\u55B5\uFF01"
+    - "\u8FD9\u4E9B\u5148\u7ED9\u654F\u6069\u597D\u670B\u53CB\uFF0C\u54C8\u9C81\u6BCF\u5929\u90FD\u4F1A\u51C6\u5907\u4E00\u4EFD\u793C\u7269~"
+    - "\u55B5\u55B5\u55B5\uFF0C\u5F00\u5FC3\u7684\u65F6\u5019\u5C31\u60F3\u7ED9\u654F\u6069\u597D\u670B\u53CB\u793C\u7269\uFF01"
+    - "\u8FD9\u662F\u54C8\u9C81\u7684\u5FC3\u610F\uFF0C\u654F\u6069\u597D\u670B\u53CB\u559C\u6B22\u5417\uFF1F"
+    - "\u654F\u6069\u597D\u670B\u53CB\uFF0C\u7ED9\uFF01\u54C8\u9C81\u60F3\u5403\u5C0F\u9C7C\u5E72\uFF0C\u55B5\u55B5~"
+    - "\u8FD9\u4E2A\u54C8\u9C81\u4E5F\u4E0D\u77E5\u9053\u6709\u4EC0\u4E48\u7528\uFF0C\u5C31\u7ED9\u654F\u6069\u597D\u670B\u53CB\u5427\uFF01"
+    - "\u654F\u6069\u597D\u670B\u53CB\uFF0C\u6536\u4E0B\u8FD9\u4E2A\uFF0C\u4EE5\u540E\u4E0D\u8BB8\u8BF4\u672C\u55B5\u4E0D\u6D17\u6FA1\uFF01"
+    - "\u654F\u6069\u597D\u670B\u53CB\uFF0C\u672C\u55B5\u5728\u597D\u4E50\u72D7\u5DE5\u4F5C\u5BA4\u53D1\u73B0\u4E86\u8FD9\u4E2A\uFF01"
+    NotFirstStrokeLines:
+    - "\u654F\u6069\u597D\u670B\u53CB\u4ECA\u5929\u5F00\u5FC3\u5417\uFF1F\u54C8\u9C81\u5E0C\u671B\u4F60\u5929\u5929\u55B5\u55B5\u55B5~"
+    - "\u654F\u6069\u597D\u670B\u53CB\u53C8\u6765\u770B\u54C8\u9C81\u4E86\uFF0C\u672C\u55B5\u5F88\u5F00\u5FC3\uFF01"
+    - "\u6211\u5E2E\u654F\u6069\u597D\u670B\u53CB\u50AC\u4E86\u90A3\u4E2A\u4E0D\u61C2\u4E8B\u7684\u6587\u6848\u4E24\u811A\u517D\uFF0C\u5979\u8BF4\u5728\u52A0\u901F\u4E86\uFF0C\u55B5~"
+    - "\u55B5\u55B5\u55B5~\u55B5\u55B5\u55B5~"
+    - "\u62A5\u544A\u654F\u6069\u597D\u670B\u53CB\uFF0C\u54C8\u9C81\u4E0A\u6B21\u60F3\u53BB\u7CD6\u4E00\u5BB6\u5077\u5B58\u7A3F\uFF0C\u53D1\u73B0\u5979\u5728\u6478\u9C7C\uFF01"
+    - "\u660E\u5929\u4F1A\u89C1\u5230\u654F\u6069\u597D\u670B\u53CB\u5417\uFF1F\u54C8\u9C81\u60F3\u7ED9\u654F\u6069\u597D\u670B\u53CB\u66F4\u591A\u5B9D\u8D1D~"
+    - "\u4E24\u811A\u517D\u7684\u629A\u6478\uFF0C\u55B5\u55B5\u55B5~"
+    - "\u6084\u6084\u544A\u8BC9\u654F\u6069\u597D\u670B\u53CB\uFF0C\u90A3\u4E2A\u597D\u4E50\u72D7\u5DE5\u4F5C\u5BA4\u5728\u8BA8\u8BBAHelloMeow\u7684\u5947\u8FF9\u5C0F\u94FA\uFF01"
+    - "\u654F\u6069\u597D\u670B\u53CB\uFF0C\u5982\u679C\u6709\u4E24\u811A\u517D\u6B3A\u8D1F\u4F60\uFF0C\u4E00\u5B9A\u8981\u544A\u8BC9\u54C8\u9C81\uFF0C\u672C\u55B5\u4EC0\u4E48\u4E5F\u4E0D\u6015\uFF01"
+    - "\u60F3\u5403\u5C0F\u9C7C\u5E72\uFF0C\u55B5~"
+    - "\u54C8\u9C81\u6700\u8FD1\u5728\u60F3\uFF0C\u5982\u679C\u4E00\u76F4\u8DDF\u654F\u6069\u597D\u670B\u53CB\u5728\u4E00\u8D77\u7684\u8BDD\u2026\u2026"
+    - "\u6BCF\u5929\u90FD\u60F3\u89C1\u5230\u654F\u6069\u597D\u670B\u53CB\uFF0C\u55B5~"
+    - "\u4ECA\u5929\u770B\u5230\u4E00\u53EA\u55B5\uFF0C\u4ED6\u5C45\u7136\u56E0\u4E3A\u4E00\u5757\u5C0F\u9C7C\u5E72\u5C31\u88AB\u4E24\u811A\u517D\u9A97\u8D70\u4E86\uFF01"
+    - "\u542C\u8BF4\u6E23\u6E23\u7070\u6700\u8FD1\u5403\u5230\u5C0F\u9C7C\u5E72\u4E86\uFF01"
+    - "\u654F\u6069\u597D\u670B\u53CB\uFF0C\u660E\u5929\u54C8\u9C81\u4E5F\u5728\u8FD9\u91CC\u7B49\u4F60\uFF01"
+    StrDefaultLine: "\u53EA\u6709\u654F\u6069\u597D\u670B\u53CB\u64B8~\u672C\u55B5\u624D\u4E0D\u8EB2~"
+  strInteractionPointDesc: "\u9001\u82B1\u7ED9\u5BF9\u65B9\u53EF\u589E\u52A0\u533F\u70B9\uFF0C\u533F\u70B9\u5956\u52B1\u656C\u8BF7\u671F\u5F85\uFF01"
+  mailLifeCycle: 30
+  wamGameSetting: {fileID: 11400000, guid: 01e7843b001f6bc4ba72b3bad46a8c34, type: 2}

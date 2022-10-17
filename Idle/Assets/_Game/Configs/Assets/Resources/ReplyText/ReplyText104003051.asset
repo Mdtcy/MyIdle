@@ -1,0 +1,33 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 72f39b624f3714aed9cf3295fa091875, type: 3}
+  m_Name: ReplyText104003051
+  m_EditorClassIdentifier: 
+  Id: 104003051
+  Name: "\u6CFD\u5B87\u644A\u724C3"
+  Image: {fileID: 0}
+  ImageRef:
+    m_AssetGUID: 
+    m_SubObjectName: 
+    m_SubObjectType: 
+  note: "\u6CFD\u5B87\u644A\u724C3"
+  Sender: {fileID: 11400000, guid: e5dd26030fa6e4dae9ba03311d1287d6, type: 2}
+  Receiver: {fileID: 11400000, guid: 989286f2df32945df80765c403ee1c84, type: 2}
+  CommandsOnPublish: []
+  Comment:
+    IsClue: 1
+    Id: 637859752492550420
+    TipAfterUnlock: "\u7834\u574F\u73B0\u6709\u7684\u751F\u6D3B\u5417\uFF1F\u539F\u6765\uFF0C\u4ED6\u771F\u7684\u5728\u8BA1\u5212\u8FD9\u4E9B\u2026\u2026"
+    Text: "\u90A3\u5C31\u9700\u8981\u53BB\u6253\u7834\u67D0\u4E9B\u751F\u6D3B\u7684\u5B9A\u5F0F\u4E86\uFF0C\u773C\u754C\u8981\u5F00\u9614\u3002\r"
+    Indices:
+    - Start: 5
+      Length: 9

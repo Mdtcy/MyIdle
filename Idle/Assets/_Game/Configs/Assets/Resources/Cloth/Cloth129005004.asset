@@ -1,0 +1,31 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c50ac9e00a49e894dbf4234132653b0a, type: 3}
+  m_Name: Cloth129005004
+  m_EditorClassIdentifier: 
+  Id: 129005004
+  Name: "\u4EBA\u6A21\u4EBA\u6837"
+  Image: {fileID: 0}
+  ImageRef:
+    m_AssetGUID: 
+    m_SubObjectName: 
+    m_SubObjectType: 
+  note: 
+  IsAutoUnlock: 0
+  UnlockCommodity: {fileID: 11400000, guid: 0022acad76566f04291e050dfb1651cc, type: 2}
+  StrDesc: "\u4F60\u60F3\u770B\u6211\u7A7F\u8FD9\u5957\u5417\uFF1F"
+  Order: 1
+  PortraitRef:
+    m_AssetGUID: b1e24782d5ee90b40a7e4e2481626c0d
+    m_SubObjectName: 
+    m_SubObjectType: 
+  CommodityIcon: {fileID: 21300000, guid: c9860d903bb811c40b10be5b2a6c6913, type: 3}

@@ -1,0 +1,27 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 00140f645fe1b2c4f8957d389a5a2d67, type: 3}
+  m_Name: RecordedUtterance130001020
+  m_EditorClassIdentifier: 
+  Id: 130001020
+  Name: "\u8D75\u6CFD\u5B87\u8BED\u5F5520"
+  Image: {fileID: 0}
+  ImageRef:
+    m_AssetGUID: 
+    m_SubObjectName: 
+    m_SubObjectType: 
+  note: 
+  Title: "\u548C\u6211\u767D\u5934\u5230\u8001"
+  Text: "\u654F\u6069\uFF0C\u4F60\u8FD8\u613F\u610F\u7EE7\u7EED\u548C\u6211\u767D\u5934\u5230\u8001\u5417\uFF1F"
+  CharacterVoice: {fileID: 8300000, guid: 847e68a1368ede84c976a5753ddf53b5, type: 3}
+  ScheduleUnlockBy: {fileID: 11400000, guid: 731af920062291e4bbf71ff0a38bef36, type: 2}
+  Contact: {fileID: 11400000, guid: 22b7a5da3a7564302a401b00315da3d0, type: 2}

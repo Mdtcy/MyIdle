@@ -1,0 +1,20 @@
+{
+    "name": "NewLife.Defined",
+    "rootNamespace": "",
+    "references": [
+        "HelloMeow",
+        "NewLife.BasicInterfaces",
+        "UnityEngine.Purchasing",
+        "Zenject",
+        "RSG.Promise"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}

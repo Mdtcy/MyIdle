@@ -1,0 +1,24 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 54432609f317d45d397305aaeda081d2, type: 3}
+  m_Name: FileImage113002028
+  m_EditorClassIdentifier: 
+  Id: 113002028
+  Name: "\u7167\u955C\u5B50\u7EA2\u8272\u8863\u670D"
+  Image: {fileID: 0}
+  ImageRef:
+    m_AssetGUID: 9d3b2e6f4f2c0704da0e2c77ee65d7e2
+    m_SubObjectName: 113002025
+    m_SubObjectType: UnityEngine.Sprite, UnityEngine.CoreModule, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
+  note: 
+  CommodityConfig: {fileID: 0}

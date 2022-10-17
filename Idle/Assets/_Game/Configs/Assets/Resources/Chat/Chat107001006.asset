@@ -1,0 +1,54 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c5cd8837576e54692ae83eba07a6963b, type: 3}
+  m_Name: Chat107001006
+  m_EditorClassIdentifier: 
+  Id: 107001006
+  Name: "\u6CFD\u5B87\u7684\u884C\u8E2A"
+  Image: {fileID: 0}
+  ImageRef:
+    m_AssetGUID: 
+    m_SubObjectName: 
+    m_SubObjectType: 
+  note: 
+  Hp:
+    Currency: {fileID: 11400000, guid: bda8e65d4be7e154e8e4e98b2f5a4a86, type: 2}
+    Num: 1
+  Contact: {fileID: 11400000, guid: ec5fc36ad7b874215b0b75f335cd1dee, type: 2}
+  Dialogue: {fileID: 11400000, guid: e7acd6e883cf85b44a688896b307688a, type: 2}
+  CommandsOnAllCluesFound:
+  - CommandType: 3
+    CustomScript: 
+    Target: {fileID: 11400000, guid: 38ba1276ca869d846a8973f273dc8ea9, type: 2}
+    TargetName: 
+    Num: 1
+    PropertyType: 0
+    ScheduleState: 2
+  - CommandType: 4
+    CustomScript: 
+    Target: {fileID: 11400000, guid: 87e83bc85e2d70a41a877a13ff92102a, type: 2}
+    TargetName: 
+    Num: 1
+    PropertyType: 0
+    ScheduleState: 0
+  PriorClueTip: "\u4E0D\u6127\u662F\u9760\u8C31\u7684\u65AF\u9EDB\u4E3D\uFF01\u5979\u7684\u8BDD\u53EF\u4EE5\u5370\u8BC1\u5F88\u591A\u4E8B\u60C5\uFF0C\u5148\u627E\u627E\u7EBF\u7D22\u2026\u2026"
+  PostClueTip: "\u6CFD\u5B87\u771F\u7684\u662F\u53BB\u8C08\u5408\u540C\u5417\uFF1F\u4E5F\u8BB8\u6709\u4EC0\u4E48\u8BEF\u4F1A\uFF0C\u4E0D\u5982\u518D\u53D1\u6D88\u606F\u95EE\u95EE\u4ED6\u5427\u3002"
+  Clues:
+  - IsClue: 1
+    Id: 637859097612099320
+    TipAfterUnlock: "\u4E5F\u5C31\u662F\u8BF4\uFF0C\u4E0A\u6B21\u7684\u51FA\u5DEE\u5E76\u975E\u8C0E\u8A00\u3002\u53EF\u65E2\u7136\u4ED6\u6CA1\u6709\u505A\u4E8F\u5FC3\u4E8B\uFF0C\u53C8\u4E3A\u4EC0\u4E48\u8981\u5F00\u5C0F\u53F7\u5462\uFF1F"
+  - IsClue: 1
+    Id: 637859097612102570
+    TipAfterUnlock: "\u53EF\u6CFD\u5B87\u8BF4\u7684\u662F\u51FA\u5DEE3\u5929\uFF0C\u4ED6\u4E3A\u4EC0\u4E48\u8981\u63D0\u524D\u56DE\u6765\uFF0C\u4ED6\u56DE\u6765\u4EE5\u540E\u90A3\u5929\u53C8\u4F4F\u5728\u54EA\u91CC\uFF1F\r"
+  - IsClue: 1
+    Id: 637859097612105800
+    TipAfterUnlock: 

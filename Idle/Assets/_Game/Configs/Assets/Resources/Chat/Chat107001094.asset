@@ -1,0 +1,31 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c5cd8837576e54692ae83eba07a6963b, type: 3}
+  m_Name: Chat107001094
+  m_EditorClassIdentifier: 
+  Id: 107001094
+  Name: "\u4E0D\u60F3\u6C2A\u91D1\u5200\u7247"
+  Image: {fileID: 0}
+  ImageRef:
+    m_AssetGUID: 
+    m_SubObjectName: 
+    m_SubObjectType: 
+  note: 
+  Hp:
+    Currency: {fileID: 0}
+    Num: 0
+  Contact: {fileID: 11400000, guid: 5071a409911336a43a32b094f595c977, type: 2}
+  Dialogue: {fileID: 11400000, guid: 6843a906ffe0c094ead0218f91200079, type: 2}
+  CommandsOnAllCluesFound: []
+  PriorClueTip: 
+  PostClueTip: 
+  Clues: []

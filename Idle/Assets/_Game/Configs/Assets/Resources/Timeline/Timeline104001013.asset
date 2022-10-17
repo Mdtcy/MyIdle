@@ -1,0 +1,63 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 358ffe76783d24679a800a4dd1acf973, type: 3}
+  m_Name: Timeline104001013
+  m_EditorClassIdentifier: 
+  Id: 104001013
+  Name: "\u5C0F\u53F7\u7684\u53D1\u6CC4"
+  Image: {fileID: 0}
+  ImageRef:
+    m_AssetGUID: 
+    m_SubObjectName: 
+    m_SubObjectType: 
+  note: 
+  Publisher: {fileID: 11400000, guid: e5dd26030fa6e4dae9ba03311d1287d6, type: 2}
+  Text:
+    IsClue: 0
+    Id: 637859788670660490
+    TipAfterUnlock: 
+    Text: "\u51B0\u51B7\u7684\u533B\u9662\uFF0C\u9884\u671F\u7684\u7ED3\u679C\uFF0C\u5FC3\u91CC\u5374\u8FD8\u662F\u9690\u9690\u4F5C\u75DB\u3002\u4E0D\u8FC7\uFF0C\u6211\u4E5F\u7B97\u4EC1\u81F3\u4E49\u5C3D\u3002"
+    Indices: []
+  Pic:
+    IsClue: 0
+    Id: 637859788670662690
+    TipAfterUnlock: 
+    ImageRef:
+      m_AssetGUID: d7843948dfcb6c0438bae689ad7096ad
+      m_SubObjectName: 
+      m_SubObjectType: 
+    ImageName: 
+    CommodityConfig: {fileID: 0}
+  Location: {fileID: 0}
+  ReplyForest: {fileID: 11400000, guid: 47c1eb7085377e74fb6972ba95216116, type: 2}
+  CommandsOnSessionFinished: []
+  CommandsOnAllCluesFound:
+  - CommandType: 3
+    CustomScript: 
+    Target: {fileID: 11400000, guid: 3a299f30a9cadbc468b5bf30c64334e9, type: 2}
+    TargetName: 
+    Num: 1
+    PropertyType: 0
+    ScheduleState: 2
+  - CommandType: 4
+    CustomScript: 
+    Target: {fileID: 11400000, guid: f2bdfb0239659aa4eb11398b29fa47cb, type: 2}
+    TargetName: 
+    Num: 1
+    PropertyType: 0
+    ScheduleState: 0
+  PriorClueTip: "\u201C\u9884\u671F\u7684\u7ED3\u679C\u201D\u662F\u4EC0\u4E48\u610F\u601D\uFF1F\u4ED6\u4E3A\u4EC0\u4E48\u4E00\u76F4\u5728\u56DE\u907F\u6211\uFF0C\u4ED6\u5230\u5E95\u600E\u4E48\u60F3\u7684\u3002"
+  PostClueTip: "\u8FD9\u4E9B\u53EA\u8A00\u7247\u5B57\u8BA9\u4E00\u79CD\u53EF\u6015\u9634\u8C0B\u8BBA\u8C03\u6D6E\u4E0A\u6211\u7684\u5FC3\u5934\u2026\u2026"
+  Clues:
+  - IsClue: 1
+    Id: 637859752492554420
+    TipAfterUnlock: "\u65B0\u7684\u5F00\u59CB\uFF1F\u6216\u8005\u8BF4\uFF0C\u8FD9\u6837\u7684\u73B0\u5B9E\u624D\u662F\u4ED6\u7684\u671F\u5F85\uFF1F"

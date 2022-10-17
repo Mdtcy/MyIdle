@@ -1,0 +1,7 @@
+namespace $[namespace]
+{
+	public partial interface IConfigChecker
+	{
+$[content]
+	}
+}

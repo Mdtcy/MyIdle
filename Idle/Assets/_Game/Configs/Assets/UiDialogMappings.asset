@@ -1,0 +1,142 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b4f1417baacd488bb0faf8f6e47d9eb2, type: 3}
+  m_Name: UiDialogMappings
+  m_EditorClassIdentifier: 
+  mappings:
+  - Type: UIContactIntro
+    Prefab: {fileID: 3138500686658280533, guid: 75a788621d403cd4daab7cdd4d4e9cd2,
+      type: 3}
+  - Type: UIShowFileImage
+    Prefab: {fileID: 8348406738438601870, guid: ac6901e81e7474f88ab12c0c30d528d3,
+      type: 3}
+  - Type: UIFileItemIntro
+    Prefab: {fileID: 1407676892774570646, guid: ce68e565a520e4826a0a851c7fecc246,
+      type: 3}
+  - Type: UIUserAgreement
+    Prefab: {fileID: 6137805124410565483, guid: 4ca3fefe503316a46a3997f111b300de,
+      type: 3}
+  - Type: UILoginByPhone
+    Prefab: {fileID: 6137805124410565483, guid: 1b9c1376ab56d7341b0a689b9d8e87af,
+      type: 3}
+  - Type: UIRegisterByPhone
+    Prefab: {fileID: 6137805124410565483, guid: 5deb7c1fe56301042a6f7d8a4e5afa98,
+      type: 3}
+  - Type: UIResetPassword
+    Prefab: {fileID: 6137805124410565483, guid: e54967f92a125534c82c941b23a479e5,
+      type: 3}
+  - Type: UIUnderageTip
+    Prefab: {fileID: 6137805124410565483, guid: 98c36dd27f1c4314dbca09e34431502f,
+      type: 3}
+  - Type: UIRealNameAuth
+    Prefab: {fileID: 6137805124410565483, guid: 7d289b86d04d04c45931f920882d0c42,
+      type: 3}
+  - Type: UILoadingIndicator
+    Prefab: {fileID: 7880817860755995517, guid: 9c6cc7252d241e5448dc4930f928e1e5,
+      type: 3}
+  - Type: UIReviewDialogueTree
+    Prefab: {fileID: 7090365044030829090, guid: 1a67d311a72b66c4dbaac30487352466,
+      type: 3}
+  - Type: UIQuitGameTip
+    Prefab: {fileID: 6137805124410565483, guid: 0f2d4b96a7defa44597124380b111249,
+      type: 3}
+  - Type: UIMailDetail
+    Prefab: {fileID: 773199038263598662, guid: 9ab8d875c35cf9b4e9a835be41586e36, type: 3}
+  - Type: UIMailDetailHasRewards
+    Prefab: {fileID: 1382257007594217206, guid: 9de41b7aa3c157c428b118e676e6c894,
+      type: 3}
+  - Type: UINotice
+    Prefab: {fileID: 6137805124410565483, guid: 929dcbf715056a64b841b1ce01e5cac7,
+      type: 3}
+  - Type: UIAllStaff
+    Prefab: {fileID: 2893802371114567241, guid: 39dff790378d78b49a0f3c9fe0cd5906,
+      type: 3}
+  - Type: UIStoryList
+    Prefab: {fileID: 3788931105154279430, guid: 72964db874d32e1439b071598166f00e,
+      type: 3}
+  - Type: UIEditDressUp
+    Prefab: {fileID: 626844424004080339, guid: f1df8be74b3fe3d46a9048cb936ae9ef, type: 3}
+  - Type: UIRecordedUtteranceList
+    Prefab: {fileID: 3933625064772585466, guid: db2e6d19f780a62439d234f81b1443cd,
+      type: 3}
+  - Type: UISendFlower
+    Prefab: {fileID: 8428239384782779034, guid: a73e493357c12684e945698173c8ed6d,
+      type: 3}
+  - Type: UIVent
+    Prefab: {fileID: 3933625064772585466, guid: 3617f036976fd9045885ce3c181d2786,
+      type: 3}
+  - Type: UIScheduleSceneChat
+    Prefab: {fileID: 8289184943446162547, guid: 0a733d37ae89b6b409d60ed3980d49f9,
+      type: 3}
+  - Type: UINotRecordSceneChat
+    Prefab: {fileID: 8289184943446162547, guid: f34307766bb7d8648b7ed713b4ef83c1,
+      type: 3}
+  - Type: UIUploadArchive
+    Prefab: {fileID: 8013335653700956338, guid: e21724cf47b2ac54b871953effba4b81,
+      type: 3}
+  - Type: UIExchangeHpToPeep
+    Prefab: {fileID: 945581345639213924, guid: c347c807726d37642b80be368fcee507, type: 3}
+  - Type: UICurrencyShortage
+    Prefab: {fileID: 945581345639213924, guid: bf3245728976eb64c8a0527ed52a04f1, type: 3}
+  - Type: UIRealNameAuth3rdParty
+    Prefab: {fileID: 6137805124410565483, guid: 6c6cc9791f798bf48bb8a4e195572377,
+      type: 3}
+  - Type: UIUserBlockedTip
+    Prefab: {fileID: 6137805124410565483, guid: 6b627373ac0e3ad41a85a01b1b6c3072,
+      type: 3}
+  - Type: UIHpSource
+    Prefab: {fileID: 6137805124410565483, guid: a1a501e8e734ed1499cabf2614a39ca1,
+      type: 3}
+  - Type: UIGCoinSource
+    Prefab: {fileID: 6137805124410565483, guid: c49c55c4437ec4143933c8cd7e65963b,
+      type: 3}
+  - Type: UIUpdateApp
+    Prefab: {fileID: 6137805124410565483, guid: 7bb134528dfe9344ab8c9a56fe68c6c4,
+      type: 3}
+  - Type: DoubleReward812
+    Prefab: {fileID: 6137805124410565483, guid: 45faa7bc66600f343b98b0960f2804f0,
+      type: 3}
+  - Type: UIContactUs
+    Prefab: {fileID: 6137805124410565483, guid: 8b0cc2b92fa8a4449bf7fe4731eecbf3,
+      type: 3}
+  - Type: UIConfirmToUploadArchive
+    Prefab: {fileID: 6137805124410565483, guid: 4772a04b1bcb2064781089d81b5f7055,
+      type: 3}
+  - Type: UIUserAgreementIceSimba
+    Prefab: {fileID: 6137805124410565483, guid: d0d36a39807f6914f871fa2e69dd9b85,
+      type: 3}
+  - Type: UIJailBrokenWarning
+    Prefab: {fileID: 6137805124410565483, guid: 172fab66c88097547bb8d18a24f0c1cd,
+      type: 3}
+  - Type: UIExchangeRewards
+    Prefab: {fileID: 6137805124410565483, guid: 91dbe922bb0d79f429b71b06eb6198b2,
+      type: 3}
+  - Type: UIWAMAddTime
+    Prefab: {fileID: 772407232153639768, guid: fb419e9a601badd45ad14c4d1a9ff6a1, type: 3}
+  - Type: UIWAMGameMenu
+    Prefab: {fileID: 2486458494776492765, guid: 7d34debd27b98454caacc13e8fe371b7,
+      type: 3}
+  - Type: UIWAMGameOver
+    Prefab: {fileID: 4829895244761363284, guid: c0fcb941768eb4a43b36ddd5fa71aef9,
+      type: 3}
+  - Type: UIWAMGamePause
+    Prefab: {fileID: 8427958764090243568, guid: 0e622888453aeb4479465c729a8a07fe,
+      type: 3}
+  - Type: UINewbieGiftPack
+    Prefab: {fileID: 6137805124410565483, guid: 3bde5ef816522a441805f73b38dad89a,
+      type: 3}
+  - Type: UIExchangeHpByGCoin
+    Prefab: {fileID: 6137805124410565483, guid: e47a64d51e3ac35418b42b27463e59ab,
+      type: 3}
+  - Type: UIFirstRecharge1Yuan
+    Prefab: {fileID: 6137805124410565483, guid: 65ab16e0df790524e80100e9967f6acc,
+      type: 3}

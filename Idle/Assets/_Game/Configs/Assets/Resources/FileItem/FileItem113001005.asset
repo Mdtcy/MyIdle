@@ -1,0 +1,25 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: db84b9d5aadcd48d98a7e21656f5ddfe, type: 3}
+  m_Name: FileItem113001005
+  m_EditorClassIdentifier: 
+  Id: 113001005
+  Name: "\u7070\u8272\u5927\u8863"
+  Image: {fileID: 0}
+  ImageRef:
+    m_AssetGUID: 16edcbce54c605949a1aeb9de9a42f28
+    m_SubObjectName: item_huidayi
+    m_SubObjectType: UnityEngine.Sprite, UnityEngine.CoreModule, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
+  note: "\u5927\u88632"
+  Description: "\u6298\u53E0\u7684\u5F62\u72B6\u6709\u4E9B\u6563\u67B6\uFF0C\u660E\u663E\u53EF\u4EE5\u770B\u89C1\u5F88\u591A\u8936\u76B1\u3002"
+  CommodityConfig: {fileID: 0}

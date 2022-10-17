@@ -1,0 +1,33 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 862df179d80701f4da8c8910d1ab42b3, type: 3}
+  m_Name: ContactBackground129004005
+  m_EditorClassIdentifier: 
+  Id: 129004005
+  Name: "\u9605\u8BFB\u7A9D\u7A9D"
+  Image: {fileID: 0}
+  ImageRef:
+    m_AssetGUID: 
+    m_SubObjectName: 
+    m_SubObjectType: 
+  note: 
+  CanNotPurchased: 0
+  IsAutoUnlock: 0
+  UnlockCommodity: {fileID: 11400000, guid: 268aeb85c8e3d7240987aeaee555ff4d, type: 2}
+  StrDesc: "\u4F60\u60F3\u8BA9\u6211\u53BB\u90A3\u91CC\u5417\uFF1F"
+  Order: 4
+  StrCanNotPurchasedShortDesc: 
+  StrCanNotPurchasedDesc: 
+  BackgroundRef:
+    m_AssetGUID: 212ec632812f2144db4a0dcc55ec6860
+    m_SubObjectName: 
+    m_SubObjectType: 

@@ -1,0 +1,46 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 358ffe76783d24679a800a4dd1acf973, type: 3}
+  m_Name: Timeline104001053
+  m_EditorClassIdentifier: 
+  Id: 104001053
+  Name: "B\u7AD9"
+  Image: {fileID: 0}
+  ImageRef:
+    m_AssetGUID: 
+    m_SubObjectName: 
+    m_SubObjectType: 
+  note: 
+  Publisher: {fileID: 11400000, guid: c493bc854bea9a0478a463679d52af4a, type: 2}
+  Text:
+    IsClue: 0
+    Id: 637985195139606819
+    TipAfterUnlock: 
+    Text: "\u5236\u4F5C\u7EC4\u975E\u8981\u6211\u6765\u62C9\u4E00\u6CE2\u63A8\u5E7F\uFF0C\u751A\u81F3\u7528\u732B\u8584\u8377\u8BF1\u60D1\u672C\u55B5\uFF01\uFF01\uFF08\u88AB\u8FEB\u59A5\u534F\uFF09\u6240\u4EE5\u5927\u5BB6\u770B\u770B\u5C31\u597D\uFF0C\u4E0D\u5FC5\u5F53\u771F\u3002"
+    Indices: []
+  Pic:
+    IsClue: 0
+    Id: 637985195139606819
+    TipAfterUnlock: 
+    ImageRef:
+      m_AssetGUID: 0a744ab8766c7cb4cbb466eb05180f0e
+      m_SubObjectName: 
+      m_SubObjectType: 
+    ImageName: 
+    CommodityConfig: {fileID: 0}
+  Location: {fileID: 0}
+  ReplyForest: {fileID: 11400000, guid: 2f76c768163f3ae48a29fc5d55d0f447, type: 2}
+  CommandsOnSessionFinished: []
+  CommandsOnAllCluesFound: []
+  PriorClueTip: 
+  PostClueTip: 
+  Clues: []

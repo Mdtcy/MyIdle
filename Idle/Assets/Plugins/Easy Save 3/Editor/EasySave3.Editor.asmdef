@@ -1,0 +1,17 @@
+{
+    "name": "EasySave3.Editor",
+    "references": [
+        "GUID:c6496433b2190422c8f470d2cc0daef2"
+    ],
+    "includePlatforms": [
+        "Editor"
+    ],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}

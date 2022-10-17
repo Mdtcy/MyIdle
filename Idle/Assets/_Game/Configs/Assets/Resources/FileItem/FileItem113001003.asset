@@ -1,0 +1,25 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: db84b9d5aadcd48d98a7e21656f5ddfe, type: 3}
+  m_Name: FileItem113001003
+  m_EditorClassIdentifier: 
+  Id: 113001003
+  Name: "\u56F4\u5DFE"
+  Image: {fileID: 0}
+  ImageRef:
+    m_AssetGUID: 47a960883bca8dd46bcff645a83c5434
+    m_SubObjectName: item_weijin
+    m_SubObjectType: UnityEngine.Sprite, UnityEngine.CoreModule, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
+  note: 
+  Description: "\u60C5\u4FA3\u56F4\u5DFE\u4E2D\u7684\u7537\u6B3E\uFF0C\u7EE3\u7740\u8D75\u6CFD\u5B87\u548C\u6797\u654F\u6069\u540D\u5B57\u7684\u7F29\u5199\u5B57\u6BCD\u3002"
+  CommodityConfig: {fileID: 0}

@@ -1,0 +1,26 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 22c52d35a2ce16b4dae6248743c28b8d, type: 3}
+  m_Name: Weather119001072
+  m_EditorClassIdentifier: 
+  Id: 119001072
+  Name: XC804B
+  Image: {fileID: 0}
+  ImageRef:
+    m_AssetGUID: 
+    m_SubObjectName: 
+    m_SubObjectType: 
+  note: 
+  Type: 2
+  DegreeCentigrade: 18
+  Location: "\u590F\u9633"
+  DetailedLocation: "\u552F\u5B89\u516C\u5BD3"

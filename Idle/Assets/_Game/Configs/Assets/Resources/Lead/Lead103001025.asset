@@ -1,0 +1,25 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d59acfc94d2c44993a73f1e50caa8115, type: 3}
+  m_Name: Lead103001025
+  m_EditorClassIdentifier: 
+  Id: 103001025
+  Name: "\u7559\u7EA7"
+  Image: {fileID: 0}
+  ImageRef:
+    m_AssetGUID: 
+    m_SubObjectName: 
+    m_SubObjectType: 
+  note: 
+  IsTrueLead: 0
+  Dialogue: {fileID: 11400000, guid: e014893deffdb3a4c9685808d9dc01e0, type: 2}
+  CommandsAfterFinish: []

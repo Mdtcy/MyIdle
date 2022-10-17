@@ -1,0 +1,64 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9df6180da6fc647cbb69037d63501942, type: 3}
+  m_Name: Contact102001001
+  m_EditorClassIdentifier: 
+  Id: 102001001
+  Name: "\u8D75\u6CFD\u5B87"
+  Image: {fileID: 0}
+  ImageRef:
+    m_AssetGUID: 
+    m_SubObjectName: 
+    m_SubObjectType: 
+  note: 
+  Description: "\u8D75\u5148\u751F\uFF01\u5C04\u624B\u5EA7\uFF0C\u559C\u6B22\u7070\u9ED1\u8272\u7CFB\uFF0C\u559C\u6B22\u83E0\u841D\uFF0C\u559C\u6B22\u8584\u8377\uFF0C\u559C\u6B22\u9C7C\u7C7B\uFF0C\u559C\u6B22\u654F\u6069\uFF01\u6211\u4EEC\u5728\u4E00\u8D77\u5DF2\u7ECF\u4E03\u5E74\u5566~"
+  AvatarRef:
+    m_AssetGUID: 27d4c0928d095a7498c4063c7d7bee4d
+    m_SubObjectName: avatar_zhaozeyu
+    m_SubObjectType: UnityEngine.Sprite, UnityEngine.CoreModule, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
+  PortraitRef:
+    m_AssetGUID: 3bb1fbbead2cee14db58a6b2e853318b
+    m_SubObjectName: halfchar_zzy_1
+    m_SubObjectType: UnityEngine.Sprite, UnityEngine.CoreModule, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
+  ContactDetailPortraitRef:
+    m_AssetGUID: 3f6560d44661c994ba4e1c30fb6380d5
+    m_SubObjectName: char_zzy_1_normal
+    m_SubObjectType: UnityEngine.Sprite, UnityEngine.CoreModule, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
+  Leads:
+  - {fileID: 11400000, guid: 59e9fd3a433c8c140bdcbd9a4cb49e08, type: 2}
+  - {fileID: 11400000, guid: d0c45eab6ac1b6d48a09d0cafc04c17e, type: 2}
+  - {fileID: 11400000, guid: da7ea173d98a23d438f303318700374f, type: 2}
+  - {fileID: 11400000, guid: 7c91dabf7e32b0648b3c283660bf3d9d, type: 2}
+  - {fileID: 11400000, guid: 469b410bcbc33864aaca7d71fbb05baa, type: 2}
+  - {fileID: 11400000, guid: 743a3e43c30cdeb4b98a1a2de8ad1681, type: 2}
+  - {fileID: 11400000, guid: 69eefe5f88d271d4096622220842cfba, type: 2}
+  - {fileID: 11400000, guid: 2e5855f91a1b7224e91ed8c1c0f84481, type: 2}
+  - {fileID: 11400000, guid: 905f0c3a91ec31c4584e4877465804f7, type: 2}
+  - {fileID: 11400000, guid: 04a131c3e33806b46a0dc5de0b85017d, type: 2}
+  - {fileID: 11400000, guid: 90613fee54f8a154fad8e313646b1da1, type: 2}
+  - {fileID: 11400000, guid: e3d4f776c5f34764b9cf55e634b58313, type: 2}
+  - {fileID: 11400000, guid: f7b988f09ae092144b9aebf45ddc9c24, type: 2}
+  - {fileID: 11400000, guid: 041f24633db1675448b8ff73939deb25, type: 2}
+  AllowToFollowAnonymously: 0
+  Age: 30
+  Birthday: "11\u670824\u65E5"
+  PhoneNo: 919472
+  blockedScenario: 0
+  Properties:
+  - {fileID: 11400000, guid: bec73496233274671ba6aebead4db922, type: 2}
+  - {fileID: 11400000, guid: 016266c1163a932448d4f8c7c73daa7a, type: 2}
+  - {fileID: 11400000, guid: c0629063feef30e469604210ba25604c, type: 2}
+  ContactPropertyInitValues: []
+  JobTitle: "\u745E\u946B\u516C\u53F8\u80A1\u4E1C"

@@ -1,0 +1,34 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f06d5baa413bc1a4c8d4914a410e1fdd, type: 3}
+  m_Name: Expression129003009
+  m_EditorClassIdentifier: 
+  Id: 129003009
+  Name: "\u8C03\u76AE"
+  Image: {fileID: 0}
+  ImageRef:
+    m_AssetGUID: 
+    m_SubObjectName: 
+    m_SubObjectType: 
+  note: 
+  CanNotPurchased: 0
+  IsAutoUnlock: 0
+  UnlockCommodity: {fileID: 11400000, guid: e4fbfb26ac911134f86def6ffe2547b6, type: 2}
+  StrDesc: "\u8FD9\u6837\u597D\u770B\u5417\uFF1F"
+  Order: 2
+  StrCanNotPurchasedShortDesc: 
+  StrCanNotPurchasedDesc: 
+  ExpressionRef:
+    m_AssetGUID: a620dcc710a4671448f61a77277b600a
+    m_SubObjectName: 
+    m_SubObjectType: 
+  CommodityIcon: {fileID: 21300000, guid: 5b18a9c22fa95844e8276a2f976add7f, type: 3}

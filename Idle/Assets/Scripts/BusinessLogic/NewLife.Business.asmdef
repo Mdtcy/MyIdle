@@ -1,0 +1,31 @@
+{
+    "name": "NewLife.Business",
+    "rootNamespace": "",
+    "references": [
+        "HelloMeow",
+        "NewLife.Defined",
+        "NewLife.Configs",
+        "Zenject",
+        "ParadoxNotion",
+        "MEC",
+        "Unity.Addressables",
+        "GameLogic",
+        "EasySave3",
+        "ZString",
+        "XNode",
+        "NewLife.BasicInterfaces",
+        "UMeng",
+        "GA",
+        "UnityEngine.Purchasing",
+        "RSG.Promise"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}
