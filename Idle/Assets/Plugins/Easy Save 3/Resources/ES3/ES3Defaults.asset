@@ -50,6 +50,7 @@ MonoBehaviour:
     - DOTween.Modules
     - NewLife.Support
     - UIGradient
+    - Assembly-CSharp
     - NewLife.EditorOnly
     - PoolManager
     - NativeShare.Runtime

@@ -7,6 +7,7 @@
  */
 
 #pragma warning disable 0649
+using HM;
 using HM.GameBase;
 using NewLife.Config;
 
@@ -20,6 +21,18 @@ namespace DefaultNamespace.Test
 
         public ItemTest(int itemId) : base(itemId)
         {
+        }
+
+        public override void OnPicked()
+        {
+            base.OnPicked();
+            HMLog.LogDebug("[ItemTest] OnPicked");
+        }
+
+        public override void OnLoaded()
+        {
+            base.OnLoaded();
+            HMLog.LogDebug("[ItemTest] OnLoaded");
         }
     }
 }
