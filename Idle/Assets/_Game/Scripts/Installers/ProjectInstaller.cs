@@ -7,6 +7,7 @@
 
 using HelloMeow.Signal;
 using HM;
+using HM.Date;
 using HM.GameBase;
 using HM.Interface;
 using HM.Notification;
@@ -61,6 +62,9 @@ namespace NewLife.Installers
         {
             // Signal
             DeclareSignals();
+
+            // DateTime
+            Container.Bind<IDateTime>().To<SimpleDateTime>().AsSingle();
 
             // // Players
             // Container.BindInterfacesTo<EffectPlayer>().FromInstance(effectPlayer).AsCached();

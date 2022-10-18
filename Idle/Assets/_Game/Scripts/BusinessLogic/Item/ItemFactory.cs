@@ -6,6 +6,7 @@
  * @desc [Item工厂类，创建Item的唯一方式（除序列化之外）]
  */
 
+using DefaultNamespace.Test;
 using HM;
 using HM.GameBase;
 using HM.Interface;
@@ -36,7 +37,7 @@ namespace NewLife.BusinessLogic.Item
             ItemBase item = null;
             // todo: fill Item creation code.
 
-            // if (configChecker.IsItemSecret(itemId)) item = new ItemSecret(itemId);
+            if (configChecker.IsItemTest(itemId)) item = new ItemTest(itemId);
 
             if (item == null)
             {

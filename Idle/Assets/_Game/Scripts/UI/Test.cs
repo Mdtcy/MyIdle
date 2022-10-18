@@ -7,7 +7,9 @@
  */
 
 #pragma warning disable 0649
+using DefaultNamespace.Test;
 using HM;
+using HM.GameBase;
 using HM.Interface;
 using NewLife.Config;
 using NewLife.Config.Helper;
@@ -27,6 +29,12 @@ namespace _Game.Scripts.UI
         [Inject]
         private ConfigCollectionFactory configCollectionFactory;
 
+        [Inject]
+        private IArchive archive;
+
+        [Inject]
+        private IItemUpdater itemUpdater;
+
         #endregion
 
         #region PROPERTIES
@@ -36,15 +44,40 @@ namespace _Game.Scripts.UI
         #region PUBLIC METHODS
 
         [Button]
-        public void 测试()
+        public void 打印test()
         {
             using (var col = configCollectionFactory.CreateConfigCollection<TestConfig>())
             {
                 foreach (var test in col)
                 {
-                    HMLog.LogDebug($"var {test}");
+                    HMLog.LogDebug($"var {test} ");
                 }
             }
+        }
+
+        [Button]
+        public void 打印Itemtest()
+        {
+            var test = itemUpdater.GetOrAddItem<ItemTest>(te.Id);
+            HMLog.LogDebug($"var {test} {test.score}");
+        }
+
+        [SerializeField]
+        private TestConfig te;
+
+
+        [Button]
+        public void 改Item(int value)
+        {
+            var test = itemUpdater.GetOrAddItem<ItemTest>(te.Id);
+            test.score = value;
+        }
+
+
+        [Button]
+        public void 存档()
+        {
+            archive.Save();
         }
 
         #endregion

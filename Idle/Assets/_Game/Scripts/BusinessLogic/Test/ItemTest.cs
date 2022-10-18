@@ -15,6 +15,9 @@ namespace DefaultNamespace.Test
 {
     public class ItemTest : ItemBase<TestConfig>
     {
+        [ES3Serializable]
+        public int score;
+
         public ItemTest() : base()
         {
         }
