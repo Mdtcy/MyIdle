@@ -19,23 +19,17 @@ namespace NewLife.UI.AudioManager
         #region FIELDS
 
         // * inject
-        private IAmbientAudioPlayer    ambientAudioPlayer;
         private IBackgroundMusicPlayer backgroundMusicPlayer;
         private IEffectAudioPlayer     effectAudioPlayer;
-        private INpcAudioPlayer        npcAudioPlayer;
 
         #endregion
 
         #region PUBLIC METHODS
 
         [Inject]
-        public void Construct(IAmbientAudioPlayer    ambientAudioPlayer,
-                              IBackgroundMusicPlayer backgroundMusicPlayer,
-                              IEffectAudioPlayer     effectAudioPlayer,
-                              INpcAudioPlayer        npcAudioPlayer)
+        public void Construct(IBackgroundMusicPlayer backgroundMusicPlayer,
+                              IEffectAudioPlayer     effectAudioPlayer)
         {
-            this.ambientAudioPlayer    = ambientAudioPlayer;
-            this.npcAudioPlayer        = npcAudioPlayer;
             this.backgroundMusicPlayer = backgroundMusicPlayer;
             this.effectAudioPlayer     = effectAudioPlayer;
         }
@@ -43,21 +37,17 @@ namespace NewLife.UI.AudioManager
         public void MuteMusic()
         {
             backgroundMusicPlayer.Mute();
-            ambientAudioPlayer.Mute();
-            npcAudioPlayer.Mute();
         }
 
         public void UnmuteMusic()
         {
             backgroundMusicPlayer.Unmute();
-            ambientAudioPlayer.Unmute();
-            npcAudioPlayer.Unmute();
         }
 
         /// <inheritdoc />
         public bool IsMusicMuted()
         {
-            return backgroundMusicPlayer.IsMuted() && ambientAudioPlayer.IsMuted() && npcAudioPlayer.IsMuted();
+            return backgroundMusicPlayer.IsMuted();
         }
 
         public void MuteEffect()
