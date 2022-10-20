@@ -7,6 +7,7 @@
  */
 
 #pragma warning disable 0649
+using _Game.Scripts.UI.MainMenu;
 using DefaultNamespace.Test;
 using HM;
 using HM.GameBase;
@@ -35,6 +36,9 @@ namespace _Game.Scripts.UI
         [Inject]
         private IItemUpdater itemUpdater;
 
+        [Inject]
+        private MainMenuController mainMenuController;
+
         #endregion
 
         #region PROPERTIES
@@ -42,6 +46,12 @@ namespace _Game.Scripts.UI
         #endregion
 
         #region PUBLIC METHODS
+
+        [Button]
+        public void ShowMenu()
+        {
+            mainMenuController.Show();
+        }
 
         [Button]
         public void 打印test()
