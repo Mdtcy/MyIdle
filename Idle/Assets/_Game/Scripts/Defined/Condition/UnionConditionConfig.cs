@@ -25,22 +25,10 @@ namespace NewLife.Defined.Condition
         /// </summary>
         public BaseConfig Target;
 
-        #region ScheduleState
-
-        /// <summary>
-        /// 行程状态
-        /// </summary>
-        [ShowIf("ConditionType", ConditionType.ScheduleState)]
-        public ScheduleState ScheduleState;
-
-        #endregion
-
         public override string ToString()
         {
             switch (ConditionType)
             {
-                case ConditionType.ScheduleState:
-                    return $"[UnionConditionConfig type = {ConditionType}, target = {Target.Id}, state = {ScheduleState}";
                 default:
                     return $"[UnionConditionConfig type = {ConditionType}]";
             }

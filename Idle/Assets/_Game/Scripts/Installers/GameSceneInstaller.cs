@@ -10,9 +10,7 @@
 
 using HM;
 using HM.GameBase;
-using NewLife.Defined;
 using NewLife.UI.AudioManager;
-using NewLife.UI.DialogLauncher;
 using PathologicalGames;
 using UnityEngine;
 using Zenject;
@@ -54,8 +52,6 @@ namespace NewLife.Installers
 
             // Audio
             Container.BindInterfacesTo<AudioSwitch>().AsCached().NonLazy();
-            // UiDialogLauncher
-            Container.Bind<UIDialogLaunchSetting.Factory>().AsCached();
 
             // FloatingTextPool
             // Container.BindInstance(floatingTextPool).WithId(ZenjectId.FloatingTextPool).AsSingle();

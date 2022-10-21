@@ -110,10 +110,6 @@ namespace NewLife.Installers
 
             // StartDate
             Container.Bind<StartDate>().AsSingle();
-
-            // SerializableConfig
-            Container.Bind(typeof(SerializableConfig<>)).AsTransient();
-            Container.Bind<SerializableConfigFactory>().AsCached();
         }
 
         #endregion

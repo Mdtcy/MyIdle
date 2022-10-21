@@ -49,35 +49,8 @@ namespace NewLife.Defined.Condition
         /// <summary>
         /// 数量
         /// </summary>
-        [HideIf("CommandType", CommandType.SwitchWeather)]
         [HideIf("CommandType", CommandType.CustomScript)]
         public int Num = 1;
-
-        #endregion
-
-        #region UpdateNpcProperty
-
-        // target
-
-        /// <summary>
-        /// 联系人属性
-        /// </summary>
-        [ShowIf("CommandType", CommandType.UpdateNpcProperty)]
-        public ContactPropertyType PropertyType;
-
-        // num
-
-        #endregion
-
-        #region SetScheduleState
-
-        // target
-
-        /// <summary>
-        /// 行程状态
-        /// </summary>
-        [ShowIf("CommandType", CommandType.SetScheduleState)]
-        public ScheduleState ScheduleState;
 
         #endregion
 

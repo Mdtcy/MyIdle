@@ -145,8 +145,6 @@ namespace NewLife.BusinessLogic.Archive
             {
                 item.OnArchiveWillLoad(this);
             }
-
-            notificationSender.Publish(NewLifeNotifyKeys.EvtOnArchiveLoaded);
         }
 
         /// <inheritdoc />
