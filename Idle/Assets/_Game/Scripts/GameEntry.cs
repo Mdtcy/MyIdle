@@ -8,6 +8,7 @@
 
 #pragma warning disable 0649
 using System;
+using _Game.Scripts.UI.MainMenu;
 using HM;
 using HM.Interface;
 using NewLife.BusinessLogic.Archive;
@@ -16,7 +17,7 @@ using Zenject;
 
 namespace DefaultNamespace
 {
-    public class EnterGame : MonoBehaviour
+    public class GameEntry : MonoBehaviour
     {
         #region FIELDS
 
@@ -25,6 +26,9 @@ namespace DefaultNamespace
 
         [Inject]
         private IRequest request;
+
+        [Inject]
+        private MainMenuController mainMenuController;
 
         #endregion
 
@@ -44,18 +48,20 @@ namespace DefaultNamespace
 
         private void Awake()
         {
+            HMLog.LogInfo($"[GameEntry] 加载存档");
             archiveInitializer.Run();
+        }
+
+        private void Start()
+        {
+            HMLog.LogInfo($"[GameEntry] 登陆游戏");
+            request.FastLogin("IdleArchive", OnUserLogin);
         }
 
         // 登录成功
         private void OnUserLogin()
         {
-            HMLog.LogInfo($"LoginOnGameScene::登陆成功:");
-        }
-        private void Start()
-        {
-            request.FastLogin("IdleArchive", OnUserLogin);
-            HMLog.LogDebug("加载存档");
+            HMLog.LogInfo($"[GameEntry] 登陆成功");
         }
 
         #endregion

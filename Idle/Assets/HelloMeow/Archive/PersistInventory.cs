@@ -50,7 +50,6 @@ namespace HM.Interface
 
             foreach (var client in items.Values)
             {
-                HMLog.LogVerbose($"[PersistInventory]Load {client.PersistKey}");
                 client.OnArchiveWillLoad(archive);
             }
 

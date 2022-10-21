@@ -29,13 +29,11 @@ namespace DefaultNamespace.Test
         public override void OnPicked()
         {
             base.OnPicked();
-            HMLog.LogDebug("[ItemTest] OnPicked");
         }
 
         public override void OnLoaded()
         {
             base.OnLoaded();
-            HMLog.LogDebug("[ItemTest] OnLoaded");
         }
     }
 }

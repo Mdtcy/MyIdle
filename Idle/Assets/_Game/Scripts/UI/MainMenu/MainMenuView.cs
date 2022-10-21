@@ -18,8 +18,6 @@ namespace _Game.Scripts.UI.MainMenu
 
         public Button BtnHelloWorld;
 
-        public Button BtnHide;
-
         public Transform Bg;
     }
 }

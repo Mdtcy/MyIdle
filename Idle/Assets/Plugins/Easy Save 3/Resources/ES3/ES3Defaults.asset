@@ -77,7 +77,6 @@ MonoBehaviour:
     - Sirenix.OdinInspector.CompatibilityLayer.Editor
     - NewLife.Defined.Editor
     - DOTweenPro.EditorScripts
-    - NewLife.Platform
     - NativeShare.Editor
     showAdvancedSettings: 1
   addMgrToSceneAutomatically: 0

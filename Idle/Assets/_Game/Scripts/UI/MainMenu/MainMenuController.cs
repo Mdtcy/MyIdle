@@ -73,8 +73,6 @@ namespace _Game.Scripts.UI.MainMenu
             {
                 Debug.Log("Start");
             });
-
-            View.BtnHide.onClick.AddListener(Hide);
         }
     }
 }
