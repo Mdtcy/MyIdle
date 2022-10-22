@@ -34,7 +34,7 @@ namespace NewLife.Installers
         public override void InstallBindings()
         {
             // Audio
-            Container.BindInterfacesTo<AudioSwitch>().AsCached().NonLazy();
+            // Container.BindInterfacesTo<AudioSwitch>().AsCached().NonLazy();
 
             // FloatingTextPool
             // Container.BindInstance(floatingTextPool).WithId(ZenjectId.FloatingTextPool).AsSingle();

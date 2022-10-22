@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 2630356671116915339}
   - component: {fileID: 1736938806951377388}
   - component: {fileID: 6115130839174260282}
+  - component: {fileID: 3067044276929055973}
   m_Layer: 0
   m_Name: ProjectContext
   m_TagString: Untagged
@@ -47,7 +48,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _scriptableObjectInstallers: []
-  _monoInstallers: []
+  _monoInstallers:
+  - {fileID: 1736938806951377388}
+  - {fileID: 3067044276929055973}
   _installerPrefabs: []
   _parentNewObjectsUnderContext: 1
   _editorReflectionBakingCoverageMode: 0
@@ -91,3 +94,17 @@ MonoBehaviour:
     values:
     - {fileID: 11400000, guid: 0b469e7a42a2f3944a94abeeadebc6fa, type: 2}
   showDetail: 0
+--- !u!114 &3067044276929055973
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2401104630616965964}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 364ef907070604c3b88f8b243d823d30, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sceneLoaderPrefab: {fileID: 4123692637928319031, guid: 8e137778d5bbe49cd9baae19471b1415, type: 3}
+  transitionBackgroundPrefab: {fileID: 7665747294610992991, guid: 82353ade303904d2eaaac4c2daa11c27, type: 3}

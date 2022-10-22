@@ -60,6 +60,12 @@ MonoBehaviour:
     - Sirenix.OdinInspector.CompatibilityLayer
     - NewLife.BasicInterfaces
     - MEC
+    - UniSwitcher
+    - UniTask.Linq
+    - UniTask
+    - UniTask.TextMeshPro
+    - UniTask.DOTween
+    - UniTask.Addressables
     - MoreMountains.Tools.Editor
     - AssetUsageFinder
     - NewLife.Configs.Editor
@@ -79,6 +85,8 @@ MonoBehaviour:
     - NewLife.Defined.Editor
     - DOTweenPro.EditorScripts
     - NativeShare.Editor
+    - RuntimeTests
+    - UniTask.Editor
     showAdvancedSettings: 0
   addMgrToSceneAutomatically: 0
   autoUpdateReferences: 1
