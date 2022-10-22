@@ -30,6 +30,12 @@ namespace DefaultNamespace.Scene
             PerformSceneTransition(ChangeScene(Scene.GameScene));
         }
 
+        [Button]
+        public void EnterMenuScene()
+        {
+            PerformSceneTransition(ChangeScene(Scene.FirstScene));
+        }
+
         #endregion
 
         #region PROTECTED METHODS

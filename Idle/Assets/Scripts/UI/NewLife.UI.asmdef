@@ -33,7 +33,9 @@
         "RSG.Promise",
         "EasySave3",
         "small_zstring",
-        "Unity.TextMeshPro"
+        "Unity.TextMeshPro",
+        "Scene",
+        "UniSwitcher"
     ],
     "includePlatforms": [],
     "excludePlatforms": [],

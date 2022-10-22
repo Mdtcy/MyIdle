@@ -224,7 +224,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9f369493413543e6ba7609f0cab64eac, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sceneProgressBarController: {fileID: 0}
+  sceneProgressBarController: {fileID: 825076221}
 --- !u!1 &1628906521
 GameObject:
   m_ObjectHideFlags: 0
@@ -1126,3 +1126,4 @@ MonoBehaviour:
   BtnStart: {fileID: 6659399696771227840}
   BtnHelloWorld: {fileID: 6659399696613998511}
   Bg: {fileID: 8678203771371052528}
+  SceneController: {fileID: 1181564479}

@@ -71,7 +71,7 @@ namespace _Game.Scripts.UI.MainMenu
 
             View.BtnStart.onClick.AddListener(() =>
             {
-                Debug.Log("Start");
+                View.SceneController.EnterGameScene();
             });
         }
     }

@@ -135,6 +135,7 @@ GameObject:
   - component: {fileID: 413627128}
   - component: {fileID: 413627127}
   - component: {fileID: 413627126}
+  - component: {fileID: 413627129}
   m_Layer: 5
   m_Name: BtnMenu
   m_TagString: Untagged
@@ -161,7 +162,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: -10.9, y: 66.9}
-  m_SizeDelta: {x: 160, y: 80}
+  m_SizeDelta: {x: 300, y: 150}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &413627126
 MonoBehaviour:
@@ -206,7 +207,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 413627127}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 413627129}
+        m_TargetAssemblyTypeName: DefaultNamespace.Scene.SceneController, Scene
+        m_MethodName: EnterMenuScene
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &413627127
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -245,6 +258,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 413627124}
   m_CullTransparentMesh: 1
+--- !u!114 &413627129
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 413627124}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9f369493413543e6ba7609f0cab64eac, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sceneProgressBarController: {fileID: 0}
 --- !u!1 &467905140
 GameObject:
   m_ObjectHideFlags: 0
@@ -407,8 +433,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 24
-  m_fontSizeBase: 24
+  m_fontSize: 63.75
+  m_fontSizeBase: 63.75
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -492,7 +518,7 @@ MonoBehaviour:
   m_BlockingObjects: 0
   m_BlockingMask:
     serializedVersion: 2
-    m_Bits: 4294967295
+    m_Bits: 55
 --- !u!114 &1252569497
 MonoBehaviour:
   m_ObjectHideFlags: 0

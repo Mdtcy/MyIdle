@@ -30,8 +30,11 @@ MonoBehaviour:
     serializationDepthLimit: 64
     assemblyNames:
     - Zenject
+    - UniTask
+    - UniSwitcher
     - DOTweenPro.Scripts
     - EasySave3
+    - UniTask.Linq
     - StompyRobot.SRF
     - MoreMountains.Tools
     - StompyRobot.SRDebugger
@@ -40,6 +43,7 @@ MonoBehaviour:
     - MoreMountains.Feedbacks
     - MoreMountains.Feedbacks.MMTools
     - NewLife.Business
+    - UniTask.DOTween
     - NewLife.UI
     - NewLife.Defined
     - NewLife.Configs
@@ -51,21 +55,18 @@ MonoBehaviour:
     - UIGradient
     - Assembly-CSharp
     - NewLife.EditorOnly
+    - Scene
     - PoolManager
     - NativeShare.Runtime
     - NewLife.Installers
     - small_zstring
     - SROptions
+    - UniTask.Addressables
     - MoreMountains.Tools.Feedbacks
     - Sirenix.OdinInspector.CompatibilityLayer
     - NewLife.BasicInterfaces
-    - MEC
-    - UniSwitcher
-    - UniTask.Linq
-    - UniTask
     - UniTask.TextMeshPro
-    - UniTask.DOTween
-    - UniTask.Addressables
+    - MEC
     - MoreMountains.Tools.Editor
     - AssetUsageFinder
     - NewLife.Configs.Editor
@@ -82,11 +83,11 @@ MonoBehaviour:
     - HelloMeowEditor
     - MoreMountains.Tools.Feedbacks.Editor
     - Sirenix.OdinInspector.CompatibilityLayer.Editor
+    - UniTask.Editor
     - NewLife.Defined.Editor
     - DOTweenPro.EditorScripts
     - NativeShare.Editor
     - RuntimeTests
-    - UniTask.Editor
     showAdvancedSettings: 0
   addMgrToSceneAutomatically: 0
   autoUpdateReferences: 1

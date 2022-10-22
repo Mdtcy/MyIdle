@@ -7,6 +7,7 @@
  */
 
 #pragma warning disable 0649
+using DefaultNamespace.Scene;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -20,7 +21,7 @@ namespace _Game.Scripts.UI.MainMenu
 
         public Transform Bg;
 
-        // public SceneController
+        public SceneController SceneController;
     }
 }
 #pragma warning restore 0649
