@@ -22,8 +22,6 @@ namespace NewLife.Config.CustomJsonConverters
                 ["CommandType"]   = (int) value.CommandType,
                 ["Target"]        = value.Target == null ? "" : GetAssetPath(value.Target),
                 ["Num"]           = value.Num,
-                ["PropertyType"]  = (int) value.PropertyType,
-                ["ScheduleState"] = (int) value.ScheduleState
             };
 
             data.WriteTo(writer);

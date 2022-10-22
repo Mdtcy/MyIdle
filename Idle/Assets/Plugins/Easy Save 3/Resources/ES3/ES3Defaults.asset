@@ -40,9 +40,9 @@ MonoBehaviour:
     - MoreMountains.Feedbacks
     - Assembly-CSharp-firstpass
     - MoreMountains.Feedbacks.MMTools
-    - NewLife.Defined
     - NewLife.Business
     - NewLife.UI
+    - NewLife.Defined
     - NewLife.Configs
     - XNode
     - NewLife.Installers
