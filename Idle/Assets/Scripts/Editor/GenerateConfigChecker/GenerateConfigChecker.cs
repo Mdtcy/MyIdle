@@ -34,12 +34,12 @@ namespace NewLife.EditorTool
             "public bool IsItem{0}(int itemId){{return ConfigCheckerBase.IsMajorType(itemId, Major{1}) && ConfigCheckerBase.IsMinorType(itemId, Minor{1}{2:d3});}}";
 
         private static readonly string _methodDel = "bool IsItem{0}(int itemId);";
-        private const string ClassTemplatePath = "Assets/_Game/Scripts/Editor/GenerateConfigChecker/ConfigCheckerTemplate.txt";
-        private const string InterfaceTemplatePath = "Assets/_Game/Scripts/Editor/GenerateConfigChecker/IConfigCheckerTemplate.txt";
+        private const string ClassTemplatePath = "Assets/Scripts/Editor/GenerateConfigChecker/ConfigCheckerTemplate.txt";
+        private const string InterfaceTemplatePath = "Assets/Scripts/Editor/GenerateConfigChecker/IConfigCheckerTemplate.txt";
 
         // FIXME: 各个项目调整ConfigChecker所在路径
-        private const string IConfigCheckerPath = "Assets/_Game/Scripts/BusinessLogic/Item/IConfigChecker.cs";
-        private const string ConfigCheckerPath = "Assets/_Game/Scripts/BusinessLogic/Item/ConfigChecker.cs";
+        private const string IConfigCheckerPath = "Assets/Scripts/BusinessLogic/Item/IConfigChecker.cs";
+        private const string ConfigCheckerPath = "Assets/Scripts/BusinessLogic/Item/ConfigChecker.cs";
 
         [MenuItem("Assets/HelloMeow/Generate ConfigChecker.cs")]
         public static void Run()

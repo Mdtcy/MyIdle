@@ -62,7 +62,6 @@ MonoBehaviour:
     - MEC
     - MoreMountains.Tools.Editor
     - AssetUsageFinder
-    - HelloMeowEditor
     - NewLife.Configs.Editor
     - PsdPlugin
     - MoreMountains.Feedbacks.Editor
@@ -74,6 +73,7 @@ MonoBehaviour:
     - NewLife.Editor
     - HelloMeow.Config.Editor
     - XNodeEditor
+    - HelloMeowEditor
     - MoreMountains.Tools.Feedbacks.Editor
     - Sirenix.OdinInspector.CompatibilityLayer.Editor
     - NewLife.Defined.Editor
