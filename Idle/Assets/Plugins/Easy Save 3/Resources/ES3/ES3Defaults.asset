@@ -78,6 +78,7 @@ MonoBehaviour:
     - NewLife.Defined.Editor
     - DOTweenPro.EditorScripts
     - NativeShare.Editor
+    - AssetUsageFinder
     showAdvancedSettings: 1
   addMgrToSceneAutomatically: 0
   autoUpdateReferences: 1
