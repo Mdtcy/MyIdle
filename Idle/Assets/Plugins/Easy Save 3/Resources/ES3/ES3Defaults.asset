@@ -38,14 +38,13 @@ MonoBehaviour:
     - OSA
     - HelloMeow
     - MoreMountains.Feedbacks
-    - Assembly-CSharp-firstpass
     - MoreMountains.Feedbacks.MMTools
     - NewLife.Business
     - NewLife.UI
     - NewLife.Defined
     - NewLife.Configs
     - XNode
-    - NewLife.Installers
+    - Assembly-CSharp-firstpass
     - PriorityQueue
     - DOTween.Modules
     - NewLife.Support
@@ -54,6 +53,7 @@ MonoBehaviour:
     - NewLife.EditorOnly
     - PoolManager
     - NativeShare.Runtime
+    - NewLife.Installers
     - small_zstring
     - SROptions
     - MoreMountains.Tools.Feedbacks
@@ -61,6 +61,7 @@ MonoBehaviour:
     - NewLife.BasicInterfaces
     - MEC
     - MoreMountains.Tools.Editor
+    - AssetUsageFinder
     - HelloMeowEditor
     - NewLife.Configs.Editor
     - PsdPlugin
@@ -78,7 +79,6 @@ MonoBehaviour:
     - NewLife.Defined.Editor
     - DOTweenPro.EditorScripts
     - NativeShare.Editor
-    - AssetUsageFinder
     showAdvancedSettings: 1
   addMgrToSceneAutomatically: 0
   autoUpdateReferences: 1
