@@ -1041,7 +1041,7 @@ namespace Zenject
                         return context.FallBackValue;
                     }
 
-                    throw Assert.CreateException("Unable to resolve '{0}'{1}. Object graph:{2}", context.BindingId,
+                    throw Assert.CreateException("Unable to resolve '{0}'{1}. Object graph:\n{2}", context.BindingId,
                         (context.ObjectType == null ? "" : " while building object with type '{0}'".Fmt(context.ObjectType)),
                         context.GetObjectGraphString());
                 }
@@ -1641,7 +1641,7 @@ namespace Zenject
             if (extraArgs.Count > 0)
             {
                 throw Assert.CreateException(
-                    "Passed unnecessary parameters when injecting into type '{0}'. Extra Parameters: {1}Object graph:{2}",
+                    "Passed unnecessary parameters when injecting into type '{0}'. \nExtra Parameters: {1}\nObject graph:\n{2}",
                     injectableType, String.Join(",", extraArgs.Select(x => x.Type.PrettyName()).ToArray()), context.GetObjectGraphString());
             }
         }
@@ -2871,7 +2871,7 @@ namespace Zenject
             statement.SetFinalizer(
                 new ScopableBindingFinalizer(
                     bindInfo,
-                    (container, type) => new InstanceProvider(type, instance, container)));
+                    (container, type) => new InstanceProvider(type, instance, container, bindInfo.InstantiatedCallback)));
 
             return new IdScopeConcreteIdArgConditionCopyNonLazyBinder(bindInfo);
         }

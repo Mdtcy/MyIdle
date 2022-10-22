@@ -5,6 +5,7 @@ using System.Linq;
 using ModestTree;
 using UnityEditor;
 using UnityEditor.Compilation;
+using UnityEngine;
 using Zenject.ReflectionBaking.Mono.Cecil;
 using Debug = UnityEngine.Debug;
 
@@ -15,26 +16,17 @@ namespace Zenject.ReflectionBaking
         [InitializeOnLoadMethod]
         public static void Initialize()
         {
-#if HM_ZENJECT
-            CompilationPipeline.assemblyCompilationStarted += CompilationPipelineOnAssemblyCompilationStarted;
             CompilationPipeline.assemblyCompilationFinished += OnAssemblyCompiled;
-#endif
-        }
-
-        private static void CompilationPipelineOnAssemblyCompilationStarted(string obj)
-        {
-            Debug.Log($"CompilationPipelineOnAssemblyCompilationStarted: {obj}");
         }
 
         static void OnAssemblyCompiled(string assemblyAssetPath, CompilerMessage[] messages)
         {
-            Debug.Log($"Reflection Baking is about to start: [{assemblyAssetPath}]");
-// #if !UNITY_2018
-//             if (Application.isEditor && !BuildPipeline.isBuildingPlayer)
-//             {
-//                 return;
-//             }
-// #endif
+#if !UNITY_2018_1_OR_NEWER
+            if (Application.isEditor && !BuildPipeline.isBuildingPlayer)
+            {
+                return;
+            }
+#endif
 
             if (EditorUserBuildSettings.activeBuildTarget == BuildTarget.WSAPlayer)
             {
@@ -57,32 +49,12 @@ namespace Zenject.ReflectionBaking
 
             if (settings.AllGeneratedAssemblies && settings.ExcludeAssemblies.Contains(assemblyAssetPath))
             {
-                Debug.Log($"ExcludeAssemblies included, ignore [{assemblyAssetPath}]");
                 return;
             }
 
-            // Not found in IncludeAssemblies, ignore [Library/PlayerScriptAssemblies/Awaken.dll]
             if (!settings.AllGeneratedAssemblies && !settings.IncludeAssemblies.Contains(assemblyAssetPath))
             {
-                Debug.Log($"Not found in IncludeAssemblies: [{assemblyAssetPath}]");
-
-                var fileName = Path.GetFileName(assemblyAssetPath);
-                bool found = false;
-
-                foreach (string s in settings.IncludeAssemblies)
-                {
-                    if (s.Contains(fileName))
-                    {
-                        found = true;
-                        Debug.Log($"found in wider search inside IncludeAssemblies: [{fileName}]");
-                        break;
-                    }
-                }
-
-                if (!found)
-                {
-                    return;
-                }
+                return;
             }
 
             var stopwatch = new Stopwatch();
@@ -103,7 +75,6 @@ namespace Zenject.ReflectionBaking
 
             if (!assemblyRefNames.Contains("zenject-usage"))
             {
-                Debug.Log($"zenject-usage not found, ignore {assemblyAssetPath}");
                 // Zenject-usage is used by the generated methods
                 // Important that we do this check otherwise we can corrupt some dlls that don't have access to it
                 return;
@@ -115,7 +86,6 @@ namespace Zenject.ReflectionBaking
 
             Assert.IsNotNull(assembly, "Could not find unique assembly '{0}' in currently loaded list of assemblies", assemblyName);
 
-            Debug.Log($"Will weave assembly module = {module}, assembly = {assembly}, namespacePatterns = {settings.NamespacePatterns}");
             int numTypesChanged = ReflectionBakingModuleEditor.WeaveAssembly(
                 module, assembly, settings.NamespacePatterns);
 

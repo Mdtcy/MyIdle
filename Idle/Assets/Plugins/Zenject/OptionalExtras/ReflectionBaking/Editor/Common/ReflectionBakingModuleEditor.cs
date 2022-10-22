@@ -81,7 +81,6 @@ namespace Zenject.ReflectionBaking
 
                 if (TryEditType(typeDef, actualType))
                 {
-                    UnityEngine.Debug.Log($"Reflection baking type [{actualType}]");
                     numTypesEditted++;
                 }
             }
