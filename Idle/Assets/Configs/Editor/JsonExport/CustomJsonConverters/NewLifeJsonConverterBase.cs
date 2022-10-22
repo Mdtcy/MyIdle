@@ -19,7 +19,7 @@ namespace NewLife.Config.CustomJsonConverters
         protected string GetAssetPath(Object value)
         {
             string path = Path.ChangeExtension(AssetDatabase.GetAssetPath(value), null);
-            return path.Replace("Assets/_Game/", string.Empty);
+            return path.Replace("Assets/", string.Empty);
         }
     }
 }

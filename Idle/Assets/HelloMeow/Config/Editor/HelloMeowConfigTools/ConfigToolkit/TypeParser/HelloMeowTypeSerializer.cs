@@ -11,7 +11,6 @@ using HM.Extensions;
 using HM.GameBase;
 using UnityEditor;
 using UnityEngine;
-using UnityEngine.AddressableAssets;
 using Object = UnityEngine.Object;
 
 namespace HM.EditorOnly.TypeParser
@@ -62,11 +61,6 @@ namespace HM.EditorOnly.TypeParser
             {
                 // return its path relative to Assets
                 return AssetDatabase.GetAssetPath(someObject);
-            }
-
-            if (value is AssetReference assetReference)
-            {
-                return assetReference.RuntimeKey as string;
             }
 
             HMLog.LogVerbose($"{value.GetType()}");
@@ -143,12 +137,6 @@ namespace HM.EditorOnly.TypeParser
             {
                 // for Object type, data is the path of actual asset.
                 result = AssetDatabase.LoadAssetAtPath(data, type);
-                return true;
-            }
-
-            if (type == typeof(AssetReference) || type.IsSubclassOf(typeof(AssetReference)))
-            {
-                result = new AssetReference(data);
                 return true;
             }
 

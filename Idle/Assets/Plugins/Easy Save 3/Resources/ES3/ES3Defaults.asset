@@ -77,7 +77,6 @@ MonoBehaviour:
     - StompyRobot.SRDebugger.Editor
     - Zenject-TestFramework
     - EasySave3.Editor
-    - NewLife.Editor
     - HelloMeow.Config.Editor
     - XNodeEditor
     - HelloMeowEditor
@@ -86,6 +85,7 @@ MonoBehaviour:
     - UniTask.Editor
     - NewLife.Defined.Editor
     - DOTweenPro.EditorScripts
+    - NewLife.Editor
     - NativeShare.Editor
     - RuntimeTests
     showAdvancedSettings: 0

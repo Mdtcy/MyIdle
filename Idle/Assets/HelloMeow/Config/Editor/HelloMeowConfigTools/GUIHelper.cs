@@ -2,7 +2,6 @@ using System;
 using Sirenix.Utilities;
 using UnityEditor;
 using UnityEngine;
-using UnityEngine.AddressableAssets;
 using Object = UnityEngine.Object;
 
 namespace HM.ConfigTool
@@ -272,38 +271,6 @@ namespace HM.ConfigTool
                 {
                     EditorGUILayout.ObjectField(obj, valueType, false, new GUILayoutOption[] { GUILayout.Width(width) });
                 }
-            }
-            else if (value is AssetReference)
-            {
-                var assetRef = value as AssetReference;
-                Object obj = null;
-                if (!assetRef.AssetGUID.IsNullOrWhitespace())
-                {
-                    var atlasPath = AssetDatabase.GUIDToAssetPath(assetRef.AssetGUID);
-
-                    if (assetRef.SubObjectName.IsNullOrWhitespace())
-                    {
-                        obj = AssetDatabase.LoadAssetAtPath<Object>(atlasPath);
-                    }
-                    else
-                    {
-                        Object[] objs = AssetDatabase.LoadAllAssetRepresentationsAtPath(atlasPath);
-                        // locate the sub object
-                        for (int j = 0, jMax = objs.Length; j < jMax; ++j)
-                        {
-                            if (objs[j].name.Equals(assetRef.SubObjectName))
-                            {
-                                obj = objs[j];
-                                break;
-                            }
-                        }
-                    }
-                }
-
-                var objType = obj == null ? typeof(Object) : obj.GetType();
-                var newObj = EditorGUILayout.ObjectField(obj, objType, false, GUILayout.Width(width));
-                if (newObj != obj)
-                    OnValueChanged(newObj);
             }
             else
             {

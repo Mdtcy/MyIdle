@@ -37,7 +37,6 @@ namespace NewLife.Config
             settings = new JsonSerializerSettings {Formatting = Formatting.Indented};
             settings.Converters.Add(new UnionCommandConfigJsonConverter());
             settings.Converters.Add(new SpriteJsonConverter());
-            settings.Converters.Add(new AssetReferenceJsonConverter());
             settings.Converters.Add(new GameObjectJsonConverter());
             settings.Converters.Add(new AudioClipJsonConverter());
             settings.ContractResolver = new NewLifeContractResolver();

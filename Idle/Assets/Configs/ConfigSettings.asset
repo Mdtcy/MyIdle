@@ -12,11 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1f68237aad94e432b8913568c5e73072, type: 3}
   m_Name: ConfigSettings
   m_EditorClassIdentifier: 
-  root: Assets/_Game/Configs
+  root: Assets/Configs
   configAssetRoot: '{ROOT}/Assets/Resources'
   typeConfigAssetRoot: '{ROOT}/Assets/TypeConfigAssets'
   configClassOutputRoot: '{ROOT}/Assets/Class'
   templateRoot: Assets/HelloMeow/Config/Templates
   configNamespace: NewLife.Config
-  assemblyDefinition: {fileID: 5897886265953266890, guid: 6b57b70114eff4c78b4794d2bd59bdf7,
-    type: 3}
+  assemblyDefinition: {fileID: 5897886265953266890, guid: 6b57b70114eff4c78b4794d2bd59bdf7, type: 3}

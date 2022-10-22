@@ -14,7 +14,6 @@ using HM.GameBase;
 using Sirenix.Utilities;
 using UnityEditor;
 using UnityEngine;
-using UnityEngine.AddressableAssets;
 using Object = System.Object;
 
 namespace HM.ConfigTool
@@ -491,16 +490,7 @@ namespace HM.ConfigTool
                 {
                     if (value != v)
                     {
-                        if (fi.Info.FieldType == typeof(AssetReference))
-                        {
-                            var assetRef = value as AssetReference ?? new AssetReference();
-                            assetRef.SetEditorAsset(v as UnityEngine.Object);
-                            fi.Info.SetValue(conf, assetRef);
-                        }
-                        else
-                        {
-                            fi.Info.SetValue(conf, v);
-                        }
+                        fi.Info.SetValue(conf, v);
                         // 如果不写这句话，那么关闭-重新打开Unity会发现数据重置了
                         EditorUtility.SetDirty(conf);
                     }

@@ -15,13 +15,13 @@ namespace NewLife.Editor
         [SerializeField]
         [LabelText("Attribute模板路径")]
         private string attributeTemplatePath =
-            "Assets/_Game/Scripts/EditorOnly/GenerateXyzConfigAttribute/XyzConfigAttributeTemplate.txt";
+            "Assets/Scripts/EditorOnly/GenerateXyzConfigAttribute/XyzConfigAttributeTemplate.txt";
 
         [FoldoutGroup("配置")]
         [FilePath]
         [SerializeField]
         [LabelText("AttributeDrawer模板路径")]
-        private string attributeDrawerTemplatePath = "Assets/_Game/Scripts/EditorOnly/GenerateXyzConfigAttribute/XyzConfigAttributeDrawerTemplate.txt";
+        private string attributeDrawerTemplatePath = "Assets/Scripts/EditorOnly/GenerateXyzConfigAttribute/XyzConfigAttributeDrawerTemplate.txt";
 
         [FoldoutGroup("配置")]
         [FolderPath]
