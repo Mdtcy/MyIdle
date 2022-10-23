@@ -20,7 +20,6 @@ namespace NewLife.Defined
         /// 物品配置
         /// </summary>
         [LabelText("物品配置")]
-        [BaseConfig]
         public BaseConfig Item;
 
         /// <summary>
