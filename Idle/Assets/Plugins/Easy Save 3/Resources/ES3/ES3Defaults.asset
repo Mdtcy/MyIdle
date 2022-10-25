@@ -75,6 +75,7 @@ MonoBehaviour:
     - DOTweenPro.EditorScripts
     - NativeShare.Editor
     - RuntimeTests
+    - Sirenix.OdinInspector.Modules.UnityMathematics
     showAdvancedSettings: 0
   addMgrToSceneAutomatically: 0
   autoUpdateReferences: 1
