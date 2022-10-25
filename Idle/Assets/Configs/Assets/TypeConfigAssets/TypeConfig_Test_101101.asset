@@ -9,10 +9,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7457e360439f96c43ba6c4245d85aae5, type: 3}
-  m_Name: Test111211001
+  m_Script: {fileID: 11500000, guid: ddb264f95ec5e4bd6aa2711abe112cb4, type: 3}
+  m_Name: TypeConfig_Test_101101
   m_EditorClassIdentifier: 
-  Id: 111211001
-  Name: Test1
-  Image: {fileID: 21300000, guid: a2d52bcd69861084fa115cda76d8b5e7, type: 3}
-  note: dasdasdasdsad
+  MajorType: 101
+  MinorType: 101
+  ConfigName: Test
+  InheritFrom: BaseConfig
+  Note: 

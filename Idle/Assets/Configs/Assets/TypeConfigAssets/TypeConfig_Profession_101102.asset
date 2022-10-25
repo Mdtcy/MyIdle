@@ -10,10 +10,10 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ddb264f95ec5e4bd6aa2711abe112cb4, type: 3}
-  m_Name: TypeConfig_Test_111211
+  m_Name: TypeConfig_Profession_101102
   m_EditorClassIdentifier: 
-  MajorType: 111
-  MinorType: 211
-  ConfigName: Test
+  MajorType: 101
+  MinorType: 102
+  ConfigName: Profession
   InheritFrom: BaseConfig
   Note: 
