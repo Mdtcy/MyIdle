@@ -57,6 +57,7 @@ MonoBehaviour:
     - MoreMountains.Tools.Feedbacks
     - UniTask.TextMeshPro
     - MEC
+    - com.votrubec.largenumbers
     - MoreMountains.Tools.Editor
     - AssetUsageFinder
     - PsdPlugin

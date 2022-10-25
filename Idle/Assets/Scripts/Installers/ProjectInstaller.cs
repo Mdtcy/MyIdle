@@ -5,6 +5,7 @@
  * @desc [项目安装器]
  */
 
+using DefaultNamespace.Age;
 using HelloMeow.Signal;
 using HM;
 using HM.Date;
@@ -65,6 +66,9 @@ namespace NewLife.Installers
 
             // DateTime
             Container.Bind<IDateTime>().To<SimpleDateTime>().AsSingle();
+
+            // Age
+            Container.BindInterfacesAndSelfTo<Age>().AsSingle();
 
             // // Players
             // Container.BindInterfacesTo<EffectPlayer>().FromInstance(effectPlayer).AsCached();

@@ -9,6 +9,7 @@
 #pragma warning disable 0649
 using System;
 using System.Collections.Generic;
+using DefaultNamespace.Age;
 using HM;
 using HM.Extensions;
 using HM.GameBase;
@@ -53,6 +54,7 @@ namespace NewLife.BusinessLogic.Archive
         private readonly List<PersistConfig> configs = new List<PersistConfig>
         {
             new PersistConfig(typeof(Inventory), string.Empty),
+            new PersistConfig(typeof(Age), string.Empty),
         };
 
         [Inject]
