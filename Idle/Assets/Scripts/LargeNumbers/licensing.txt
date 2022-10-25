@@ -1,0 +1,5 @@
+ This software is Copyright 2019, Milan Egon Votrubec.
+ 
+ As per the Asset Store Terms of Service and EULA, section 3.5, you agree that you will not reproduce,
+ duplicate, copy, sell, trade or resell any Asset that you have licensed from the Unity Asset Store for any purpose.
+ https://unity3d.comlegalas_terms
