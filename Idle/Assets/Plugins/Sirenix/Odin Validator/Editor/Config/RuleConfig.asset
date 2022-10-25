@@ -26,3 +26,7 @@ MonoBehaviour:
     EnabledOverridden: 1
     Type: Sirenix.OdinValidator.Editor.Validators.MaterialValidator, Sirenix.OdinValidator.Editor
     Override: 
+  - Enabled: 0
+    EnabledOverridden: 1
+    Type: Sirenix.OdinValidator.Editor.Validators.DuplicateComponentsValidator, Sirenix.OdinValidator.Editor
+    Override: 

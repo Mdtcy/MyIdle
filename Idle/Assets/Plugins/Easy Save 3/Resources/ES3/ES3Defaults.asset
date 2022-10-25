@@ -55,7 +55,6 @@ MonoBehaviour:
     - SROptions
     - UniTask.Addressables
     - MoreMountains.Tools.Feedbacks
-    - Sirenix.OdinInspector.CompatibilityLayer
     - UniTask.TextMeshPro
     - MEC
     - MoreMountains.Tools.Editor
@@ -70,7 +69,6 @@ MonoBehaviour:
     - XNodeEditor
     - HelloMeowEditor
     - MoreMountains.Tools.Feedbacks.Editor
-    - Sirenix.OdinInspector.CompatibilityLayer.Editor
     - UniTask.Editor
     - DOTweenPro.EditorScripts
     - NativeShare.Editor
