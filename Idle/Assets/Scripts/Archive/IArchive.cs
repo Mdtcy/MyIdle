@@ -20,16 +20,10 @@ namespace HM.Interface
         bool ArchiveExists(string name);
 
         /// <summary>
-        /// 创建并加载存档
-        /// </summary>
-        /// <param name="name">存档名</param>
-        void CreateAndLoad(string name);
-
-        /// <summary>
         /// 注册需要保存的对象
         /// </summary>
         /// <param name="itemToArchive"></param>
-        void Register(IArchiveClient itemToArchive);
+        void Register(IPersistable itemToArchive);
 
         void Save();
 
