@@ -62,8 +62,7 @@ namespace _Game.Scripts.UI.MainMenu
 
         public void Initialize()
         {
-            Show();
-
+            View.gameObject.SetActive(true);
             View.BtnHelloWorld.onClick.AddListener(() =>
             {
                 Debug.Log("HelloWorld");
