@@ -7,6 +7,7 @@
  */
 
 #pragma warning disable 0649
+using DefaultNamespace.Scene;
 using DG.Tweening;
 using UnityEngine;
 using Zenject;
@@ -16,6 +17,9 @@ namespace _Game.Scripts.UI.MainMenu
     public class MainMenuController : BaseUIController<MainMenuView>, IInitializable
     {
         #region FIELDS
+
+        [Inject]
+        private SceneController sceneController;
 
         #endregion
 
@@ -70,7 +74,7 @@ namespace _Game.Scripts.UI.MainMenu
 
             View.BtnStart.onClick.AddListener(() =>
             {
-                View.SceneController.EnterGameScene();
+                sceneController.EnterGameScene();
             });
         }
     }

@@ -38,7 +38,7 @@ namespace DefaultNamespace.GameProcedure
         public void Initialize()
         {
             // todo  登录游戏
-            string userName = "Editor";
+            string userName = "Editor1";
 
             // 注册需要存档的东西
             archive.Register(inventory);

@@ -1,5 +1,50 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1 &465863107210115891
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2416780105777596070}
+  - component: {fileID: 3070962027077817532}
+  m_Layer: 0
+  m_Name: SceneController
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2416780105777596070
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 465863107210115891}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1730626086261176248}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &3070962027077817532
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 465863107210115891}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9f369493413543e6ba7609f0cab64eac, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sceneProgressBarController: {fileID: 0}
 --- !u!1 &2401104630616965964
 GameObject:
   m_ObjectHideFlags: 0
@@ -31,7 +76,8 @@ Transform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 2416780105777596070}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -77,6 +123,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8772ff79aa9046088fcb29a6e4a03009, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  sceneController: {fileID: 3070962027077817532}
 --- !u!114 &6115130839174260282
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -90,9 +137,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   configMap:
-    keys: f9f1a006
+    keys: c9ad0606
     values:
-    - {fileID: 11400000, guid: 0b469e7a42a2f3944a94abeeadebc6fa, type: 2}
+    - {fileID: 11400000, guid: 974f4fb78bb1e8a48a2c7cb1b60e7a8b, type: 2}
   showDetail: 0
 --- !u!114 &3067044276929055973
 MonoBehaviour:

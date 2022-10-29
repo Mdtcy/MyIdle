@@ -69,10 +69,10 @@ namespace HM.ConfigTool
 
         #region Assembly
 
-        [Comment("配置所在Assembly")]
-        [SerializeField]
-        private AssemblyDefinitionAsset assemblyDefinition;
-        public string AssemblyName => assemblyDefinition.name;
+        // [Comment("配置所在Assembly")]
+        // [SerializeField]
+        // private AssemblyDefinitionAsset assemblyDefinition;
+        public string AssemblyName;
 
         #endregion
 

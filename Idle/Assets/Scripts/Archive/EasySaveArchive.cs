@@ -74,11 +74,11 @@ namespace NewLife.BusinessLogic.Archive
 
         #region PRIVATE METHODS
 
-        private void OnArchiveCreated()
+        private void OnArchiveCreated(ES3File archiveFile)
         {
             // todo 存疑 为什么是Application.identifier
-            file.Save("ArchiveId", Application.identifier);
-            file.Save("Version", "1.0");
+            archiveFile.Save("ArchiveId", Application.identifier);
+            archiveFile.Save("Version", "1.0");
         }
 
         #endregion
@@ -139,6 +139,9 @@ namespace NewLife.BusinessLogic.Archive
             file               = new ES3File(CurrentArchiveName);
             HMLog.LogVerbose($"[EasySaveArchive] Load {CurrentArchiveName}");
 
+            // 更新当前存档名
+            ES3.Save(KCurrentArchive, name, KeyFileName);
+
             foreach (var persistable in archivedItems)
             {
                 persistable.OnArchiveWillLoad(this);
@@ -154,11 +157,9 @@ namespace NewLife.BusinessLogic.Archive
             // 保存新的存档名到key file
             ES3.Save(name, true, KeyFileName);
 
-            // 更新当前存档名
-            ES3.Save(KCurrentArchive, name, KeyFileName);
-            CurrentArchiveName = name;
-
-            OnArchiveCreated();
+            // 创建存档
+            var archiveFile = new ES3File(name);
+            OnArchiveCreated(archiveFile);
         }
 
         /// <inheritdoc />

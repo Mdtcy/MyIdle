@@ -20,8 +20,6 @@ namespace _Game.Scripts.UI.MainMenu
         public Button BtnHelloWorld;
 
         public Transform Bg;
-
-        public SceneController SceneController;
     }
 }
 #pragma warning restore 0649

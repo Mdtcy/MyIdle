@@ -7,6 +7,7 @@
 
 using DefaultNamespace.Age;
 using DefaultNamespace.GameProcedure;
+using DefaultNamespace.Scene;
 using HelloMeow.Signal;
 using HM;
 using HM.Date;
@@ -19,6 +20,7 @@ using NewLife.BusinessLogic.Item;
 using NewLife.BusinessLogic.Request;
 using NewLife.Config.Helper;
 using NewLife.UI.SRDebuggers;
+using UnityEngine;
 using Zenject;
 
 #pragma warning disable 0649
@@ -48,6 +50,9 @@ namespace NewLife.Installers
         // [SerializeField]
         // private NpcAudioPlayer npcAudioPlayer;
 
+        [SerializeField]
+        private SceneController sceneController;
+
         #endregion
 
         #region PROPERTIES
@@ -69,6 +74,8 @@ namespace NewLife.Installers
 
             // Age
             Container.BindInterfacesAndSelfTo<Age>().AsSingle();
+
+            Container.BindInstance(sceneController).AsSingle();
 
             // // Players
             // Container.BindInterfacesTo<EffectPlayer>().FromInstance(effectPlayer).AsCached();

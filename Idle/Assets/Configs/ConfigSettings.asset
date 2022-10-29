@@ -18,4 +18,4 @@ MonoBehaviour:
   configClassOutputRoot: '{ROOT}/Assets/Class'
   templateRoot: Assets/HelloMeow/Config/Templates
   configNamespace: NewLife.Config
-  assemblyDefinition: {fileID: 5897886265953266890, guid: 6b57b70114eff4c78b4794d2bd59bdf7, type: 3}
+  AssemblyName: Assembly-CSharp

@@ -3,6 +3,7 @@
 	public partial interface IConfigChecker
 	{
 		bool IsItemTest(int itemId);
+		bool IsItemProfession(int itemId);
 
 	}
 }
