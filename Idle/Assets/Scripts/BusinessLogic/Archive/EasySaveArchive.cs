@@ -12,6 +12,8 @@ using System.Collections.Generic;
 using System.IO;
 using HM;
 using HM.Interface;
+using HM.Notification;
+using NewLife.Defined;
 using UnityEngine;
 using Zenject;
 
@@ -25,7 +27,7 @@ namespace NewLife.BusinessLogic.Archive
         private ES3File file;
 
         // 所有需要持久化保存的对象都要注册到这里
-        private readonly HashSet<IPersistable> archivedItems = new HashSet<IPersistable>();
+        private readonly HashSet<IArchiveClient> archivedItems = new HashSet<IArchiveClient>();
 
         // 保存所有存档名的文件
         private const string KeyFileName = "archiveKeys.es3";
@@ -34,7 +36,7 @@ namespace NewLife.BusinessLogic.Archive
         private const string KCurrentArchive = "KCurrentArchive";
 
         // inject
-        private DiContainer container;
+        private ISendNotification       notificationSender;
 
         #endregion
 
@@ -47,23 +49,14 @@ namespace NewLife.BusinessLogic.Archive
 
         public string ArchiveName => CurrentArchiveName;
 
-        /// <inheritdoc />
-        public bool IsEnabled { get; set; }
-
-        /// <inheritdoc />
-        public string CurrentArchivePath => file.settings.FullPath;
-
-        /// <inheritdoc />
-        public ES3File CurrentFile => file;
-
         #endregion
 
         #region PUBLIC METHODS
 
         [Inject]
-        public void Construct(DiContainer container)
+        public void Construct(ISendNotification       notificationSender)
         {
-            this.container = container;
+            this.notificationSender = notificationSender;
         }
 
         #endregion
@@ -76,7 +69,6 @@ namespace NewLife.BusinessLogic.Archive
 
         private void OnArchiveCreated()
         {
-            // todo 存疑 为什么是Application.identifier
             file.Save("ArchiveId", Application.identifier);
             file.Save("Version", "1.0");
         }
@@ -101,7 +93,24 @@ namespace NewLife.BusinessLogic.Archive
         }
 
         /// <inheritdoc />
-        public void Register(IPersistable itemToArchive)
+        public void CreateAndLoad(string name)
+        {
+            Debug.Assert(!ArchiveExists(name));
+
+            // 保存新的存档名到key file
+            ES3.Save(name, true, KeyFileName);
+
+            // 更新当前存档名
+            ES3.Save(KCurrentArchive, name, KeyFileName);
+            CurrentArchiveName = name;
+
+            // 加载
+            Load(CurrentArchiveName);
+            OnArchiveCreated();
+        }
+
+        /// <inheritdoc />
+        public void Register(IArchiveClient itemToArchive)
         {
             archivedItems.Add(itemToArchive);
         }
@@ -116,10 +125,9 @@ namespace NewLife.BusinessLogic.Archive
                 return;
             }
 
-            foreach (var persistable in archivedItems)
+            foreach (var item in archivedItems)
             {
-                persistable.OnWillSave();
-                persistable.OnArchiveWillSave(this);
+                item.OnArchiveWillSave(this);
             }
 
             file.Sync();
@@ -128,37 +136,15 @@ namespace NewLife.BusinessLogic.Archive
         /// <inheritdoc />
         public void Load(string name)
         {
-            // 如果不存在存档，则创建存档
-            if (!ArchiveExists(name))
-            {
-                CreatArchive(name);
-            }
-
             IsEnabled          = true; // 默认可保存
             CurrentArchiveName = name;
             file               = new ES3File(CurrentArchiveName);
             HMLog.LogVerbose($"[EasySaveArchive] Load {CurrentArchiveName}");
 
-            foreach (var persistable in archivedItems)
+            foreach (var item in archivedItems)
             {
-                persistable.OnArchiveWillLoad(this);
-                persistable.OnWillInject(container);
-                persistable.OnLoaded();
+                item.OnArchiveWillLoad(this);
             }
-        }
-
-        private void CreatArchive(string name)
-        {
-            Debug.Assert(!ArchiveExists(name), "[EasySaveArchive] 已经有存档了，不可以再创建存档");
-
-            // 保存新的存档名到key file
-            ES3.Save(name, true, KeyFileName);
-
-            // 更新当前存档名
-            ES3.Save(KCurrentArchive, name, KeyFileName);
-            CurrentArchiveName = name;
-
-            OnArchiveCreated();
         }
 
         /// <inheritdoc />
@@ -206,6 +192,15 @@ namespace NewLife.BusinessLogic.Archive
         }
 
         /// <inheritdoc />
+        public bool IsEnabled { get; set; }
+
+        /// <inheritdoc />
+        public string CurrentArchivePath => file.settings.FullPath;
+
+        /// <inheritdoc />
+        public ES3File CurrentFile => file;
+
+        /// <inheritdoc />
         public bool IsValidArchive(string filepath)
         {
             try
@@ -233,7 +228,6 @@ namespace NewLife.BusinessLogic.Archive
             // 如果本地没有这个人的存档，创建一份
             if (!ArchiveExists(name))
             {
-                // todo
                 // 保存新的存档名到key file
                 ES3.Save(name, true, KeyFileName);
             }

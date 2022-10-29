@@ -55,9 +55,9 @@ MonoBehaviour:
     - SROptions
     - UniTask.Addressables
     - MoreMountains.Tools.Feedbacks
-    - com.votrubec.largenumbers
     - UniTask.TextMeshPro
     - MEC
+    - com.votrubec.largenumbers
     - MoreMountains.Tools.Editor
     - AssetUsageFinder
     - PsdPlugin
@@ -73,8 +73,8 @@ MonoBehaviour:
     - UniTask.Editor
     - DOTweenPro.EditorScripts
     - NativeShare.Editor
-    - Sirenix.OdinInspector.Modules.UnityMathematics
     - RuntimeTests
+    - Sirenix.OdinInspector.Modules.UnityMathematics
     showAdvancedSettings: 0
   addMgrToSceneAutomatically: 0
   autoUpdateReferences: 1

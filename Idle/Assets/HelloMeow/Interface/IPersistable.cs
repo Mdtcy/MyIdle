@@ -10,16 +10,12 @@ using HM.Extenject;
 
 namespace HM.Interface
 {
-    public interface IPersistable : IInjectable
+    public interface IPersistable : IInjectable, IArchiveClient
     {
         /// <summary>
         /// 存档里的唯一标识符
         /// </summary>
-        abstract string PersistKey { get; }
-
-        void OnArchiveWillLoad(IArchive archive);
-
-        void OnArchiveWillSave(IArchive archive);
+        string PersistKey { get; }
 
         /// <summary>
         /// 数据被成功加载后调用
