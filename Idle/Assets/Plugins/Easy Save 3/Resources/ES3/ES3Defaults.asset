@@ -75,6 +75,7 @@ MonoBehaviour:
     - NativeShare.Editor
     - Sirenix.OdinInspector.Modules.UnityMathematics
     - RuntimeTests
+    - ToolbarExtender.Editor
     showAdvancedSettings: 0
   addMgrToSceneAutomatically: 0
   autoUpdateReferences: 1
