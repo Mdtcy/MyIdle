@@ -6,6 +6,7 @@
  */
 
 using DefaultNamespace.Age;
+using DefaultNamespace.GameProcedure;
 using HelloMeow.Signal;
 using HM;
 using HM.Date;
@@ -16,11 +17,8 @@ using NewLife.BusinessLogic.Archive;
 using NewLife.BusinessLogic.DateTimeUtils;
 using NewLife.BusinessLogic.Item;
 using NewLife.BusinessLogic.Request;
-using NewLife.Config;
 using NewLife.Config.Helper;
-using NewLife.UI.AudioManager;
 using NewLife.UI.SRDebuggers;
-using UnityEngine;
 using Zenject;
 
 #pragma warning disable 0649
@@ -64,6 +62,8 @@ namespace NewLife.Installers
             // Signal
             DeclareSignals();
 
+            Container.BindInterfacesAndSelfTo<Game>().AsSingle();
+
             // DateTime
             Container.Bind<IDateTime>().To<SimpleDateTime>().AsSingle();
 
@@ -97,7 +97,6 @@ namespace NewLife.Installers
                      .AsCached();
 
             // inventory
-            Container.BindInterfacesAndSelfTo<PersistInventory>().AsSingle();
             Container.Bind<Inventory>().AsSingle();
 
             // Item

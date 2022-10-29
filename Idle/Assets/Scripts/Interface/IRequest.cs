@@ -69,44 +69,6 @@ namespace HM.Interface
         void RemoveItem(int itemId, OnRequestSucc onSucc = null, OnRequestFail onFail = null);
 
         /// <summary>
-        /// 快速登录，如果没有用户登陆过则创建新存档登录
-        /// </summary>
-        /// <param name="name"></param>
-        /// <param name="onSucc"></param>
-        /// <param name="onFail"></param>
-        void FastLogin(string name, OnRequestSucc onSucc = null, OnRequestFail onFail = null);
-
-        /// <summary>
-        /// 使用指定名字创建游戏存档进入游戏
-        /// </summary>
-        /// <param name="name"></param>
-        /// <param name="onSucc"></param>
-        /// <param name="onFail"></param>
-        void Register(string name, OnRequestSucc onSucc = null, OnRequestFail onFail = null);
-
-        /// <summary>
-        /// 使用对应存档登录游戏
-        /// </summary>
-        /// <param name="name"></param>
-        /// <param name="onSucc"></param>
-        /// <param name="onFail"></param>
-        void Login(string name, OnRequestSucc onSucc = null, OnRequestFail onFail = null);
-
-        /// <summary>
-        /// 注销当前用户
-        /// </summary>
-        /// <param name="onSucc">成功回调</param>
-        /// <param name="onFail">失败回调</param>
-        void Logout(OnRequestSucc onSucc = null, OnRequestFail onFail = null);
-
-        /// <summary>
-        /// 保存玩家信息
-        /// </summary>
-        /// <param name="onSucc">成功回调</param>
-        /// <param name="onFail">失败回调</param>
-        void Save(OnRequestSucc onSucc = null, OnRequestFail onFail = null);
-
-        /// <summary>
         /// 购买物品
         /// </summary>
         /// <param name="itemId">物品Id，必须是可购买的物品（继承自PurchasableConfig）</param>
