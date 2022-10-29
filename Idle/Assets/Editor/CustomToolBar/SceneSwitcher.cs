@@ -13,16 +13,16 @@ namespace UnityToolbarExtender
 	{
 		class SceneData
 		{
-			public string     path;
-			public GUIContent popupDisplay;
+			public string     Path;
+			public GUIContent PopupDisplay;
 		}
 
 		static bool showSceneFolder = true;
 
-		static SceneData[] scenesPopupDisplay;
-		static string[]    scenesPath;
-		static string[]    scenesBuildPath;
-		static int                selectedSceneIndex;
+		static         SceneData[] scenesPopupDisplay;
+		static         string[]    scenesPath;
+		static         string[]    scenesBuildPath;
+		private static int         selectedSceneIndex;
 
 		static SceneSwitchLeftButton()
 		{
@@ -36,7 +36,7 @@ namespace UnityToolbarExtender
 			GUILayout.FlexibleSpace();
 
 			selectedSceneIndex = EditorGUILayout.Popup(selectedSceneIndex,
-			                                           scenesPopupDisplay.Select(e => e.popupDisplay).ToArray(),
+			                                           scenesPopupDisplay.Select(e => e.PopupDisplay).ToArray(),
 			                                           GUILayout.Width(100));
 
 			if (GUI.changed && 0 <= selectedSceneIndex && selectedSceneIndex < scenesPopupDisplay.Length)
@@ -45,7 +45,7 @@ namespace UnityToolbarExtender
 				{
 					foreach (var scenePath in scenesPath)
 					{
-						if ((scenePath) == scenesPopupDisplay[selectedSceneIndex].path)
+						if ((scenePath) == scenesPopupDisplay[selectedSceneIndex].Path)
 						{
 							EditorSceneManager.OpenScene(scenePath);
 
@@ -65,7 +65,7 @@ namespace UnityToolbarExtender
 
 			scenesBuildPath = EditorBuildSettings.scenes.Select(s => s.path).ToArray();
 
-			string[] sceneGuids = AssetDatabase.FindAssets("t:scene", new string[] {"Assets"});
+			string[] sceneGuids = AssetDatabase.FindAssets("t:scene", new[] {"Assets"});
 			scenesPath = new string[sceneGuids.Length];
 
 			for (int i = 0; i < scenesPath.Length; ++i)
@@ -88,15 +88,15 @@ namespace UnityToolbarExtender
 
 				toDisplay.Add(new SceneData()
 				{
-					path         = scenesBuildPath[i],
-					popupDisplay = content,
+					Path         = scenesBuildPath[i],
+					PopupDisplay = content,
 				});
 			}
 
 			toDisplay.Add(new SceneData()
 			{
-				path         = "\0",
-				popupDisplay = new GUIContent("\0"),
+				Path         = "\0",
+				PopupDisplay = new GUIContent("\0"),
 			});
 			++usedIds;
 
@@ -123,8 +123,8 @@ namespace UnityToolbarExtender
 
 				toDisplay.Add(new SceneData()
 				{
-					path         = scenesPath[i],
-					popupDisplay = content,
+					Path         = scenesPath[i],
+					PopupDisplay = content,
 				});
 
 				++usedIds;
