@@ -15,12 +15,12 @@ namespace NewLife.Installers
 {
     public class UIInstaller : MonoInstaller
     {
-        public GameObject MainViewPrefab;
+        public MainMenuView MainMenuView;
 
         public override void InstallBindings()
         {
             // MainMenu
-            Container.Bind<MainMenuView>().FromComponentInNewPrefab(MainViewPrefab).AsSingle();
+            Container.BindInstance(MainMenuView).AsSingle();
             Container.BindInterfacesAndSelfTo<MainMenuController>().AsSingle();
         }
     }
