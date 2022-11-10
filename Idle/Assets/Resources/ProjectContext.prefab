@@ -137,8 +137,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   configMap:
-    keys: c9ad0606
+    keys: b1b10606c9ad0606
     values:
+    - {fileID: 11400000, guid: 9adf281332d0e964583458a776f31397, type: 2}
     - {fileID: 11400000, guid: 974f4fb78bb1e8a48a2c7cb1b60e7a8b, type: 2}
   showDetail: 0
 --- !u!114 &3067044276929055973

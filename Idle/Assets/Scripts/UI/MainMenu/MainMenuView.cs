@@ -7,7 +7,7 @@
  */
 
 #pragma warning disable 0649
-using DefaultNamespace.Scene;
+using Game.Scene;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -16,10 +16,6 @@ namespace _Game.Scripts.UI.MainMenu
     public class MainMenuView : MonoBehaviour
     {
         public Button BtnStart;
-
-        public Button BtnHelloWorld;
-
-        public Transform Bg;
     }
 }
 #pragma warning restore 0649

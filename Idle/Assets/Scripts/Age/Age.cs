@@ -13,7 +13,7 @@ using HM.Interface;
 using UnityEngine;
 using Zenject;
 
-namespace DefaultNamespace.Age
+namespace Game.PlayerAge
 {
     public class Age : PersistableObject, ITickable
     {
@@ -25,7 +25,7 @@ namespace DefaultNamespace.Age
         [ES3Serializable]
         public int day;
 
-        public Action ActOnAgeChange;
+        public Action ActOnAgeDayChange;
 
         // 每年天数
         private const int YearDayCount = 365;
@@ -63,7 +63,7 @@ namespace DefaultNamespace.Age
             else
             {
                 dayTimer = dayTime;
-                AddDay(1);
+                AddDay();
             }
         }
 
@@ -75,11 +75,11 @@ namespace DefaultNamespace.Age
 
         #region PRIVATE METHODS
 
-        public void AddDay(int value)
+        public void AddDay()
         {
-            if (day + value > YearDayCount)
+            if (day + 1 > YearDayCount)
             {
-                int totalDay = day + value;
+                int totalDay = day + 1;
 
                 // 加完刚好在一年最后一天
                 if (totalDay % YearDayCount == 0)
@@ -95,10 +95,10 @@ namespace DefaultNamespace.Age
             }
             else
             {
-                day += value;
+                day += 1;
             }
 
-            ActOnAgeChange?.Invoke();
+            ActOnAgeDayChange?.Invoke();
         }
 
         #endregion

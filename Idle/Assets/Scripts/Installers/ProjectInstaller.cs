@@ -5,9 +5,10 @@
  * @desc [项目安装器]
  */
 
-using DefaultNamespace.Age;
-using DefaultNamespace.GameProcedure;
-using DefaultNamespace.Scene;
+using Game.Currency;
+using Game.PlayerAge;
+using Game.Procedure;
+using Game.Scene;
 using HelloMeow.Signal;
 using HM;
 using HM.Date;
@@ -67,7 +68,7 @@ namespace NewLife.Installers
             // Signal
             DeclareSignals();
 
-            Container.BindInterfacesAndSelfTo<Game>().AsSingle();
+            Container.BindInterfacesAndSelfTo<GameProcedure>().AsSingle();
 
             // DateTime
             Container.Bind<IDateTime>().To<SimpleDateTime>().AsSingle();
@@ -76,6 +77,9 @@ namespace NewLife.Installers
             Container.BindInterfacesAndSelfTo<Age>().AsSingle();
 
             Container.BindInstance(sceneController).AsSingle();
+
+            // 货币
+            Container.Bind<ICurrencyOperator>().To<CurrencyInventory>().AsSingle();
 
             // // Players
             // Container.BindInterfacesTo<EffectPlayer>().FromInstance(effectPlayer).AsCached();

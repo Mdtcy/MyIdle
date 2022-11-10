@@ -7,9 +7,7 @@
  */
 
 #pragma warning disable 0649
-using DefaultNamespace.Scene;
-using DG.Tweening;
-using UnityEngine;
+using Game.Scene;
 using Zenject;
 
 namespace _Game.Scripts.UI.MainMenu
@@ -36,18 +34,11 @@ namespace _Game.Scripts.UI.MainMenu
         public void Show()
         {
             View.gameObject.SetActive(true);
-            View.Bg.localScale = Vector3.zero;
-            View.Bg.DOScale(1, 0.3f).SetEase(Ease.InOutSine);
         }
 
         public void Hide()
         {
-            View.Bg.DOScale(0, 0.3f)
-                .SetEase(Ease.InOutSine)
-                .OnComplete(() =>
-                 {
-                     View.gameObject.SetActive(false);
-                 });
+            View.gameObject.SetActive(false);
         }
 
         #endregion
@@ -67,10 +58,6 @@ namespace _Game.Scripts.UI.MainMenu
         public void Initialize()
         {
             View.gameObject.SetActive(true);
-            View.BtnHelloWorld.onClick.AddListener(() =>
-            {
-                Debug.Log("HelloWorld");
-            });
 
             View.BtnStart.onClick.AddListener(() =>
             {

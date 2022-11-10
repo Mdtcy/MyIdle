@@ -8,7 +8,7 @@
 
 #pragma warning disable 0649
 using UniSwitcher.Domain;
-namespace DefaultNamespace.Scene
+namespace Game.Scene
 {
     public class Scene : BaseScene
     {

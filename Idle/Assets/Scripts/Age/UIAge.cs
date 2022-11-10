@@ -11,7 +11,7 @@ using TMPro;
 using UnityEngine;
 using Zenject;
 
-namespace DefaultNamespace.Age
+namespace Game.PlayerAge
 {
     public class UIAge : MonoBehaviour
     {
@@ -41,12 +41,12 @@ namespace DefaultNamespace.Age
 
         private void OnEnable()
         {
-            age.ActOnAgeChange += OnAgeChanged;
+            age.ActOnAgeDayChange += OnAgeChanged;
         }
 
         private void OnDisable()
         {
-            age.ActOnAgeChange -= OnAgeChanged;
+            age.ActOnAgeDayChange -= OnAgeChanged;
         }
 
         private void OnAgeChanged()

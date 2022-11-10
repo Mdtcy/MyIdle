@@ -11,7 +11,7 @@ using HM;
 using HM.GameBase;
 using NewLife.Config;
 
-namespace DefaultNamespace.Test
+namespace Game.Test
 {
     public class ItemTest : ItemBase<TestConfig>
     {

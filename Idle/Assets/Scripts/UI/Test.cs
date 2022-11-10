@@ -8,7 +8,7 @@
 
 #pragma warning disable 0649
 using _Game.Scripts.UI.MainMenu;
-using DefaultNamespace.Test;
+using Game.Test;
 using HM;
 using HM.GameBase;
 using HM.Interface;

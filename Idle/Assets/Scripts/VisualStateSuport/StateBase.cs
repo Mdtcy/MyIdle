@@ -1,43 +1,13 @@
-/**
- * @author BoLuo
- * @email [ tktetb@163.com ]
- * @create date  2022年11月9日
- * @modify date 2022年11月9日
- * @desc [任务组UI]
- */
-
-#pragma warning disable 0649 
-using UnityEngine; 
-
-namespace VisualStateSuport
+#pragma warning disable 0649
+namespace VisualStateSupport
 {
-    public class StateBase : MonoBehaviour
+    public abstract class StateBase
     {
-        
+        public abstract void OnEnter();
 
-        #region FIELDS
+        public abstract void OnUpdate();
 
-        #endregion
-
-        #region PROPERTIES
-
-        #endregion
-
-        #region PUBLIC METHODS
-
-        #endregion
-
-        #region PROTECTED METHODS
-
-        #endregion
-
-        #region PRIVATE METHODS
-
-        #endregion
-
-        #region STATIC METHODS
-
-        #endregion
+        public abstract void OnExit();
     }
 }
 #pragma warning restore 0649

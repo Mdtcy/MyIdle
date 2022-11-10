@@ -10,7 +10,7 @@
 using Sirenix.OdinInspector;
 using UniSwitcher;
 
-namespace DefaultNamespace.Scene
+namespace Game.Scene
 {
     public class SceneController : Switcher
     {

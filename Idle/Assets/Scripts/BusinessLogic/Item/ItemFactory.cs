@@ -6,10 +6,11 @@
  * @desc [Item工厂类，创建Item的唯一方式（除序列化之外）]
  */
 
-using DefaultNamespace.Test;
+using Game.Test;
 using HM;
 using HM.GameBase;
 using HM.Interface;
+using Profession;
 using Zenject;
 
 namespace NewLife.BusinessLogic.Item
@@ -38,6 +39,7 @@ namespace NewLife.BusinessLogic.Item
             // todo: fill Item creation code.
 
             if (configChecker.IsItemTest(itemId)) item = new ItemTest(itemId);
+            if (configChecker.IsItemProfession(itemId)) item = new ItemProfession(itemId);
 
             if (item == null)
             {

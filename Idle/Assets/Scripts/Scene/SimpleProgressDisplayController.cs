@@ -12,7 +12,7 @@ using UniSwitcher;
 using UnityEngine;
 using UnityEngine.UI;
 
-namespace DefaultNamespace.Scene
+namespace Game.Scene
 {
     public class SimpleProgressDisplayController : ProgressDisplayController
     {
