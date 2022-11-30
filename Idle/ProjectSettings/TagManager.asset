@@ -41,3 +41,9 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
+  - name: Enviroment
+    uniqueID: 2042114351
+    locked: 0
+  - name: Tile
+    uniqueID: 1159435955
+    locked: 0
