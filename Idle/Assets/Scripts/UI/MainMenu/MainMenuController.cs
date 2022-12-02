@@ -7,7 +7,7 @@
  */
 
 #pragma warning disable 0649
-using Game.Scene;
+using HM;
 using Zenject;
 
 namespace _Game.Scripts.UI.MainMenu
@@ -15,9 +15,6 @@ namespace _Game.Scripts.UI.MainMenu
     public class MainMenuController : BaseUIController<MainMenuView>, IInitializable
     {
         #region FIELDS
-
-        [Inject]
-        private SceneController sceneController;
 
         #endregion
 
@@ -61,7 +58,7 @@ namespace _Game.Scripts.UI.MainMenu
 
             View.BtnStart.onClick.AddListener(() =>
             {
-                sceneController.EnterGameScene();
+                HMLog.LogDebug("Start");
             });
         }
     }

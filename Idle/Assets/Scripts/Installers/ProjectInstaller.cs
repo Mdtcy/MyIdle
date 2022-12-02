@@ -8,7 +8,6 @@
 using Game.Currency;
 using Game.PlayerAge;
 using Game.Procedure;
-using Game.Scene;
 using HelloMeow.Signal;
 using HM;
 using HM.Date;
@@ -51,9 +50,6 @@ namespace NewLife.Installers
         // [SerializeField]
         // private NpcAudioPlayer npcAudioPlayer;
 
-        [SerializeField]
-        private SceneController sceneController;
-
         #endregion
 
         #region PROPERTIES
@@ -75,8 +71,6 @@ namespace NewLife.Installers
 
             // Age
             Container.BindInterfacesAndSelfTo<Age>().AsSingle();
-
-            Container.BindInstance(sceneController).AsSingle();
 
             // 货币
             Container.Bind<ICurrencyOperator>().To<CurrencyInventory>().AsSingle();

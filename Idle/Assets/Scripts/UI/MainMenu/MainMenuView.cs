@@ -7,7 +7,6 @@
  */
 
 #pragma warning disable 0649
-using Game.Scene;
 using UnityEngine;
 using UnityEngine.UI;
 
