@@ -7,6 +7,7 @@
  */
 
 #pragma warning disable 0649
+using System;
 using Sirenix.OdinInspector;
 using UnityEngine;
 
@@ -35,6 +36,10 @@ namespace Tile
         [SerializeField]
         private Vector2Int tileOffset;
 
+        [ShowInInspector]
+        public Tile[][] tiles;
+
+        
 
         [Button]
         public void Initialize()
@@ -45,46 +50,97 @@ namespace Tile
                 DestroyImmediate(child.gameObject);
             }
 
-            for (int i = 0; i < tileSize.x; i++)
+            tiles = null;
+            tiles = new Tile[tileSize.x][];
+            for (var index = 0; index < tiles.Length; index++)
             {
-                for (int j = 0; j < tileSize.y; j++)
+                tiles[index] = new Tile[tileSize.y];
+            }
+            for (int x = 0; x < tileSize.x; x++)
+            {
+                for (int y = 0; y < tileSize.y; y++)
                 {
                     var tile = Instantiate(pfbTile, root);
-                    tile.transform.position = new Vector2(i, j) + tileOffset;
-
-                    if (i == tileSize.x - 1 ||
-                        j == tileSize.y - 1 ||
-                        i == 0 ||
-                        j == 0)
+                    tile.transform.position = new Vector2(x, y) + tileOffset;
+                    tiles[x][y] = tile.GetComponent<Tile>();
+                }
+            }
+            for (int x = 0; x < tileSize.x; x++)
+            {
+                for (int y = 0; y < tileSize.y; y++)
+                {
+                    var tile = tiles[x][y];
+                    if (x == tileSize.x - 1 ||
+                        y == tileSize.y - 1 ||
+                        x == 0 ||
+                        y == 0)
                     {
                         tile.GetComponent<Tile>().ShowArrow = true;
-                        tile.gameObject.name                = "Road";
+                        tile.gameObject.name = $"Road{x}{y}";
+                        tile.Type = Tile.TileType.Road;
+                        MakeTile(x, y);
                     }
                     else
                     {
                         tile.GetComponent<Tile>().ShowArrow = false;
+                        tile.gameObject.name = $"Tile{x}{y}";
+                        tile.Type = Tile.TileType.Normal;
                     }
 
-                    if (i == 0)
+                    if (x == 0)
                     {
-                        tile.GetComponent<Tile>().direction = Tile.Direction.South;
+                        if (y == 0)
+                        {
+                            tile.GetComponent<Tile>().direction = Tile.Direction.East;
+                        }
+                        else
+                        {
+                            tile.GetComponent<Tile>().direction = Tile.Direction.South;
+                        }
                     }
-                    else if (i == tileSize.x - 1)
+                    else if (x == tileSize.x - 1)
                     {
-                        tile.GetComponent<Tile>().direction = Tile.Direction.North;
+                        if (y == tileSize.y - 1)
+                        {
+                            tile.GetComponent<Tile>().direction = Tile.Direction.West;
+                        }
+                        else
+                        {
+                            tile.GetComponent<Tile>().direction = Tile.Direction.North;
+                        }
                     }
-                    else if (j == tileSize.y - 1)
+                    else if (y == tileSize.y - 1)
                     {
                         tile.GetComponent<Tile>().direction = Tile.Direction.West;
                     }
-                    else if (j == 0)
+                    else if (y == 0)
                     {
                         tile.GetComponent<Tile>().direction = Tile.Direction.East;
                     }
 
                     tile.GetComponent<Tile>().RefreshArrow();
-                    tile.gameObject.name = "Tile";
                 }
+            }
+        }
+
+        private void MakeTile(int x, int y )
+        {
+            if (y + 1 < tileSize.y)
+            {
+                Tile.MakeNorthSouthNeighbors(tiles[x][y + 1], tiles[x][y]);
+            }
+            else if (y - 1 >= 0)
+            {
+                Tile.MakeNorthSouthNeighbors(tiles[x][y], tiles[x][y - 1]);
+            }
+
+            if (x - 1 > 0)
+            {
+                Tile.MakeEastWestNeighbors(tiles[x][y], tiles[x-1][y]);
+            }
+            else if (x + 1 < tileSize.x)
+            {
+                Tile.MakeEastWestNeighbors(tiles[x + 1][y], tiles[x][y]);
             }
         }
 
@@ -112,6 +168,19 @@ namespace Tile
                 }
             }
 
+        }
+
+        public Tile GetTile()
+        {
+            // Vector3 mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+            // Vector2 mousePos2D = new Vector2(mousePos.x, mousePos.y);
+            // RaycastHit2D hit = Physics2D.Raycast(mousePos2D, Vector2.zero);
+            // if (hit.collider != null) {
+            //     var tile =
+            //         hit.collider.GetComponent<Tile>();
+            //     return tile;
+            // }
+            return null;
         }
     }
 }

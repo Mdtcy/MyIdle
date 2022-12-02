@@ -7,6 +7,7 @@
  */
 
 #pragma warning disable 0649
+using System;
 using UnityEngine;
 
 namespace Tile
@@ -14,6 +15,41 @@ namespace Tile
     public class Tile : MonoBehaviour
     {
         #region FIELDS
+
+        public Tile north, east, south, west;
+
+        public enum TileType
+        {
+            Road,
+            Normal
+        }
+
+        public TileType Type;
+        
+        public static void MakeEastWestNeighbors (Tile east, Tile west)
+        {
+            if (west)
+            {
+                west.east = east;
+            }
+
+            if (east)
+            {
+                east.west = west;
+            }
+        }
+        public static void MakeNorthSouthNeighbors (Tile north, Tile south) 
+        {
+            if (south != null)
+            {
+                south.north = north;
+            }
+
+            if (north != null)
+            {
+                north.south = south;
+            }
+        }
 
         static Quaternion
             northRotation = Quaternion.Euler(0f, 0f, 0f),
@@ -51,7 +87,8 @@ namespace Tile
         {
             if (!ShowArrow)
             {
-                arrow.gameObject.SetActive(false);
+                if(arrow)
+                    arrow.gameObject.SetActive(false);
 
                 return;
             }
@@ -77,6 +114,23 @@ namespace Tile
 
                     break;
             }
+        }
+
+        public Tile GetNextTile()
+        {
+            switch (direction)
+            {
+                case Direction.North:
+                    return north;
+                case Direction.South:
+                    return south;
+                case Direction.East:
+                    return east;
+                case Direction.West:
+                    return west;
+            }
+
+            return null;
         }
 
         #endregion

@@ -30,52 +30,48 @@ MonoBehaviour:
     serializationDepthLimit: 64
     assemblyNames:
     - Zenject
-    - OSA
-    - MoreMountains.Feedbacks
-    - UniSwitcher
     - UniTask
     - Animancer.Examples
     - DOTweenPro.Scripts
     - EasySave3
-    - StompyRobot.SRF
     - UniTask.Linq
-    - Assembly-CSharp
+    - StompyRobot.SRF
     - MoreMountains.Tools
     - StompyRobot.SRDebugger
-    - NativeShare.Runtime
+    - OSA
+    - Assembly-CSharp
+    - MoreMountains.Feedbacks
     - MoreMountains.Feedbacks.MMTools
     - Animancer
     - Animancer.FSM
-    - MoreMountains.Tools.Feedbacks
-    - Assembly-CSharp-firstpass
     - UniTask.DOTween
-    - com.votrubec.largenumbers
     - XNode
+    - Assembly-CSharp-firstpass
     - PriorityQueue
     - DOTween.Modules
     - UIGradient
-    - UniTask.TextMeshPro
     - PoolManager
-    - Scene
+    - NativeShare.Runtime
     - small_zstring
-    - MEC
     - SROptions
     - UniTask.Addressables
+    - MoreMountains.Tools.Feedbacks
+    - com.votrubec.largenumbers
+    - UniTask.TextMeshPro
+    - MEC
     - MoreMountains.Tools.Editor
-    - ToolbarExtender.Editor
     - AssetUsageFinder
-    - RuntimeTests
-    - XNodeEditor
     - PsdPlugin
     - MoreMountains.Feedbacks.Editor
     - PoolManagerEditor
     - StompyRobot.SRF.Editor
-    - EasySave3.Editor
-    - UniTask.Editor
     - StompyRobot.SRDebugger.Editor
-    - Zenject-TestFramework
+    - EasySave3.Editor
+    - XNodeEditor
     - HelloMeowEditor
+    - ToolbarExtender.Editor
     - MoreMountains.Tools.Feedbacks.Editor
+    - UniTask.Editor
     - DOTweenPro.EditorScripts
     - NativeShare.Editor
     - Sirenix.OdinInspector.Modules.UnityMathematics
