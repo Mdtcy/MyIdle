@@ -6,7 +6,7 @@ using System.IO;
 
 [CustomEditor(typeof(SPUM_Prefabs))]
 [CanEditMultipleObjects]
-public class SPUM_PrefabEditor : Editor
+public class SPUM_PrefabEditor : UnityEditor.Editor
 {
     // Start is called before the first frame update
     public override void OnInspectorGUI()

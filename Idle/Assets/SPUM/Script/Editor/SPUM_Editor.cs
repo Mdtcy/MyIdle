@@ -7,7 +7,7 @@ using System.Linq;
 
 [CustomEditor(typeof(SPUM_Manager))]
 [CanEditMultipleObjects]
-public class SPUM_Editor : Editor
+public class SPUM_Editor : UnityEditor.Editor
 {
     // Start is called before the first frame update
     public override void OnInspectorGUI()

@@ -8,6 +8,7 @@
 
 #pragma warning disable 0649
 using System;
+using Test;
 using UnityEngine;
 
 namespace Tile
@@ -51,19 +52,7 @@ namespace Tile
             }
         }
 
-        static Quaternion
-            northRotation = Quaternion.Euler(0f, 0f, 0f),
-            eastRotation  = Quaternion.Euler(0f, 0f, -90f),
-            southRotation = Quaternion.Euler(0f, 0f, 180f),
-            westRotation  = Quaternion.Euler(0f, 0f, 90f);
-
-        public enum Direction
-        {
-            North,
-            East,
-            South,
-            West
-        }
+       
 
         public bool ShowArrow;
 
@@ -94,26 +83,7 @@ namespace Tile
             }
 
             arrow.gameObject.SetActive(true);
-
-            switch (direction)
-            {
-                case Direction.North:
-                    arrow.localRotation = northRotation;
-
-                    break;
-                case Direction.South:
-                    arrow.localRotation = southRotation;
-
-                    break;
-                case Direction.East:
-                    arrow.localRotation = eastRotation;
-
-                    break;
-                case Direction.West:
-                    arrow.localRotation = westRotation;
-
-                    break;
-            }
+            arrow.localRotation = direction.GetRotation();
         }
 
         public Tile GetNextTile()

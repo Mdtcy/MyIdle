@@ -11,7 +11,7 @@ TagManager:
   - 
   - Water
   - UI
-  - 
+  - Enemy
   - 
   - 
   - 
@@ -47,6 +47,6 @@ TagManager:
   - name: Tile
     uniqueID: 1159435955
     locked: 0
-  - name: Enemy
+  - name: Entity
     uniqueID: 1378392733
     locked: 0

@@ -5,7 +5,7 @@ using UnityEditor;
 using System.IO;
 
 [CustomEditor(typeof(SpriteSync))]
-public class SPUM_Sync : Editor
+public class SPUM_Sync : UnityEditor.Editor
 {
     // Start is called before the first frame update
     public override void OnInspectorGUI()

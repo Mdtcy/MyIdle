@@ -7,8 +7,9 @@
  */
 
 #pragma warning disable 0649
-using System;
+
 using Sirenix.OdinInspector;
+using Test;
 using UnityEngine;
 
 namespace Tile
@@ -91,31 +92,31 @@ namespace Tile
                     {
                         if (y == 0)
                         {
-                            tile.GetComponent<Tile>().direction = Tile.Direction.East;
+                            tile.GetComponent<Tile>().direction = Direction.East;
                         }
                         else
                         {
-                            tile.GetComponent<Tile>().direction = Tile.Direction.South;
+                            tile.GetComponent<Tile>().direction = Direction.South;
                         }
                     }
                     else if (x == tileSize.x - 1)
                     {
                         if (y == tileSize.y - 1)
                         {
-                            tile.GetComponent<Tile>().direction = Tile.Direction.West;
+                            tile.GetComponent<Tile>().direction = Direction.West;
                         }
                         else
                         {
-                            tile.GetComponent<Tile>().direction = Tile.Direction.North;
+                            tile.GetComponent<Tile>().direction = Direction.North;
                         }
                     }
                     else if (y == tileSize.y - 1)
                     {
-                        tile.GetComponent<Tile>().direction = Tile.Direction.West;
+                        tile.GetComponent<Tile>().direction = Direction.West;
                     }
                     else if (y == 0)
                     {
-                        tile.GetComponent<Tile>().direction = Tile.Direction.East;
+                        tile.GetComponent<Tile>().direction = Direction.East;
                     }
 
                     tile.GetComponent<Tile>().RefreshArrow();

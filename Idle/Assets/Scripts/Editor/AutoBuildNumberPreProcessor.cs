@@ -13,7 +13,7 @@ using UnityEditor.Build.Reporting;
 /// <summary>
 /// 打包预处理工具，自动更新小版本号
 /// </summary>
-public class AutoBuildNumberPreProcessor : Editor, IPreprocessBuildWithReport
+public class AutoBuildNumberPreProcessor : UnityEditor.Editor, IPreprocessBuildWithReport
 {
     #region IPreprocessBuildWithReport
 

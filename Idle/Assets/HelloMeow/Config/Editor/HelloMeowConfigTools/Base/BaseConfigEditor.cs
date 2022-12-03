@@ -4,7 +4,7 @@ using HM.GameBase;
 namespace HM.ConfigTool
 {
     [CustomEditor(typeof(BaseConfig))]
-    public class BaseConfigEditor : Editor
+    public class BaseConfigEditor : UnityEditor.Editor
     {
         private ConfigSettings _setting;
 

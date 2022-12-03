@@ -7,7 +7,7 @@ using System.Linq;
 
 [CustomEditor(typeof(SPUM_Exporter))]
 [CanEditMultipleObjects]
-public class SPUM_ExporterEditor : Editor
+public class SPUM_ExporterEditor : UnityEditor.Editor
 {
     //field list
     SerializedProperty _unitPrefab;
