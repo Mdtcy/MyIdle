@@ -66,6 +66,9 @@ public class Tower : MonoBehaviour
         
         laserBeam.localPosition =
             turret.localPosition + 0.5f * d * laserBeam.up;
+        
+        
+        target.Enemy.ApplyDamage(damagePerSecond * Time.deltaTime);
     }
     private void FireProjectile()
     {
@@ -91,7 +94,9 @@ public class Tower : MonoBehaviour
 
         return true;
     }
-    static  Collider2D [] targetsBuffer = new  Collider2D [ 1 ];
+    static  Collider2D [] targetsBuffer = new  Collider2D [ 100 ];
+    [SerializeField, Range(1f, 100f)]
+    float damagePerSecond = 10f;
 
     bool AcquireTarget () {
         
@@ -99,7 +104,8 @@ public class Tower : MonoBehaviour
             transform.localPosition,  targetingRange, targetsBuffer, enemyLayerMask
         );
         if (hits > 0) {
-            target = targetsBuffer[0].GetComponent<TargetPoint>();
+            // 增加一点随机性 不总选择第一个 
+            target = targetsBuffer[Random.Range(0, hits)].GetComponent<TargetPoint>();
             Debug.Assert(target != null, "Targeted non-enemy!", targetsBuffer[0]);
             return true;
         }
@@ -113,7 +119,13 @@ public class Tower : MonoBehaviour
         if (target == null) {
             return false;
         }
-        
+
+        // todo 
+        if (target.Enemy.Health <= 0)
+        {
+            return false;
+        }
+
         // 如果超出了距离 则返回false
         Vector3 a = transform.localPosition;
         Vector3 b = target.Position;

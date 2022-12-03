@@ -25,6 +25,8 @@ namespace NewLife.Installers
         // [SerializeField]
         // private SpawnPool floatingTextPool;
 
+        [SerializeField] private SpawnPool enemyPool;
+        
         #endregion
 
         #region PROPERTIES
@@ -39,6 +41,8 @@ namespace NewLife.Installers
             // FloatingTextPool
             // Container.BindInstance(floatingTextPool).WithId(ZenjectId.FloatingTextPool).AsSingle();
 
+            Container.Bind<SpawnPool>().WithId("EnemyPool").FromInstance(enemyPool).AsSingle();
+            
             // so we can inject dependencies into pooled gameObjects and attached scripts.
             UseCustomInstanceDelegateForPoolManager();
         }

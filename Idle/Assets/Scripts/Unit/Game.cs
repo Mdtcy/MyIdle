@@ -3,6 +3,7 @@ using PathologicalGames;
 using Tile;
 using Unity.VisualScripting;
 using UnityEngine;
+using Zenject;
 
 namespace Test
 {
@@ -38,9 +39,12 @@ namespace Test
         [SerializeField, FloatRangeSlider(0.2f, 5f)]
         FloatRange enemySpeedRange = new FloatRange(1f);
         
+        [Inject(Id = "EnemyPool")]
+        private SpawnPool enemyPool;
+        
         void SpawnEnemy (Tile.Tile tile)
         {
-            var enemy = spawnPool.Spawn(pfbEnemy).GetComponent<Enemy>();
+            var enemy = enemyPool.Spawn(pfbEnemy).GetComponent<Enemy>();
             enemies.Add(enemy);
             enemy.SpawnOn(tile);
             enemy.Init(enemySpeedRange.RandomValueInRange);

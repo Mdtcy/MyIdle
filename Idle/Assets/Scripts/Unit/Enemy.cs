@@ -1,13 +1,23 @@
 using HM;
+using PathologicalGames;
+using Sirenix.OdinInspector;
 using UnityEngine;
+using Zenject;
 
 namespace Test
 {
     public class Enemy : MonoBehaviour
     {
+        [Inject(Id = "EnemyPool")]
+        private SpawnPool enemyPool;
+        
         Tile.Tile tileFrom, tileTo;
         Vector3 positionFrom, positionTo;
-        
+
+        [ReadOnly]
+        public float Health;
+
+        public float MaxHelth;
 
         private float speed;
         
@@ -15,7 +25,19 @@ namespace Test
         private Direction direction = default;
 
         float progress;
+        
+        public void ApplyDamage (float damage) {
+            Debug.Assert(damage >= 0f, "Negative damage applied.");
+            Health -= damage;
+        }
+        
         public bool GameUpdate () {
+            
+            if (Health <= 0f) {
+                enemyPool.Despawn(transform);
+                return false;
+            }
+            
             progress += Time.deltaTime * speed;
             while (progress >= 1f) {
                 tileFrom = tileTo;
@@ -34,6 +56,7 @@ namespace Test
         public void Init(float speed)
         {
             this.speed = speed;
+            this.Health = MaxHelth;
         }
 
         public void SpawnOn (Tile.Tile tile)
