@@ -1,6 +1,8 @@
 {
   "dependencies": {
-    "com.unity.collab-proxy": "1.17.2",
+    "com.rstar.rpg.modules": "https://github.com/L1247/RPG-Module.git?path=Assets/Modules",
+    "com.rstar.rstarutility": "https://github.com/L1247/rStarUtility.git?path=Assets/rStarUtility",
+    "com.unity.collab-proxy": "1.17.6",
     "com.unity.editorcoroutines": "1.0.0",
     "com.unity.feature.2d": "1.0.0",
     "com.unity.ide.rider": "3.0.16",
@@ -40,5 +42,18 @@
     "com.unity.modules.vr": "1.0.0",
     "com.unity.modules.wind": "1.0.0",
     "com.unity.modules.xr": "1.0.0"
-  }
+  },
+  "scopedRegistries": [
+    {
+      "name": "package.openupm.com",
+      "url": "https://package.openupm.com",
+      "scopes": [
+        "com.svermeulen.extenject",
+        "com.cysharp.unitask",
+        "com.cysharp.messagepipe",
+        "com.cysharp.messagepipe.zenject",
+        "com.neuecc.unirx"
+      ]
+    }
+  ]
 }

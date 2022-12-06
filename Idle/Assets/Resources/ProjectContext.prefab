@@ -9,7 +9,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2416780105777596070}
-  - component: {fileID: 3070962027077817532}
   m_Layer: 0
   m_Name: SceneController
   m_TagString: Untagged
@@ -32,19 +31,6 @@ Transform:
   m_Father: {fileID: 1730626086261176248}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &3070962027077817532
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 465863107210115891}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9f369493413543e6ba7609f0cab64eac, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  sceneProgressBarController: {fileID: 0}
 --- !u!1 &2401104630616965964
 GameObject:
   m_ObjectHideFlags: 0
@@ -57,7 +43,6 @@ GameObject:
   - component: {fileID: 2630356671116915339}
   - component: {fileID: 1736938806951377388}
   - component: {fileID: 6115130839174260282}
-  - component: {fileID: 3067044276929055973}
   m_Layer: 0
   m_Name: ProjectContext
   m_TagString: Untagged
@@ -96,7 +81,6 @@ MonoBehaviour:
   _scriptableObjectInstallers: []
   _monoInstallers:
   - {fileID: 1736938806951377388}
-  - {fileID: 3067044276929055973}
   _installerPrefabs: []
   _parentNewObjectsUnderContext: 1
   _editorReflectionBakingCoverageMode: 0
@@ -123,7 +107,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8772ff79aa9046088fcb29a6e4a03009, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sceneController: {fileID: 3070962027077817532}
 --- !u!114 &6115130839174260282
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -142,17 +125,3 @@ MonoBehaviour:
     - {fileID: 11400000, guid: 9adf281332d0e964583458a776f31397, type: 2}
     - {fileID: 11400000, guid: 974f4fb78bb1e8a48a2c7cb1b60e7a8b, type: 2}
   showDetail: 0
---- !u!114 &3067044276929055973
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2401104630616965964}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 364ef907070604c3b88f8b243d823d30, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  sceneLoaderPrefab: {fileID: 4123692637928319031, guid: 8e137778d5bbe49cd9baae19471b1415, type: 3}
-  transitionBackgroundPrefab: {fileID: 7665747294610992991, guid: 82353ade303904d2eaaac4c2daa11c27, type: 3}

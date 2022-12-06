@@ -1,0 +1,23 @@
+{
+    "name": "RPGModule.Skill.Example.Intermediate.2",
+    "rootNamespace": "RPGModule.Skill.Example.Intermediate.2",
+    "references": [
+        "Zenject",
+        "rStarUtility.Util.Runtime",
+        "rStar.Utility.UniRxExtension",
+        "rStarUtility.Generic.Infrastructure",
+        "rStarUtility.Generic.Installer",
+        "Unity.TextMeshPro",
+        "RPGModule.Skill.Infrastructure",
+        "RPGModule.Skill.Installer"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": false,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}

@@ -38,20 +38,28 @@ MonoBehaviour:
     - StompyRobot.SRF
     - MoreMountains.Tools
     - StompyRobot.SRDebugger
+    - UniRx
     - OSA
     - Assembly-CSharp
     - MoreMountains.Feedbacks
     - MoreMountains.Feedbacks.MMTools
     - Animancer
     - Animancer.FSM
+    - MessagePipe.Zenject
     - UniTask.DOTween
+    - MessagePipe
+    - rStar.Utility.UniRxExtension
     - XNode
     - Assembly-CSharp-firstpass
+    - rStarUtility.Generic.Implement
     - PriorityQueue
     - DOTween.Modules
     - UIGradient
+    - rStarUtility.Generic.Infrastructure
     - PoolManager
+    - rStarUtility.Generic.Installer
     - NativeShare.Runtime
+    - rStarUtility.Util.Runtime
     - small_zstring
     - SROptions
     - UniTask.Addressables
@@ -63,10 +71,12 @@ MonoBehaviour:
     - AssetUsageFinder
     - PsdPlugin
     - MoreMountains.Feedbacks.Editor
+    - rStatUtility.TestFramework
     - PoolManagerEditor
     - StompyRobot.SRF.Editor
     - StompyRobot.SRDebugger.Editor
     - EasySave3.Editor
+    - MessagePipe.Editor
     - XNodeEditor
     - HelloMeowEditor
     - ToolbarExtender.Editor
@@ -75,6 +85,8 @@ MonoBehaviour:
     - DOTweenPro.EditorScripts
     - NativeShare.Editor
     - Sirenix.OdinInspector.Modules.UnityMathematics
+    - rStar.Editor
+    - rStarUtility.Util.Editor
     showAdvancedSettings: 0
   addMgrToSceneAutomatically: 0
   autoUpdateReferences: 1

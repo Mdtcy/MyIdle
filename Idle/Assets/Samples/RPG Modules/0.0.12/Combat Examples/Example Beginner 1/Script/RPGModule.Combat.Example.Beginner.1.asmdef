@@ -1,0 +1,27 @@
+{
+    "name": "RPGModule.Combat.Example.Beginner.1",
+    "rootNamespace": "RPGModule.Combat.Example.Beginner.1",
+    "references": [
+        "Zenject",
+        "Unity.TextMeshPro",
+        "rStar.Utility.UniRxExtension",
+        "rStarUtility.Generic.Installer",
+        "rStarUtility.Generic.Infrastructure",
+        "RPGModule.Common",
+        "RPGModule.Skill.Installer",
+        "RPGModule.Skill.Infrastructure",
+        "RPGModule.Stat.Installer",
+        "RPGModule.Stat.Infrastructure",
+        "RPGModule.Combat.Installer",
+        "RPGModule.Combat.Infrastructure"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": false,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}

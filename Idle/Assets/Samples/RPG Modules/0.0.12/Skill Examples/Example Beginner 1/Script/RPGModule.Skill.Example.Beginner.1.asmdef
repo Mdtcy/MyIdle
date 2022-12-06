@@ -1,0 +1,22 @@
+{
+    "name": "RPGModule.Skill.Example.Beginner.1",
+    "rootNamespace": "RPGModule.Skill.Example.Beginner.1",
+    "references": [
+        "Zenject",
+        "rStar.Utility.UniRxExtension",
+        "Unity.TextMeshPro",
+        "RPGModule.Skill.Infrastructure",
+        "RPGModule.Skill.Installer",
+        "rStarUtility.Generic.Infrastructure",
+        "rStarUtility.Generic.Installer"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": false,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}
