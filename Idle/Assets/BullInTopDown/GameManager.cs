@@ -24,35 +24,35 @@ public class GameManager : MonoBehaviour
         root = GameObject.Find("GameObjectLayer");
 
         //创建地图
-        SceneVariants.RandomMap(Random.Range(10, 15), Random.Range(10, 15));
-        CreateMapGameObjects();
+        // SceneVariants.RandomMap(Random.Range(10, 15), Random.Range(10, 15));
+        // CreateMapGameObjects();
 
-        //创建主角
-        Vector3 playerPos = SceneVariants.map.GetRandomPosForCharacter(new RectInt(0, 0, SceneVariants.map.MapWidth(), SceneVariants.map.MapHeight()));
-        mainCharacter =
-            this.CreateCharacter(
-                                 "FemaleGunner", 1, new Vector3(),
-                                 new ChaProperty(100, Random.Range(5000, 7000), 600, Random.Range(50, 70)),
-                                 0
-                                ); //这里必须是new Vector3()因为相机跟随的设置问题
-        mainCharacter.AddComponent<PlayerController>().mainCamera = Camera.main;
-
-        //镜头跟随
-        GameObject.Find("Main Camera").GetComponent<CamFollow>().SetFollowCharacter(mainCharacter);
-        //ui血量捕捉，别问我这是什么狗屎了，我也觉得狗屎
-        GameObject.Find("PlayerHP").GetComponent<PlayerStateListener>().playerGameObject = mainCharacter;
-
-        //再设置主角位置
-        mainCharacter.transform.position = playerPos;
-        ChaState mcs = mainCharacter.GetComponent<ChaState>();
-        mcs.LearnSkill(DesingerTables.Skill.data["fire"]);
-        mcs.LearnSkill(DesingerTables.Skill.data["roll"]);
-        mcs.LearnSkill(DesingerTables.Skill.data["spaceMonkeyBall"]);
-        mcs.LearnSkill(DesingerTables.Skill.data["homingMissle"]);
-        mcs.LearnSkill(DesingerTables.Skill.data["cloakBoomerang"]);
-        mcs.LearnSkill(DesingerTables.Skill.data["teleportBullet"]);
-        mcs.LearnSkill(DesingerTables.Skill.data["grenade"]);
-        mcs.LearnSkill(DesingerTables.Skill.data["explosiveBarrel"]);
+        // //创建主角
+        // Vector3 playerPos = SceneVariants.map.GetRandomPosForCharacter(new RectInt(0, 0, SceneVariants.map.MapWidth(), SceneVariants.map.MapHeight()));
+        // mainCharacter =
+        //     this.CreateCharacter(
+        //                          "FemaleGunner", 1, new Vector3(),
+        //                          new ChaProperty(100, Random.Range(5000, 7000), 600, Random.Range(50, 70)),
+        //                          0
+        //                         ); //这里必须是new Vector3()因为相机跟随的设置问题
+        // mainCharacter.AddComponent<PlayerController>().mainCamera = Camera.main;
+        //
+        // //镜头跟随
+        // GameObject.Find("Main Camera").GetComponent<CamFollow>().SetFollowCharacter(mainCharacter);
+        // //ui血量捕捉，别问我这是什么狗屎了，我也觉得狗屎
+        // GameObject.Find("PlayerHP").GetComponent<PlayerStateListener>().playerGameObject = mainCharacter;
+        //
+        // //再设置主角位置
+        // mainCharacter.transform.position = playerPos;
+        // ChaState mcs = mainCharacter.GetComponent<ChaState>();
+        // mcs.LearnSkill(DesingerTables.Skill.data["fire"]);
+        // mcs.LearnSkill(DesingerTables.Skill.data["roll"]);
+        // mcs.LearnSkill(DesingerTables.Skill.data["spaceMonkeyBall"]);
+        // mcs.LearnSkill(DesingerTables.Skill.data["homingMissle"]);
+        // mcs.LearnSkill(DesingerTables.Skill.data["cloakBoomerang"]);
+        // mcs.LearnSkill(DesingerTables.Skill.data["teleportBullet"]);
+        // mcs.LearnSkill(DesingerTables.Skill.data["grenade"]);
+        // mcs.LearnSkill(DesingerTables.Skill.data["explosiveBarrel"]);
 
         //【test】给主角添加火焰护盾的aoe
         // this.CreateAoE(new AoeLauncher(

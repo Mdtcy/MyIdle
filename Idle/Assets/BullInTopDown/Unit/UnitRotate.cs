@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 
@@ -22,7 +20,8 @@ public class UnitRotate : MonoBehaviour
 
     private float targetDegree = 0.00f;  //目标转到多少度，因为旋转发生在围绕y轴旋转，所以只有y就足够了
 
-    void FixedUpdate() {
+    void FixedUpdate()
+    {
         if (this.canRotate == false || DoneRotate() == true) return;
 
         float sDeg = transform.rotation.eulerAngles.z;

@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using HM;
 using UnityEngine;
 
 namespace DesignerScripts
@@ -9,31 +10,46 @@ namespace DesignerScripts
     ///</summary>
     public class Buff{
         public static Dictionary<string, BuffOnOccur> onOccurFunc = new Dictionary<string, BuffOnOccur>(){
-            
+
         };
         public static Dictionary<string, BuffOnRemoved> onRemovedFunc = new Dictionary<string, BuffOnRemoved>(){
-            {"TeleportCarrier", TeleportCarrier}
+            // {"TeleportCarrier", TeleportCarrier}
         };
-        public static Dictionary<string, BuffOnTick> onTickFunc = new Dictionary<string, BuffOnTick>(){
-            {"BarrelDurationLose", BarrelDurationLose}
+
+        public static Dictionary<string, BuffOnTick> onTickFunc = new Dictionary<string, BuffOnTick>()
+        {
+            // {"BarrelDurationLose", BarrelDurationLose}
+            {
+                "FireBullet", FireBullet
+            }
         };
-        public static Dictionary<string, BuffOnCast> onCastFunc = new Dictionary<string, BuffOnCast>(){
+
+        public static Dictionary<string, BuffOnCast> onCastFunc = new Dictionary<string, BuffOnCast>()
+        {
             {"ReloadAmmo", ReloadAmmo},
             {"FireTeleportBullet", FireTeleportBullet}
         };
         public static Dictionary<string, BuffOnHit> onHitFunc = new Dictionary<string, BuffOnHit>(){
-            
+
         };
         public static Dictionary<string, BuffOnBeHurt> beHurtFunc = new Dictionary<string, BuffOnBeHurt>(){
             {"OnlyTakeOneDirectDamage", OnlyTakeOneDirectDamage}
         };
         public static Dictionary<string, BuffOnKill> onKillFunc = new Dictionary<string, BuffOnKill>(){
-            
+
         };
-        public static Dictionary<string, BuffOnBeKilled> beKilledFunc = new Dictionary<string, BuffOnBeKilled>(){
+
+        public static Dictionary<string, BuffOnBeKilled> beKilledFunc = new Dictionary<string, BuffOnBeKilled>()
+        {
             {"BarrelExplosed", BarrelExplosed}
         };
 
+        private static void FireBullet(BuffObj buff)
+        {
+            var chaState = buff.carrier.GetComponent<ChaState>();
+            HMLog.Assert(chaState!=null, $"{buff.carrier.name}调用FireBullet但是身上没有ChaState");
+            // todo 创建一个子弹
+        }
 
         ///<summary>
         ///onCast
@@ -42,7 +58,7 @@ namespace DesignerScripts
         ///</summary>
         private static TimelineObj ReloadAmmo(BuffObj buff, SkillObj skill, TimelineObj timeline){
             ChaState cs = buff.carrier.GetComponent<ChaState>();
-            return (cs.resource.Enough(skill.model.cost) == true) ? timeline : 
+            return (cs.resource.Enough(skill.model.cost) == true) ? timeline :
                 new TimelineObj(DesingerTables.Timeline.data["skill_reload"], buff.carrier, new object[0]);
         }
 
@@ -55,7 +71,7 @@ namespace DesignerScripts
             if (skill.model.id != "teleportBullet") return timeline;
             GameObject firedBullet = buff.buffParam.ContainsKey("firedBullet") ? (GameObject)buff.buffParam["firedBullet"] : null;
             ChaState cs = buff.carrier.GetComponent<ChaState>();
-            
+
             if (firedBullet == null){
                 buff.buffParam["firedBullet"] = null;
                 return timeline;
@@ -127,13 +143,13 @@ namespace DesignerScripts
                 new AoeModel(
                     "BoomExplosive", "", new string[0], 0, false,
                     "CreateSightEffect", new object[]{"Effect/Explosion_A"},
-                    "BarrelExplosed", new object[0], 
+                    "BarrelExplosed", new object[0],
                     "", new object[0],  //tick
                     "", new object[0],  //chaEnter
                     "", new object[0],  //chaLeave
                     "", new object[0],  //bulletEnter
                     "", new object[0]   //bulletLeave
-                ), 
+                ),
                 aoeCaster, buff.carrier.transform.position, 2.2f, 0.5f, 0,
                 null, null, new Dictionary<string, object>(){
                     {"Barrel", buff.carrier}

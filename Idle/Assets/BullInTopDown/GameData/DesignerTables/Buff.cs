@@ -52,7 +52,20 @@ namespace DesingerTables
                 "", new object[0],  //kill
                 "BarrelExplosed", new object[0],  //dead
                 ChaControlState.stun, null  //桶子也是被昏迷的
-            )}
+            )},
+            {
+                "AutoAttack", new BuffModel("AutoAttack", "自动攻击", new string[] {"Passive"}, -1, 1, 2.0f,
+                                                 "", new object[0],                        //occur
+                                                 "", new object[0],                        //remove
+                                                 "AutoAttack", new object[0],      //tick
+                                                 "", new object[0],                        //cast
+                                                 "", new object[0],                        //hit
+                                                 "", new object[0], //hurt
+                                                 "", new object[0],                        //kill
+                                                 "", new object[0],          //dead
+                                                 ChaControlState.origin, null              //桶子也是被昏迷的
+                                                )
+            }
         };
     }
 }

@@ -1,4 +1,5 @@
 using System;
+using System.Collections.Generic;
 using PathologicalGames;
 using Tile;
 using Unity.VisualScripting;
@@ -29,7 +30,7 @@ namespace Test
             enemies.GameUpdate();
             // Physics.SyncTransforms();
             towers.GameUpdate();
-            
+
             if (Input.GetMouseButtonDown(0)) {
                 HandleTouch();
             }
@@ -38,10 +39,10 @@ namespace Test
         // todo
         [SerializeField, FloatRangeSlider(0.2f, 5f)]
         FloatRange enemySpeedRange = new FloatRange(1f);
-        
+
         [Inject(Id = "EnemyPool")]
         private SpawnPool enemyPool;
-        
+
         void SpawnEnemy (Tile.Tile tile)
         {
             var enemy = enemyPool.Spawn(pfbEnemy).GetComponent<Enemy>();
@@ -51,12 +52,49 @@ namespace Test
         }
 
         [SerializeField] private Transform pfbTower;
-        
+
+        [SerializeField]
+        private Transform pfbChaState;
+
+
         void SpawnTower(Tile.Tile tile)
         {
-            var tower = spawnPool.Spawn(pfbTower).GetComponent<Tower>();
-            towers.Add(tower);
-            tower.transform.position = tile.transform.position;
+            // var tower = spawnPool.Spawn(pfbTower).GetComponent<Tower>();
+            // towers.Add(tower);
+            // tower.transform.position = tile.transform.position;
+
+
+            var chaObj = spawnPool.Spawn(pfbChaState);
+            chaObj.transform.position = tile.transform.position;
+
+            ChaState cs = chaObj.GetComponent<ChaState>();
+
+            if (cs)
+            {
+                ChaProperty baseProp = new ChaProperty(0, 100, 0, 10, 1);
+                string[]    tags     = {"Tower"};
+                int         side     = 0;
+
+                cs.InitBaseProp(baseProp);
+                cs.side = side;
+                Dictionary<string, AnimInfo> aInfo = new Dictionary<string, AnimInfo>();
+
+                // if (unitAnimInfo != "" && DesingerTables.UnitAnimInfo.data.ContainsKey(unitAnimInfo))
+                // {
+                //     aInfo = DesingerTables.UnitAnimInfo.data[unitAnimInfo];
+                // }
+                var tower = spawnPool.Spawn(pfbTower);
+
+                cs.SetView(tower.gameObject, aInfo);
+                if (tags != null) cs.tags = tags;
+            }
+
+            // chaObj.transform.position = tile.transform.position;
+            // float degree = 0;
+            // chaObj.transform.RotateAround(chaObj.transform.position, Vector3.up, degree);
+            //
+            // return chaObj;
+
         }
 
         void HandleTouch () {
@@ -67,11 +105,11 @@ namespace Test
             if (hit.collider != null) {
                 var tile =
                     hit.collider.GetComponent<Tile.Tile>();
-             
+
                 if (tile != null)
                 {
                     if (tile.Type == Tile.Tile.TileType.Road)
-                    { 
+                    {
                         SpawnEnemy(tile);
                     }
                     else if(tile.Type == Tile.Tile.TileType.Normal)

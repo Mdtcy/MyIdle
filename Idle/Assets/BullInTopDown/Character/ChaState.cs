@@ -1,4 +1,3 @@
-using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -159,7 +158,6 @@ public class ChaState : MonoBehaviour
     ///</summary>
     public List<BuffObj> buffs = new List<BuffObj>();
 
-
     private UnitMove unitMove;
     private UnitAnim unitAnim;
     private UnitRotate unitRotate;
@@ -176,7 +174,54 @@ public class ChaState : MonoBehaviour
         AttrRecheck();
     }
 
-    void FixedUpdate()
+    private void OnBuffUpdate(float timePassed)
+    {
+        //对身上的buff进行管理
+        List<BuffObj> toRemove = new List<BuffObj>();
+
+        for (int i = 0; i < this.buffs.Count; i++)
+        {
+            if (buffs[i].permanent == false) buffs[i].duration -= timePassed;
+            buffs[i].timeElapsed += timePassed;
+
+            if (buffs[i].model.tickTime > 0 && buffs[i].model.onTick != null)
+            {
+                //float取模不精准，所以用x1000后的整数来
+                if (Mathf.RoundToInt(buffs[i].timeElapsed    * 1000) %
+                    Mathf.RoundToInt(buffs[i].model.tickTime * 1000) ==
+                    0)
+                {
+                    buffs[i].model.onTick(buffs[i]);
+                    buffs[i].ticked += 1;
+                }
+            }
+
+            //只要duration <= 0，不管是否是permanent都移除掉
+            if (buffs[i].duration <= 0 || buffs[i].stack <= 0)
+            {
+                if (buffs[i].model.onRemoved != null)
+                {
+                    buffs[i].model.onRemoved(buffs[i]);
+                }
+
+                toRemove.Add(buffs[i]);
+            }
+        }
+
+        if (toRemove.Count > 0)
+        {
+            for (int i = 0; i < toRemove.Count; i++)
+            {
+                this.buffs.Remove(toRemove[i]);
+            }
+
+            AttrRecheck();
+        }
+
+        toRemove = null;
+    }
+
+    private void FixedUpdate()
     {
         float timePassed = Time.fixedDeltaTime;
         if (dead == false)
@@ -195,62 +240,34 @@ public class ChaState : MonoBehaviour
                 }
             }
 
-            //对身上的buff进行管理
-            List<BuffObj> toRemove = new List<BuffObj>();
-            for (int i = 0; i < this.buffs.Count; i++)
-            {
-                if (buffs[i].permanent == false) buffs[i].duration -= timePassed;
-                buffs[i].timeElapsed += timePassed;
-
-                if (buffs[i].model.tickTime > 0 && buffs[i].model.onTick != null)
-                {
-                    //float取模不精准，所以用x1000后的整数来
-                    if (Mathf.RoundToInt(buffs[i].timeElapsed * 1000) %
-                        Mathf.RoundToInt(buffs[i].model.tickTime * 1000) == 0)
-                    {
-                        buffs[i].model.onTick(buffs[i]);
-                        buffs[i].ticked += 1;
-                    }
-                }
-
-                //只要duration <= 0，不管是否是permanent都移除掉
-                if (buffs[i].duration <= 0 || buffs[i].stack <= 0)
-                {
-                    if (buffs[i].model.onRemoved != null)
-                    {
-                        buffs[i].model.onRemoved(buffs[i]);
-                    }
-
-                    toRemove.Add(buffs[i]);
-                }
-            }
-
-            if (toRemove.Count > 0)
-            {
-                for (int i = 0; i < toRemove.Count; i++)
-                {
-                    this.buffs.Remove(toRemove[i]);
-                }
-
-                AttrRecheck();
-            }
-
-            toRemove = null;
+            OnBuffUpdate(timePassed);
 
             //给各个系统发消息
             bool wishToMove = moveOrder != Vector3.zero;
+
             if (wishToMove == true)
+            {
                 _wishToMoveDegree = Mathf.Atan2(moveOrder.x, moveOrder.z) * 180 / Mathf.PI;
+            }
 
             ChaControlState curCS = this.controlState; // _controlState + timelineControlState;
 
             //首先是合并移动信息，发送给UnitMove
             bool tryRun = curCS.canMove == true && moveOrder != Vector3.zero;
             float tryMoveDegree = Mathf.Atan2(moveOrder.x, moveOrder.z) * 180 / Mathf.PI;
-            if (tryMoveDegree > 180) tryMoveDegree -= 360;
+
+            if (tryMoveDegree > 180)
+            {
+                tryMoveDegree -= 360;
+            }
+
             if (unitMove)
             {
-                if (curCS.canMove == false) moveOrder = Vector3.zero;
+                if (curCS.canMove == false)
+                {
+                    moveOrder = Vector3.zero;
+                }
+
                 int fmIndex = 0;
                 while (fmIndex < forceMove.Count)
                 {
@@ -286,34 +303,35 @@ public class ChaState : MonoBehaviour
                 forceRotate.Clear();
             }
 
-            //再是动画处理
-            if (unitAnim)
-            {
-                unitAnim.timeScale = this.actionSpeed;
-                //先计算默认（规则下）的动画，并且添加到动画组
-                if (tryRun == false)
-                {
-                    animOrder.Add("Stand"); //如果没有要求移动，就用站立
-                }
-                else
-                {
-                    string tt = Utils.GetTailStringByDegree(transform.rotation.eulerAngles.y, tryMoveDegree);
-                    animOrder.Add("Move" + tt);
-                }
-
-                //送给动画系统处理
-                for (int i = 0; i < animOrder.Count; i++)
-                {
-                    unitAnim.Play(animOrder[i]);
-                }
-
-                animOrder.Clear();
-            }
-
-            if (animator)
-            {
-                animator.speed = this.actionSpeed;
-            }
+            // todo
+            // //再是动画处理
+            // if (unitAnim)
+            // {
+            //     unitAnim.timeScale = this.actionSpeed;
+            //     //先计算默认（规则下）的动画，并且添加到动画组
+            //     if (tryRun == false)
+            //     {
+            //         animOrder.Add("Stand"); //如果没有要求移动，就用站立
+            //     }
+            //     else
+            //     {
+            //         string tt = Utils.GetTailStringByDegree(transform.rotation.eulerAngles.y, tryMoveDegree);
+            //         animOrder.Add("Move" + tt);
+            //     }
+            //
+            //     //送给动画系统处理
+            //     for (int i = 0; i < animOrder.Count; i++)
+            //     {
+            //         unitAnim.Play(animOrder[i]);
+            //     }
+            //
+            //     animOrder.Clear();
+            // }
+            //
+            // if (animator)
+            // {
+            //     animator.speed = this.actionSpeed;
+            // }
         }
         else
         {
@@ -649,12 +667,14 @@ public class ChaState : MonoBehaviour
         if (view == null) return;
         synchronizedUnits();
         view.transform.SetParent(viewContainer.transform);
-        view.transform.position = new Vector3(0, this.gameObject.transform.position.y, 0);
-        this.gameObject.transform.position = new Vector3(
-            this.gameObject.transform.position.x,
-            0,
-            this.gameObject.transform.position.z
-        );
+
+        // view.transform.position = new Vector3(0, this.gameObject.transform.position.y, 0);
+        // this.gameObject.transform.position = new Vector3(
+        //     this.gameObject.transform.position.x,
+        //     0,
+        //     this.gameObject.transform.position.z
+        // );
+        view.transform.localPosition                      = Vector3.zero;
         this.gameObject.GetComponent<UnitAnim>().animInfo = animInfo;
     }
 
