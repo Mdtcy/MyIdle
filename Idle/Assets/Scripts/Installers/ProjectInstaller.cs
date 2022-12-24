@@ -20,6 +20,7 @@ using NewLife.BusinessLogic.Item;
 using NewLife.BusinessLogic.Request;
 using NewLife.Config.Helper;
 using NewLife.UI.SRDebuggers;
+using Test;
 using UnityEngine;
 using Zenject;
 
@@ -147,6 +148,9 @@ namespace NewLife.Installers
             SignalBusInstaller.Install(Container);
             Container.DeclareSignal<OnInventoryLoadedSignal>();
             Container.DeclareSignal<OnUserLoginSignal>();
+
+            // ConbactTest
+            Container.DeclareSignal<OnHpUpdatedSignal>();
         }
 
         #endregion

@@ -8,6 +8,7 @@
 
 #pragma warning disable 0649
 
+using Game.Projectile;
 using HM;
 using NewLife.UI.AudioManager;
 using PathologicalGames;
@@ -26,7 +27,10 @@ namespace NewLife.Installers
         // private SpawnPool floatingTextPool;
 
         [SerializeField] private SpawnPool enemyPool;
-        
+
+        [SerializeField]
+        private ProjectilePool projectilePool;
+
         #endregion
 
         #region PROPERTIES
@@ -42,7 +46,9 @@ namespace NewLife.Installers
             // Container.BindInstance(floatingTextPool).WithId(ZenjectId.FloatingTextPool).AsSingle();
 
             Container.Bind<SpawnPool>().WithId("EnemyPool").FromInstance(enemyPool).AsSingle();
-            
+
+            Container.Bind<ProjectilePool>().FromInstance(projectilePool).AsSingle();
+
             // so we can inject dependencies into pooled gameObjects and attached scripts.
             UseCustomInstanceDelegateForPoolManager();
         }

@@ -66,28 +66,28 @@ namespace Test
 
             var chaObj = spawnPool.Spawn(pfbChaState);
             chaObj.transform.position = tile.transform.position;
-
-            ChaState cs = chaObj.GetComponent<ChaState>();
-
-            if (cs)
-            {
-                ChaProperty baseProp = new ChaProperty(0, 100, 0, 10, 1);
-                string[]    tags     = {"Tower"};
-                int         side     = 0;
-
-                cs.InitBaseProp(baseProp);
-                cs.side = side;
-                Dictionary<string, AnimInfo> aInfo = new Dictionary<string, AnimInfo>();
-
-                // if (unitAnimInfo != "" && DesingerTables.UnitAnimInfo.data.ContainsKey(unitAnimInfo))
-                // {
-                //     aInfo = DesingerTables.UnitAnimInfo.data[unitAnimInfo];
-                // }
-                var tower = spawnPool.Spawn(pfbTower);
-
-                cs.SetView(tower.gameObject, aInfo);
-                if (tags != null) cs.tags = tags;
-            }
+            //
+            // ChaState cs = chaObj.GetComponent<ChaState>();
+            //
+            // if (cs)
+            // {
+            //     ChaProperty baseProp = new ChaProperty(0, 100, 0, 10, 1);
+            //     string[]    tags     = {"Tower"};
+            //     int         side     = 0;
+            //
+            //     cs.InitBaseProp(baseProp);
+            //     cs.side = side;
+            //     Dictionary<string, AnimInfo> aInfo = new Dictionary<string, AnimInfo>();
+            //
+            //     // if (unitAnimInfo != "" && DesingerTables.UnitAnimInfo.data.ContainsKey(unitAnimInfo))
+            //     // {
+            //     //     aInfo = DesingerTables.UnitAnimInfo.data[unitAnimInfo];
+            //     // }
+            //     var tower = spawnPool.Spawn(pfbTower);
+            //
+            //     cs.SetView(tower.gameObject, aInfo);
+            //     if (tags != null) cs.tags = tags;
+            // }
 
             // chaObj.transform.position = tile.transform.position;
             // float degree = 0;
