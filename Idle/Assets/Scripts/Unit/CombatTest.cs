@@ -8,6 +8,7 @@
 
 #pragma warning disable 0649
 using System.ComponentModel;
+using Event;
 using Sirenix.OdinInspector;
 using UnityEngine;
 using Zenject;
@@ -50,13 +51,34 @@ namespace Test
         [Button]
         public void AddAddCriticalProbabilityWhenHpLower30ToEntity1()
         {
-            var buff = new AddCriticalProbabilityWhenHpLower30(Entity1)
+            var buff = new AddCriticalProbabilityWhenHpLower30Percent(Entity1)
             {
-                Permanent = true
+                Permanent = true,
+                Duration = 100
             };
 
             diContainer.Inject(buff);
             Entity1.BuffComponent.AddBuff(buff);
+        }
+
+        [Button]
+        public void EventHpHigher30Percent()
+        {
+            Entity1.BuffComponent.TriggerEvent(new EEventHpHigher30Percent());
+        }
+
+        private SignalBus signalBus;
+
+        [Button]
+        public void EventHpLower30Percent()
+        {
+            Entity1.BuffComponent.TriggerEvent(new EEventHpLower30Percent());
+        }
+
+        [Button]
+        public void ChangeEntity1Hp(int changed)
+        {
+            Entity1.ChangedHp(changed);
         }
 
         #endregion

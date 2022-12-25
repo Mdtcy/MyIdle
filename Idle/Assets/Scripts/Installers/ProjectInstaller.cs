@@ -148,9 +148,6 @@ namespace NewLife.Installers
             SignalBusInstaller.Install(Container);
             Container.DeclareSignal<OnInventoryLoadedSignal>();
             Container.DeclareSignal<OnUserLoginSignal>();
-
-            // ConbactTest
-            Container.DeclareSignal<OnHpUpdatedSignal>();
         }
 
         #endregion

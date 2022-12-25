@@ -8,6 +8,7 @@
 
 #pragma warning disable 0649
 using System.Collections.Generic;
+using Event;
 using UnityEngine;
 using UnityEngine.Pool;
 
@@ -140,6 +141,17 @@ namespace Test
             // todo 直接Remove 如果此时轮询时轮询到，是否会出现错误 一个做法是先复制一份？
         }
 
+        public void TriggerEvent<T>(T tEvent) where T : Event.EEvent
+        {
+            foreach (var buff in Buffs)
+            {
+                if (buff is IListenEvent<T> t)
+                {
+                    t.Trigger(tEvent);
+                }
+            }
+        }
+
         #endregion
 
         #region PROTECTED METHODS
@@ -205,7 +217,7 @@ namespace Test
         // 计算属性
         private void AttrRecheck()
         {
-            throw new System.NotImplementedException();
+            // todo
         }
 
         #endregion

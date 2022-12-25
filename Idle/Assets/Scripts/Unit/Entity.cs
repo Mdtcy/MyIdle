@@ -7,6 +7,7 @@
  */
 
 #pragma warning disable 0649
+using Event;
 using UnityEngine;
 using Zenject;
 
@@ -55,18 +56,7 @@ namespace Test
             {
                 float damage = attack;
 
-                float c = criticalProbability;
-
-                foreach (var buff in BuffComponent.Buffs)
-                {
-                    if (buff is AddCriticalProbability addCriticalProbability)
-                    {
-                        c += addCriticalProbability.CriticalProbabilityAdd;
-                    }
-                }
-
-                testC = c;
-                if (Random.Range(0f, 1f) <= c)
+                if (Random.Range(0f, 1f) <= criticalProbability)
                 {
                     damage *= criticalDamageRatio;
                 }
@@ -83,13 +73,28 @@ namespace Test
             }
             else
             {
-                hp -= damage;
-                signalBus.Fire(new OnHpUpdatedSignal(this));
+                ChangedHp(-damage);
             }
-
         }
-        [Inject]
-        private SignalBus signalBus;
+
+        public void ChangedHp(float changed)
+        {
+            BeforeChangeHp(changed);
+            hp += changed;
+        }
+
+
+        private void BeforeChangeHp(float changed)
+        {
+            if (hp / maxHp < 0.3f && (hp + changed)/ maxHp >= 0.3f)
+            {
+                BuffComponent.TriggerEvent(new EEventHpHigher30Percent());
+            }
+            else if (hp / maxHp >= 0.3f && (hp + changed) / maxHp < 0.3f)
+            {
+                BuffComponent.TriggerEvent(new EEventHpLower30Percent());
+            }
+        }
 
         public void OnDeath()
         {
