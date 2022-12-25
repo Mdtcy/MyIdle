@@ -23,6 +23,11 @@ namespace Test
             owener = entity;
         }
 
+        public override string Id()
+        {
+            return "AddCriticalProbabilityWhenHpLower30";
+        }
+
         public override void OnAdd()
         {
             signalBus.Subscribe<OnHpUpdatedSignal>(OnHpUpdated);
@@ -33,8 +38,7 @@ namespace Test
             }
             else
             {
-                var ss = owener.BuffComponent.GetBuffByTag("AddCriticalProbabilityWhenHpLower30");
-                if (ss == null)
+                if (owener.BuffComponent.GetBuffByTag("AddCriticalProbabilityWhenHpLower30") == null)
                 {
                     var buff = new AddCriticalProbability
                     {
@@ -56,11 +60,14 @@ namespace Test
             {
                 if (owener.hp / owener.maxHp >= 0.3f)
                 {
-                    owener.BuffComponent.RemoveBuffByTag("AddCriticalProbabilityWhenHpLower30");
+                    var buff = owener.BuffComponent.GetBuff("AddCriticalProbability");
+
+                    // owener.BuffComponent.RemoveBuffByTag("AddCriticalProbabilityWhenHpLower30");
+                    owener.BuffComponent.RemoveBuff("AddCriticalProbability");
                 }
                 else
                 {
-                    if (owener.BuffComponent.GetBuffByTag("AddCriticalProbabilityWhenHpLower30") == null)
+                    if (owener.BuffComponent.GetBuff("AddCriticalProbability") == null)
                     {
                         var buff = new AddCriticalProbability
                         {

@@ -7,13 +7,15 @@
  */
 
 #pragma warning disable 0649
-using UnityEngine;
-
 namespace Test
 {
     public class AddCriticalProbability : Buff
     {
         public float CriticalProbabilityAdd = 0.13f;
+        public override string Id()
+        {
+            return "AddCriticalProbability";
+        }
     }
 }
 #pragma warning restore 0649

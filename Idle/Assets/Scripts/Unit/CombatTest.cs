@@ -50,8 +50,10 @@ namespace Test
         [Button]
         public void AddAddCriticalProbabilityWhenHpLower30ToEntity1()
         {
-            var buff = new AddCriticalProbabilityWhenHpLower30(Entity1);
-            buff.Permanent = true;
+            var buff = new AddCriticalProbabilityWhenHpLower30(Entity1)
+            {
+                Permanent = true
+            };
 
             diContainer.Inject(buff);
             Entity1.BuffComponent.AddBuff(buff);

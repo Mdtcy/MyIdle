@@ -8,7 +8,6 @@
 
 #pragma warning disable 0649
 using System.Collections.Generic;
-using Cysharp.Threading.Tasks;
 using UnityEngine;
 using UnityEngine.Pool;
 
@@ -18,7 +17,7 @@ namespace Test
     {
         #region FIELDS
 
-        public List<Buff> Buffs = new List<Buff>();
+        public List<Buff> Buffs = new();
 
         #endregion
 
@@ -28,10 +27,86 @@ namespace Test
 
         #region PUBLIC METHODS
 
-        public void AddBuff(Buff buff)
+        public Buff GetBuff(string id, GameObject caster)
         {
-            Buffs.Add(buff);
-            buff.OnAdd();
+            foreach (var buff in Buffs)
+            {
+                if (id.Equals(buff.Id()) && caster == buff.Caster)
+                {
+                    return buff;
+                }
+            }
+
+            return null;
+        }
+
+        // todo 限定一个人身上只能有一个相同的buff  不要有不同人给的相同buff
+        public Buff GetBuff(string id)
+        {
+            foreach (var buff in Buffs)
+            {
+                if (id.Equals(buff.Id()))
+                {
+                    return buff;
+                }
+            }
+
+            return null;
+        }
+
+
+        public void RemoveBuff(Buff buff)
+        {
+            AddBuff(buff, -buff.Stack);
+        }
+
+        public void RemoveBuff(string id)
+        {
+            var buff = GetBuff(id);
+            RemoveBuff(buff);
+        }
+
+        /// <summary>
+        /// 为角色添加buff，当然，删除也是走这个的
+        /// </summary>
+        public void AddBuff(Buff buff, int stack = 1, bool durationSetTo = true)
+        {
+            Buff hasOne    = GetBuff(buff.Id(), buff.Caster);
+            int  modStack  = stack;
+            bool toRemove  = false;
+            Buff toAddBuff = null;
+
+            if (hasOne != null)
+            {
+                // 如果不是永久的Buff,需要更新持续时间
+                if (!hasOne.Permanent)
+                {
+                    hasOne.Duration = durationSetTo ? buff.Duration : (buff.Duration + hasOne.Duration);
+                }
+
+                int afterAdd = hasOne.Stack + modStack;
+                modStack = afterAdd >= hasOne.MaxStack
+                    ? (hasOne.MaxStack - hasOne.Stack)
+                    : (afterAdd <= 0 ? (0 - hasOne.Stack) : modStack);
+                hasOne.Stack     += modStack;
+                hasOne.Permanent =  buff.Permanent;
+                toAddBuff        =  hasOne;
+                toRemove         =  hasOne.Stack <= 0;
+            }
+            else
+            {
+                //新建
+                toAddBuff = buff;
+                Buffs.Add(toAddBuff);
+                Buffs.Sort();
+            }
+
+            if (toRemove == false)
+            {
+                toAddBuff.OnOccur(modStack);
+            }
+
+            AttrRecheck();
         }
 
         public Buff GetBuffByTag(string tag)
@@ -77,7 +152,7 @@ namespace Test
         {
             float timePassed = Time.fixedDeltaTime;
 
-            using (ListPool<Buff>.Get(out List<Buff> buffsToRemove))
+            using ( ListPool<Buff>.Get(out List<Buff> buffsToRemove))
             {
                 for (int i = 0; i < Buffs.Count; i++)
                 {
@@ -109,6 +184,7 @@ namespace Test
                     // Stack为0也会被移除掉
                     if (buff.Duration <= 0 || buff.Stack <= 0)
                     {
+                        buff.OnRemoved();
                         buffsToRemove.Add(buff);
                     }
                 }
@@ -118,7 +194,6 @@ namespace Test
                 {
                     foreach (var buffToRemove in buffsToRemove)
                     {
-                        buffToRemove.OnRemoved();
                         Buffs.Remove(buffToRemove);
                     }
 
