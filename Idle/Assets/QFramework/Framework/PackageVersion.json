@@ -1,0 +1,20 @@
+{
+    "Id": "",
+    "Version": "v1.0.25",
+    "Type": 0,
+    "AccessRight": 0,
+    "DownloadUrl": "",
+    "InstallPath": "Assets/QFramework/Framework/",
+    "IncludeFileOrFolders": [
+        "Assets/QFramework/Framework",
+        "Assets/QFramework/Toolkits"
+    ],
+    "DocUrl": "https://liangxiegame.com",
+    "Readme": {
+        "version": "v1.0.25",
+        "content": "更新 QFramework.cs",
+        "author": "liangxie",
+        "date": "2022 年 12 月 19 日 14:39",
+        "PackageId": ""
+    }
+}
