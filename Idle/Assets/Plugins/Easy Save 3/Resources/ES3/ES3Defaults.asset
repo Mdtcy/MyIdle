@@ -34,14 +34,18 @@ MonoBehaviour:
     - Animancer.Examples
     - DOTweenPro.Scripts
     - EasySave3
+    - QFramework.CoreKit
     - UniTask.Linq
     - StompyRobot.SRF
+    - UIKit
     - MoreMountains.Tools
     - StompyRobot.SRDebugger
+    - ResKit
     - OSA
     - Assembly-CSharp
     - MoreMountains.Feedbacks
     - MoreMountains.Feedbacks.MMTools
+    - AudioKit
     - Animancer
     - Animancer.FSM
     - UniTask.DOTween
@@ -54,14 +58,17 @@ MonoBehaviour:
     - NativeShare.Runtime
     - small_zstring
     - SROptions
+    - QFramework
     - UniTask.Addressables
     - MoreMountains.Tools.Feedbacks
     - com.votrubec.largenumbers
     - UniTask.TextMeshPro
     - MEC
     - MoreMountains.Tools.Editor
+    - UIKit.Editor
     - AssetUsageFinder
     - PsdPlugin
+    - ResKit.Editor
     - MoreMountains.Feedbacks.Editor
     - PoolManagerEditor
     - StompyRobot.SRF.Editor

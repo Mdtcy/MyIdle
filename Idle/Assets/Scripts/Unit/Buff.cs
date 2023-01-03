@@ -11,7 +11,7 @@ using UnityEngine;
 
 #pragma warning disable 0649
 
-namespace Test
+namespace IdleGame
 {
     public abstract class Buff : IComparable<Buff>
     {

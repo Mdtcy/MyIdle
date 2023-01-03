@@ -8,10 +8,12 @@
 
 #pragma warning disable 0649
 using Event;
+using IdleGame;
+using Test;
 using UnityEngine;
-using Zenject;
+using Random = UnityEngine.Random;
 
-namespace Test
+namespace IdleGame
 {
     public class Entity : MonoBehaviour
     {
@@ -30,6 +32,8 @@ namespace Test
         public float criticalDamageRatio;
 
         public float dodgeProbability;
+
+        public Side side;
 
 
         public BuffComponent BuffComponent;
@@ -104,6 +108,60 @@ namespace Test
         public void OnMiss()
         {
             Debug.Log($"{name} Miss");
+        }
+
+        [SerializeField]
+        private Transform pfbBullet;
+
+        [SerializeField]
+        private Transform firePoint;
+
+        [SerializeField]
+        private float fireInterval = 0.3f;
+
+        public float shootTimer;
+
+        public bool canShoot;
+        private void Update()
+        {
+            if (!canShoot)
+            {
+                return;
+            }
+
+            shootTimer -= Time.deltaTime;
+            while (shootTimer <= 0)
+            {
+                var entitys = FindObjectsOfType<Entity>();
+
+                if (entitys.Length > 0)
+                {
+                    foreach (var entity in entitys)
+                    {
+                        if (entity.side != side)
+                        {
+                            Shoot(entity);
+
+                            break;
+                        }
+                    }
+                }
+
+                shootTimer = fireInterval;
+            }
+        }
+
+        public void Shoot(Entity entity)
+        {
+            // 生成子弹
+            var bulletTransform = Instantiate(pfbBullet);
+            bulletTransform.transform.position = firePoint.position;
+
+            var bullet          = bulletTransform.GetComponent<Bullet>();
+
+            // 将bullet向敌人射过去
+
+            bullet.Init(this, entity);
         }
 
         #endregion

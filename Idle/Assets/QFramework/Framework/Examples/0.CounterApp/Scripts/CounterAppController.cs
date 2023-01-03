@@ -108,7 +108,16 @@ namespace QFramework.Example
         {
             var model = this.GetModel<ICounterAppModel>();
                 
-            model.Count.Value++;
+            model.Count.Value++; 
+            
+            if (model.Count == 10)
+            {
+                Debug.Log("触发 点击达人 成就");
+            }
+            else if (model.Count == 20)
+            {
+                Debug.Log("触发 点击专家 成就");
+            }
         }
     }
     

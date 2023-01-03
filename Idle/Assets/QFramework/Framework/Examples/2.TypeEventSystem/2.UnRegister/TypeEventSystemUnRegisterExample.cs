@@ -1,5 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using UnityEngine;
 
 namespace QFramework.Example
@@ -16,7 +15,7 @@ namespace QFramework.Example
         {
             TypeEventSystem.Global.Register<EventA>(OnEventA);
         }
-        
+
         void OnEventA(EventA e)
         {
             
@@ -39,8 +38,6 @@ namespace QFramework.Example
                 {
                     
                 }).AddToUnregisterList(this);
-                
-         
             }
 
             void OnDestroy()

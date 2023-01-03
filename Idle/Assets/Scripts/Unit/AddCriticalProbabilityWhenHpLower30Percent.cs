@@ -10,7 +10,7 @@ using Event;
 using UnityEngine;
 
 #pragma warning disable 0649
-namespace Test
+namespace IdleGame
 {
     public class AddCriticalProbabilityWhenHpLower30Percent : Buff,
                                                               IListenEvent<EEventHpLower30Percent>,

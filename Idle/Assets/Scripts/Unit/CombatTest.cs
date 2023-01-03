@@ -13,7 +13,7 @@ using Sirenix.OdinInspector;
 using UnityEngine;
 using Zenject;
 
-namespace Test
+namespace IdleGame
 {
     public class CombatTest : MonoBehaviour
     {

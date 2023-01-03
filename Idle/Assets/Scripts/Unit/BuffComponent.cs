@@ -12,7 +12,7 @@ using Event;
 using UnityEngine;
 using UnityEngine.Pool;
 
-namespace Test
+namespace IdleGame
 {
     public class BuffComponent : MonoBehaviour
     {
