@@ -7,8 +7,12 @@
  */
 
 #pragma warning disable 0649
+using DamageNumbersPro;
 using Event;
+using Game.FloatingText;
 using IdleGame;
+using QFramework;
+using Sirenix.OdinInspector;
 using Test;
 using UnityEngine;
 using Random = UnityEngine.Random;
@@ -18,6 +22,18 @@ namespace IdleGame
     public class Entity : MonoBehaviour
     {
         #region FIELDS
+
+        [BoxGroup("Floating Text")]
+        [SerializeField]
+        private DamageNumber normalDamage;
+
+        [BoxGroup("Floating Text")]
+        [SerializeField]
+        private DamageNumber criticalDamage;
+
+        [BoxGroup("Floating Text")]
+        [SerializeField]
+        private DamageNumber missDamage;
 
         public string name;
 
@@ -38,8 +54,6 @@ namespace IdleGame
 
         public BuffComponent BuffComponent;
 
-
-        public float testC;
         #endregion
 
         #region PROPERTIES
@@ -54,15 +68,27 @@ namespace IdleGame
             if (Random.Range(0f, 1f) <= dodgeProbability)
             {
                 other.OnMiss();
+                missDamage.Spawn(other.transform.position + new Vector3(0, 0.5f, 0), $"miss");
             }
             // 命中敌人
             else
             {
                 float damage = attack;
 
+                bool isCritical = false;
                 if (Random.Range(0f, 1f) <= criticalProbability)
                 {
-                    damage *= criticalDamageRatio;
+                    damage     *= criticalDamageRatio;
+                    isCritical =  true;
+                }
+
+                if (isCritical)
+                {
+                    criticalDamage.Spawn(other.transform.position + new Vector3(0, 0.5f, 0), $"-{damage}");
+                }
+                else
+                {
+                    normalDamage.Spawn(other.transform.position + new Vector3(0, 0.5f, 0), $"-{damage}");
                 }
 
                 other.OnHurt(damage);

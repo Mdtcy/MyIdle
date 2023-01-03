@@ -44,6 +44,7 @@ MonoBehaviour:
     - OSA
     - Assembly-CSharp
     - MoreMountains.Feedbacks
+    - DamageNumbersPro
     - MoreMountains.Feedbacks.MMTools
     - AudioKit
     - Animancer
