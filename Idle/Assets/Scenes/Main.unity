@@ -374,6 +374,10 @@ PrefabInstance:
       propertyPath: side
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2254818197933588390, guid: f900211caaae85843abaa9ff389ef319, type: 3}
+      propertyPath: fireInterval
+      value: 0.3
+      objectReference: {fileID: 0}
     - target: {fileID: 2254818197933588396, guid: f900211caaae85843abaa9ff389ef319, type: 3}
       propertyPath: m_RootOrder
       value: 5
