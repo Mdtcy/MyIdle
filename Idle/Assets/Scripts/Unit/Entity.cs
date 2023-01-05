@@ -7,13 +7,12 @@
  */
 
 #pragma warning disable 0649
+using System;
 using DamageNumbersPro;
 using Event;
-using Game.FloatingText;
-using IdleGame;
-using QFramework;
+using HM;
+using Numeric;
 using Sirenix.OdinInspector;
-using Test;
 using UnityEngine;
 using Random = UnityEngine.Random;
 
@@ -37,22 +36,17 @@ namespace IdleGame
 
         public string name;
 
-        public int    attack;
-
-        public float maxHp;
-
-        public float hp;
-
-        public float criticalProbability;
-
-        public float criticalDamageRatio;
-
-        public float dodgeProbability;
-
         public Side side;
 
 
         public BuffComponent BuffComponent;
+
+        // local
+        // 属性
+        private AttributesNumeric attributesNumeric;
+
+        // 资源
+        private ResourceNumeric resourceNumeric;
 
         #endregion
 
@@ -65,7 +59,7 @@ namespace IdleGame
         public void Attack(Entity other)
         {
             // 闪避判断
-            if (Random.Range(0f, 1f) <= dodgeProbability)
+            if (Random.Range(0f, 1f) <= attributesNumeric.Get(AttributeType.DodgeProbability))
             {
                 other.OnMiss();
                 missDamage.Spawn(other.transform.position + new Vector3(0, 0.5f, 0), $"miss");
@@ -73,12 +67,12 @@ namespace IdleGame
             // 命中敌人
             else
             {
-                float damage = attack;
+                float damage = attributesNumeric.Get(AttributeType.Atk);
 
                 bool isCritical = false;
-                if (Random.Range(0f, 1f) <= criticalProbability)
+                if (Random.Range(0f, 1f) <= attributesNumeric.Get(AttributeType.CriticalProbability))
                 {
-                    damage     *= criticalDamageRatio;
+                    damage     *= attributesNumeric.Get(AttributeType.CriticalDamage);
                     isCritical =  true;
                 }
 
@@ -97,7 +91,7 @@ namespace IdleGame
 
         public void OnHurt(float damage)
         {
-            if (damage >= hp)
+            if (damage >= resourceNumeric.Get(ResourceType.Hp))
             {
                 OnDeath();
             }
@@ -109,18 +103,18 @@ namespace IdleGame
 
         public void ChangedHp(float changed)
         {
-            BeforeChangeHp(changed);
-            hp += changed;
-        }
+            float hp    = resourceNumeric.Get(ResourceType.Hp);
+            float maxHp = attributesNumeric.Get(AttributeType.MaxHp);
 
+            float hpRatioBeforeHpChanged = hp             / maxHp;
+            float hpRatioAfterHpChanged  = (hp + changed) / maxHp;
+            resourceNumeric.Add(ResourceType.Hp, changed);
 
-        private void BeforeChangeHp(float changed)
-        {
-            if (hp / maxHp < 0.3f && (hp + changed)/ maxHp >= 0.3f)
+            if (hpRatioBeforeHpChanged < 0.3f && hpRatioAfterHpChanged >= 0.3f)
             {
                 BuffComponent.TriggerEvent(new EEventHpHigher30Percent());
             }
-            else if (hp / maxHp >= 0.3f && (hp + changed) / maxHp < 0.3f)
+            else if (hpRatioBeforeHpChanged >= 0.3f && hpRatioAfterHpChanged < 0.3f)
             {
                 BuffComponent.TriggerEvent(new EEventHpLower30Percent());
             }
@@ -190,6 +184,61 @@ namespace IdleGame
             bullet.Init(this, entity);
         }
 
+        /// <summary>
+        /// 修改属性
+        /// </summary>
+        /// <param name="attributeType"></param>
+        /// <param name="value"></param>
+        /// <param name="modifyNumericType"></param>
+        public void ModifyAttribute(AttributeType attributeType, float value, ModifyNumericType modifyNumericType)
+        {
+            switch (modifyNumericType)
+            {
+                case ModifyNumericType.Add:
+                {
+                    attributesNumeric.Add(attributeType, value);
+                    break;
+                }
+                case ModifyNumericType.Set:
+                {
+                    attributesNumeric.Set(attributeType, value);
+                    break;
+                }
+                default:
+                    HMLog.LogError("未定义的ModifyNumericType");
+                    break;
+            }
+        }
+
+        /// <summary>
+        /// 修改资源
+        /// </summary>
+        /// <param name="resourceType"></param>
+        /// <param name="value"></param>
+        /// <param name="modifyNumericType"></param>
+        public void ModifyResource(ResourceType resourceType, float value, ModifyNumericType modifyNumericType)
+        {
+            switch (modifyNumericType)
+            {
+                case ModifyNumericType.Add:
+                {
+                    resourceNumeric.Add(resourceType, value);
+
+                    break;
+                }
+                case ModifyNumericType.Set:
+                {
+                    resourceNumeric.Set(resourceType, value);
+
+                    break;
+                }
+                default:
+                    HMLog.LogError("未定义的ModifyNumericType");
+
+                    break;
+            }
+        }
+
         #endregion
 
         #region PROTECTED METHODS
@@ -197,6 +246,38 @@ namespace IdleGame
         #endregion
 
         #region PRIVATE METHODS
+
+        // todo 换个地方初始化吧
+        private void Awake()
+        {
+            Init();
+        }
+
+        // 初始
+        private void Init()
+        {
+            InitAttr();
+            InitResource();
+        }
+
+        // 初始属性
+        private void InitAttr()
+        {
+            attributesNumeric = new AttributesNumeric();
+            // todo 从配置中读取
+            ModifyAttribute(AttributeType.Atk, 10, ModifyNumericType.Set);
+            ModifyAttribute(AttributeType.MaxHp, 200, ModifyNumericType.Set);
+            ModifyAttribute(AttributeType.CriticalProbability, 0.3f, ModifyNumericType.Set);
+            ModifyAttribute(AttributeType.CriticalDamage, 1.5f, ModifyNumericType.Set);
+            ModifyAttribute(AttributeType.DodgeProbability, 0.1f, ModifyNumericType.Set);
+        }
+
+        // 初始资源
+        private void InitResource()
+        {
+            resourceNumeric = new ResourceNumeric();
+            ModifyResource(ResourceType.Hp, attributesNumeric.Get(AttributeType.MaxHp), ModifyNumericType.Set);
+        }
 
         #endregion
 
