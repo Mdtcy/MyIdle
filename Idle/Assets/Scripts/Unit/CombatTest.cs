@@ -7,9 +7,8 @@
  */
 
 #pragma warning disable 0649
-using System.ComponentModel;
-using Event;
 using Sirenix.OdinInspector;
+using Unit;
 using UnityEngine;
 using Zenject;
 
@@ -57,28 +56,47 @@ namespace IdleGame
                 Duration = 100
             };
 
-            diContainer.Inject(buff);
+            // diContainer.Inject(buff);
             Entity1.BuffComponent.AddBuff(buff);
         }
 
         [Button]
-        public void EventHpHigher30Percent()
+        public void AddAdd100AtkSpeedBuff()
         {
-            Entity1.BuffComponent.TriggerEvent(new EEventHpHigher30Percent());
+            var buff = new Add100AtkSpeedBuff(Entity1)
+            {
+                Permanent = true,
+                Duration  = 100
+            };
+
+            // diContainer.Inject(buff);
+            Entity1.BuffComponent.AddBuff(buff);
         }
 
-        private SignalBus signalBus;
-
         [Button]
-        public void EventHpLower30Percent()
+        public void AddAddPoint1CriticalProb()
         {
-            Entity1.BuffComponent.TriggerEvent(new EEventHpLower30Percent());
+            var buff = new AddPoint1CriticalProb(Entity1)
+            {
+                Permanent = true,
+                Duration  = 100
+            };
+
+            // diContainer.Inject(buff);
+            Entity1.BuffComponent.AddBuff(buff);
         }
 
         [Button]
-        public void ChangeEntity1Hp(int changed)
+        public void AddAddSpeedOnCrit()
         {
-            Entity1.ChangedHp(changed);
+            var buff = new AddAtkSpeedOnCrit(Entity1)
+            {
+                Permanent = true,
+                Duration  = 100
+            };
+
+            // diContainer.Inject(buff);
+            Entity1.BuffComponent.AddBuff(buff);
         }
 
         #endregion

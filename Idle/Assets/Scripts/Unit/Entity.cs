@@ -38,6 +38,8 @@ namespace IdleGame
 
         public Side side;
 
+        public Action ActOnAttributeChanged;
+        public Action ActOnResourceChanged;
 
         public BuffComponent BuffComponent;
 
@@ -78,6 +80,8 @@ namespace IdleGame
 
                 if (isCritical)
                 {
+                    BuffComponent.TriggerEvent(new EEventOnCrit());
+
                     criticalDamage.Spawn(other.transform.position + new Vector3(0, 0.5f, 0), $"-{damage}");
                 }
                 else
@@ -108,8 +112,7 @@ namespace IdleGame
 
             float hpRatioBeforeHpChanged = hp             / maxHp;
             float hpRatioAfterHpChanged  = (hp + changed) / maxHp;
-            resourceNumeric.Add(ResourceType.Hp, changed);
-
+            ModifyResource(ResourceType.Hp, changed, ModifyNumericType.Add);
             if (hpRatioBeforeHpChanged < 0.3f && hpRatioAfterHpChanged >= 0.3f)
             {
                 BuffComponent.TriggerEvent(new EEventHpHigher30Percent());
@@ -122,6 +125,7 @@ namespace IdleGame
 
         public void OnDeath()
         {
+            ModifyResource(ResourceType.Hp, 0f, ModifyNumericType.Set);
             Destroy(gameObject);
         }
 
@@ -132,12 +136,6 @@ namespace IdleGame
 
         [SerializeField]
         private Transform pfbBullet;
-
-        [SerializeField]
-        private Transform firePoint;
-
-        [SerializeField]
-        private float fireInterval = 0.3f;
 
         public float shootTimer;
 
@@ -167,21 +165,51 @@ namespace IdleGame
                     }
                 }
 
-                shootTimer = fireInterval;
+                ResetShootTimer();
             }
+        }
+
+        private void ResetShootTimer()
+        {
+            float attackSpeed      = GetAttribute(AttributeType.AttackSpeed);
+            float baseFireInterval = GetAttribute(AttributeType.BaseFireInterval);
+            // todo 每次攻击的时间 = BAT / [(初始攻击速度 + IAS) × 0.01] = 1 / (每秒攻击的次数) 100 是基础攻速
+            // todo https://dota2.fandom.com/zh/wiki/%E6%94%BB%E5%87%BB%E9%80%9F%E5%BA%A6?variant=zh
+            float fireInterval     = baseFireInterval / ((attackSpeed + 100) * 0.01f);
+            shootTimer = fireInterval;
         }
 
         public void Shoot(Entity entity)
         {
             // 生成子弹
             var bulletTransform = Instantiate(pfbBullet);
-            bulletTransform.transform.position = firePoint.position;
+            bulletTransform.transform.position = transform.position;
 
-            var bullet          = bulletTransform.GetComponent<Bullet>();
+            var bullet = bulletTransform.GetComponent<Bullet>();
 
             // 将bullet向敌人射过去
 
             bullet.Init(this, entity);
+        }
+
+        /// <summary>
+        /// 获取属性
+        /// </summary>
+        /// <param name="attributeType"></param>
+        /// <returns></returns>
+        public float GetAttribute(AttributeType attributeType)
+        {
+            return attributesNumeric.Get(attributeType);
+        }
+
+        /// <summary>
+        /// 获取资源
+        /// </summary>
+        /// <param name="resourceType"></param>
+        /// <returns></returns>
+        public float GetResource(ResourceType resourceType)
+        {
+            return resourceNumeric.Get(resourceType);
         }
 
         /// <summary>
@@ -208,6 +236,9 @@ namespace IdleGame
                     HMLog.LogError("未定义的ModifyNumericType");
                     break;
             }
+
+            // todo 放数值组件里吧
+            ActOnAttributeChanged?.Invoke();
         }
 
         /// <summary>
@@ -237,6 +268,8 @@ namespace IdleGame
 
                     break;
             }
+
+            ActOnResourceChanged?.Invoke();
         }
 
         #endregion
@@ -258,6 +291,8 @@ namespace IdleGame
         {
             InitAttr();
             InitResource();
+
+            ResetShootTimer();
         }
 
         // 初始属性
@@ -266,10 +301,12 @@ namespace IdleGame
             attributesNumeric = new AttributesNumeric();
             // todo 从配置中读取
             ModifyAttribute(AttributeType.Atk, 10, ModifyNumericType.Set);
-            ModifyAttribute(AttributeType.MaxHp, 200, ModifyNumericType.Set);
+            ModifyAttribute(AttributeType.MaxHp, 2000, ModifyNumericType.Set);
             ModifyAttribute(AttributeType.CriticalProbability, 0.3f, ModifyNumericType.Set);
             ModifyAttribute(AttributeType.CriticalDamage, 1.5f, ModifyNumericType.Set);
             ModifyAttribute(AttributeType.DodgeProbability, 0.1f, ModifyNumericType.Set);
+            ModifyAttribute(AttributeType.AttackSpeed, 0, ModifyNumericType.Set);
+            ModifyAttribute(AttributeType.BaseFireInterval, 1, ModifyNumericType.Set);
         }
 
         // 初始资源

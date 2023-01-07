@@ -20,6 +20,11 @@ namespace Numeric
         CriticalDamage = 3100,
 
         DodgeProbability = 4000,
+
+        // todo 20-700
+        AttackSpeed = 5000,
+
+        BaseFireInterval = 6000,
     }
 
     public class AttributesNumeric : NumericBase<AttributeType>

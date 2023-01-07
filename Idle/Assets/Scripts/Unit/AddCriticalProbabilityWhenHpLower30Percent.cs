@@ -7,7 +7,7 @@
  */
 
 using Event;
-using UnityEngine;
+using Numeric;
 
 #pragma warning disable 0649
 namespace IdleGame
@@ -16,8 +16,9 @@ namespace IdleGame
                                                               IListenEvent<EEventHpLower30Percent>,
                                                               IListenEvent<EEventHpHigher30Percent>
     {
-
         private Entity owener;
+
+        private float criticalProbabilityChanged;
 
         public AddCriticalProbabilityWhenHpLower30Percent(Entity entity)
         {
@@ -31,65 +32,36 @@ namespace IdleGame
 
         public override void OnOccur(int modStack)
         {
-            // if (Stack == 1 && modStack == 1)
-            // {
-            //     Debug.Log("OnAdd");
-            //
-            //     if (owener.hp / owener.maxHp >= 0.3f)
-            //     {
-            //         owener.BuffComponent.RemoveBuffByTag("AddCriticalProbabilityWhenHpLower30");
-            //     }
-            //     else
-            //     {
-            //         if (owener.BuffComponent.GetBuffByTag("AddCriticalProbabilityWhenHpLower30") == null)
-            //         {
-            //             var buff = new AddCriticalProbability
-            //             {
-            //                 Tag = "AddCriticalProbabilityWhenHpLower30"
-            //             };
-            //             owener.BuffComponent.AddBuff(buff);
-            //         }
-            //     }
-            // }
+            float ratio = owener.GetResource(ResourceType.Hp) / owener.GetAttribute(AttributeType.MaxHp);
+
+            if (ratio < 0.3)
+            {
+                Enable();
+            }
         }
-
-
-        // private void OnHpUpdated(OnHpUpdatedSignal signal)
-        // {
-        //     if (signal.Entity == owener)
-        //     {
-        //         if (owener.hp / owener.maxHp >= 0.3f)
-        //         {
-        //             var buff = owener.BuffComponent.GetBuff("AddCriticalProbability");
-        //
-        //             // owener.BuffComponent.RemoveBuffByTag("AddCriticalProbabilityWhenHpLower30");
-        //             owener.BuffComponent.RemoveBuff("AddCriticalProbability");
-        //         }
-        //         else
-        //         {
-        //             if (owener.BuffComponent.GetBuff("AddCriticalProbability") == null)
-        //             {
-        //                 var buff = new AddCriticalProbability
-        //                 {
-        //                     Tag = "AddCriticalProbabilityWhenHpLower30",
-        //                     Permanent = true
-        //                 };
-        //                 owener.BuffComponent.AddBuff(buff);
-        //             }
-        //         }
-        //     }
-        // }
 
         public void Trigger(EEventHpLower30Percent  t)
         {
-            Debug.Log("<30");
-
+            Enable();
         }
 
         public void Trigger(EEventHpHigher30Percent t)
         {
-            Debug.Log(">IEventHpHigher30Percent");
+            Disable();
+        }
 
+        private void Enable()
+        {
+            owener.ModifyAttribute(AttributeType.CriticalProbability,
+                                   -0.3f * Stack - criticalProbabilityChanged,
+                                   ModifyNumericType.Add);
+        }
+
+        private void Disable()
+        {
+            owener.ModifyAttribute(AttributeType.CriticalProbability,
+                                   -criticalProbabilityChanged,
+                                   ModifyNumericType.Add);
         }
     }
 }

@@ -9,6 +9,7 @@
 #pragma warning disable 0649
 using System.Collections.Generic;
 using Event;
+using HM.Extensions;
 using UnityEngine;
 using UnityEngine.Pool;
 
@@ -143,13 +144,17 @@ namespace IdleGame
 
         public void TriggerEvent<T>(T tEvent) where T : Event.EEvent
         {
-            foreach (var buff in Buffs)
+            var list = HM.GameBase.ListPool<Buff>.Claim();
+            list.AddRange(Buffs);
+            foreach (var buff in list)
             {
                 if (buff is IListenEvent<T> t)
                 {
                     t.Trigger(tEvent);
                 }
             }
+
+            list.ReleaseToPool();
         }
 
         #endregion

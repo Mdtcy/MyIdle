@@ -45,11 +45,6 @@ namespace IdleGame
 
         }
 
-        public virtual void OnAdd()
-        {
-
-        }
-
         public virtual void OnRemoved()
         {
 
