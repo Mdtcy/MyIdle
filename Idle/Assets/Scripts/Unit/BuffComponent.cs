@@ -137,7 +137,7 @@ namespace IdleGame
                 addBuffInfo.buffModel.OnOccur(toAddBuff, modStack);
             }
 
-            owener.AttrRecheck();
+            owener.ControlStateRecheck();
         }
 
         private int SortBuff(BuffObj x, BuffObj y)
@@ -233,7 +233,7 @@ namespace IdleGame
                         Buffs.Remove(buffToRemove);
                     }
 
-                    owener.AttrRecheck();
+                    owener.ControlStateRecheck();
                 }
             }
         }

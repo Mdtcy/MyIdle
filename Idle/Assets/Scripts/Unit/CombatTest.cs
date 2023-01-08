@@ -3,7 +3,7 @@
  * @email [ tktetb@163.com ]
  * @create date  2022年12月24日
  * @modify date 2022年12月24日
- * @desc [任务组UI]
+ * @desc []
  */
 
 #pragma warning disable 0649
@@ -70,6 +70,24 @@ namespace IdleGame
             // diContainer.Inject(buff);
             Entity1.BuffComponent.AddBuff(addBuffInfo);
         }
+
+        [Button]
+        public void AddStun()
+        {
+            var addBuffInfo = new AddBuffInfo(
+                                              new StunBuffModel(),
+                                              null,
+                                              null,
+                                              1,
+                                              3f,
+                                              true,
+                                              false,
+                                              null);
+
+            // diContainer.Inject(buff);
+            Entity1.BuffComponent.AddBuff(addBuffInfo);
+        }
+
 
         // [Button]
         // public void AddAddPoint1CriticalProb()

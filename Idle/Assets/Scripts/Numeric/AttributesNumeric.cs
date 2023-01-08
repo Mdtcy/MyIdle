@@ -15,11 +15,11 @@ namespace Numeric
 
         MaxHp = 2000,
 
-        CriticalProbability = 3000,
+        CriticalChance = 3000,
 
         CriticalDamage = 3100,
 
-        DodgeProbability = 4000,
+        DodgeChance = 4000,
 
         // todo 20-700
         AttackSpeed = 5000,

@@ -82,9 +82,9 @@ namespace IdleGame
             txtHp.text                  = $"当前生命值 : {Entity.GetResource(ResourceType.Hp)}";
             hpBar.maxValue              = Entity.GetAttribute(AttributeType.MaxHp);
             hpBar.value                 = Entity.GetResource(ResourceType.Hp);
-            txtCriticalProbability.text = $"暴击概率 : {Entity.GetAttribute(AttributeType.CriticalProbability)}";
+            txtCriticalProbability.text = $"暴击概率 : {Entity.GetAttribute(AttributeType.CriticalChance)}";
             txtCriticalDamage.text      = $"暴击伤害 : {Entity.GetAttribute(AttributeType.CriticalDamage)}";
-            txtDodgeProbability.text    = $"闪避概率 : {Entity.GetAttribute(AttributeType.DodgeProbability)}";
+            txtDodgeProbability.text    = $"闪避概率 : {Entity.GetAttribute(AttributeType.DodgeChance)}";
             txtAttackSpeed.text         = $"攻速 : {Entity.GetAttribute(AttributeType.AttackSpeed)}";
 
             float attackSpeed      = Entity.GetAttribute(AttributeType.AttackSpeed);

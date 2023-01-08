@@ -8,6 +8,7 @@
 
 using Damage;
 using Numeric;
+using Unit;
 using UnityEngine;
 
 #pragma warning disable 0649
@@ -58,10 +59,10 @@ namespace IdleGame.Buff
         // /// </summary>
         // public AttributesNumeric AttributesNumeric;
 
-        // ///<summary>
-        // ///buff对于角色的ChaControlState的影响
-        // ///</summary>
-        // public ChaControlState stateMod;
+        ///<summary>
+        ///buff对于角色的ChaControlState的影响
+        ///</summary>
+        public ChaControlState stateMod = ChaControlState.Orgin;
 
         ///<summary>
         ///buff在被添加、改变层数时候触发的事件

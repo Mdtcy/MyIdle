@@ -7,6 +7,7 @@
  */
 
 using Numeric;
+using Unit;
 
 #pragma warning disable 0649
 namespace IdleGame.Buff.BuffModels
@@ -21,6 +22,7 @@ namespace IdleGame.Buff.BuffModels
             maxStack          = 10;
             tags              = null;
             tickTime          = 0;
+            stateMod = ChaControlState.Orgin;
         }
 
         public override void OnOccur(BuffObj buff, int modifyStack)

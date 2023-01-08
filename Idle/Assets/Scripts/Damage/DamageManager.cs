@@ -86,7 +86,7 @@ namespace Damage
             int  dVal;
 
             var   attckEntity     = dInfo.attacker.GetComponent<Entity>();
-            float critProbability = attckEntity.GetAttribute(AttributeType.CriticalProbability);
+            float critProbability = attckEntity.GetAttribute(AttributeType.CriticalChance);
             float critDamage      = attckEntity.GetAttribute(AttributeType.CriticalDamage);
 
             bool isCrit = Random.Range(0.00f, 1.00f) <= critProbability;

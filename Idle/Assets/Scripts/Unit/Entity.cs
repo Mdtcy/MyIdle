@@ -11,6 +11,7 @@ using System;
 using Damage;
 using HM;
 using Numeric;
+using Unit;
 using UnityEngine;
 
 namespace IdleGame
@@ -27,6 +28,8 @@ namespace IdleGame
         public Action ActOnResourceChanged;
 
         public BuffComponent BuffComponent;
+
+        private ChaControlState controlState = new ChaControlState(true, true);
 
         // local
 
@@ -122,7 +125,6 @@ namespace IdleGame
 
         public float shootTimer;
 
-        public  bool canShoot;
         public  bool dead;
 
         ///<summary>
@@ -139,7 +141,7 @@ namespace IdleGame
 
         private void Update()
         {
-            if (!canShoot)
+            if (!controlState.canAttack)
             {
                 return;
             }
@@ -325,9 +327,9 @@ namespace IdleGame
             // todo 从配置中读取
             ModifyAttribute(AttributeType.Atk, 10, ModifyNumericType.Set);
             ModifyAttribute(AttributeType.MaxHp, 2000, ModifyNumericType.Set);
-            ModifyAttribute(AttributeType.CriticalProbability, 0.3f, ModifyNumericType.Set);
+            ModifyAttribute(AttributeType.CriticalChance, 0.3f, ModifyNumericType.Set);
             ModifyAttribute(AttributeType.CriticalDamage, 1.5f, ModifyNumericType.Set);
-            ModifyAttribute(AttributeType.DodgeProbability, 0.1f, ModifyNumericType.Set);
+            ModifyAttribute(AttributeType.DodgeChance, 0.1f, ModifyNumericType.Set);
             ModifyAttribute(AttributeType.AttackSpeed, 0, ModifyNumericType.Set);
             ModifyAttribute(AttributeType.BaseFireInterval, 1, ModifyNumericType.Set);
         }
@@ -355,26 +357,16 @@ namespace IdleGame
             return value >= resourceNumeric.Get(ResourceType.Hp);
         }
 
-        // todo 弄成计算状态吧 属性外部修改?
-        public void AttrRecheck()
+        // 状态计算
+        public void ControlStateRecheck()
         {
-            // todo 状态暂时不改
-            // _controlState.Origin();
-        //     this._prop.Zero();
-        //
-        //     for (var i = 0; i < BuffComponent.Buffs.Count; i++) buffProp[i].Zero();
-        //
-        //     for (int i = 0; i < this.buffs.Count; i++)
-        //     {
-        //         for (int j = 0; j < Mathf.Min(buffProp.Length, buffs[i].model.propMod.Length); j++)
-        //         {
-        //             buffProp[j] += buffs[i].model.propMod[j] * buffs[i].stack;
-        //         }
-        //
-        //         _controlState += buffs[i].model.stateMod;
-        //     }
-        //
-        //     this._prop = (this.baseProp + this.equipmentProp + this.buffProp[0]) * this.buffProp[1];
+            controlState.Origin();
+
+            for (int i = 0; i < this.BuffComponent.Buffs.Count; i++)
+            {
+                var buff = BuffComponent.Buffs[i];
+                controlState += buff.model.stateMod;
+            }
         }
     }
 }
