@@ -8,6 +8,9 @@
 
 #pragma warning disable 0649
 using System;
+using Damage;
+using DefaultNamespace;
+using Numeric;
 using Test;
 using UnityEngine;
 
@@ -81,7 +84,12 @@ namespace IdleGame
 
             if (entity.side != caster.side)
             {
-                caster.Attack(entity);
+                SceneVariants.CreateDamage(caster.gameObject,
+                                           target.gameObject,
+                                           new Damage.Damage(Mathf.CeilToInt(caster.GetAttribute(AttributeType.Atk))),
+                                           0,
+                                           new DamageInfoTag[] {DamageInfoTag.directDamage,}
+                                          );
                 Destroy(gameObject);
             }
         }

@@ -33,13 +33,13 @@ namespace IdleGame
         [Button]
         public void Entity1Attack2()
         {
-            Entity1.Attack(Entity2);
+            // Entity1.Attack(Entity2);
         }
 
         [Button]
         public void Entity2Attack1()
         {
-            Entity2.Attack(Entity1);
+            // Entity2.Attack(Entity1);
         }
 
 

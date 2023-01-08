@@ -46,78 +46,78 @@ namespace IdleGame
 
         #region PUBLIC METHODS
 
-        public void Attack(Entity other)
-        {
-            // 闪避判断
-            if (Random.Range(0f, 1f) <= attributesNumeric.Get(AttributeType.DodgeProbability))
-            {
-                other.OnMiss();
-            }
-            // 命中敌人
-            else
-            {
-                float damage = attributesNumeric.Get(AttributeType.Atk);
+        // public void Attack(Entity other)
+        // {
+        //     // 闪避判断
+        //     if (Random.Range(0f, 1f) <= attributesNumeric.Get(AttributeType.DodgeProbability))
+        //     {
+        //         other.OnMiss();
+        //     }
+        //     // 命中敌人
+        //     else
+        //     {
+        //         float damage = attributesNumeric.Get(AttributeType.Atk);
+        //
+        //         bool isCritical = false;
+        //         if (Random.Range(0f, 1f) <= attributesNumeric.Get(AttributeType.CriticalProbability))
+        //         {
+        //             damage     *= attributesNumeric.Get(AttributeType.CriticalDamage);
+        //             isCritical =  true;
+        //         }
+        //
+        //         if (isCritical)
+        //         {
+        //             // criticalDamage.Spawn(other.transform.position + new Vector3(0, 0.5f, 0), $"-{damage}");
+        //         }
+        //         else
+        //         {
+        //             // normalDamage.Spawn(other.transform.position + new Vector3(0, 0.5f, 0), $"-{damage}");
+        //         }
+        //
+        //         other.OnHurt(damage);
+        //     }
+        // }
 
-                bool isCritical = false;
-                if (Random.Range(0f, 1f) <= attributesNumeric.Get(AttributeType.CriticalProbability))
-                {
-                    damage     *= attributesNumeric.Get(AttributeType.CriticalDamage);
-                    isCritical =  true;
-                }
+        // public void OnHurt(float damage)
+        // {
+        //     if (damage >= resourceNumeric.Get(ResourceType.Hp))
+        //     {
+        //         OnDeath();
+        //     }
+        //     else
+        //     {
+        //         ChangedHp(-damage);
+        //     }
+        // }
 
-                if (isCritical)
-                {
-                    // criticalDamage.Spawn(other.transform.position + new Vector3(0, 0.5f, 0), $"-{damage}");
-                }
-                else
-                {
-                    // normalDamage.Spawn(other.transform.position + new Vector3(0, 0.5f, 0), $"-{damage}");
-                }
+        // public void ChangedHp(float changed)
+        // {
+        //     float hp    = resourceNumeric.Get(ResourceType.Hp);
+        //     float maxHp = attributesNumeric.Get(AttributeType.MaxHp);
+        //     //
+        //     // float hpRatioBeforeHpChanged = hp             / maxHp;
+        //     // float hpRatioAfterHpChanged  = (hp + changed) / maxHp;
+        //     ModifyResource(ResourceType.Hp, changed, ModifyNumericType.Add);
+        //     // if (hpRatioBeforeHpChanged < 0.3f && hpRatioAfterHpChanged >= 0.3f)
+        //     // {
+        //     //     BuffComponent.TriggerEvent(new EEventHpHigher30Percent());
+        //     // }
+        //     // else if (hpRatioBeforeHpChanged >= 0.3f && hpRatioAfterHpChanged < 0.3f)
+        //     // {
+        //     //     BuffComponent.TriggerEvent(new EEventHpLower30Percent());
+        //     // }
+        // }
 
-                other.OnHurt(damage);
-            }
-        }
-
-        public void OnHurt(float damage)
-        {
-            if (damage >= resourceNumeric.Get(ResourceType.Hp))
-            {
-                OnDeath();
-            }
-            else
-            {
-                ChangedHp(-damage);
-            }
-        }
-
-        public void ChangedHp(float changed)
-        {
-            float hp    = resourceNumeric.Get(ResourceType.Hp);
-            float maxHp = attributesNumeric.Get(AttributeType.MaxHp);
-            //
-            // float hpRatioBeforeHpChanged = hp             / maxHp;
-            // float hpRatioAfterHpChanged  = (hp + changed) / maxHp;
-            ModifyResource(ResourceType.Hp, changed, ModifyNumericType.Add);
-            // if (hpRatioBeforeHpChanged < 0.3f && hpRatioAfterHpChanged >= 0.3f)
-            // {
-            //     BuffComponent.TriggerEvent(new EEventHpHigher30Percent());
-            // }
-            // else if (hpRatioBeforeHpChanged >= 0.3f && hpRatioAfterHpChanged < 0.3f)
-            // {
-            //     BuffComponent.TriggerEvent(new EEventHpLower30Percent());
-            // }
-        }
-
-        public void OnDeath()
-        {
-            ModifyResource(ResourceType.Hp, 0f, ModifyNumericType.Set);
-            Destroy(gameObject);
-        }
-
-        public void OnMiss()
-        {
-            Debug.Log($"{name} Miss");
-        }
+        // public void OnDeath()
+        // {
+        //     ModifyResource(ResourceType.Hp, 0f, ModifyNumericType.Set);
+        //     Destroy(gameObject);
+        // }
+        //
+        // public void OnMiss()
+        // {
+        //     Debug.Log($"{name} Miss");
+        // }
 
         [SerializeField]
         private Transform pfbBullet;
