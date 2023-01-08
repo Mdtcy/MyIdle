@@ -8,7 +8,9 @@
 
 #pragma warning disable 0649
 using System.Collections.Generic;
+using IdleGame;
 using IdleGame.Buff;
+using Numeric;
 using UnityEngine;
 
 namespace Damage
@@ -40,13 +42,6 @@ namespace Damage
         public Damage damage;
 
         ///<summary>
-        ///是否暴击，这是游戏设计了有暴击的可能性存在。
-        ///这里记录一个总暴击率，随着buff的不断改写，最后这个暴击率会得到一个0-1的值，代表0%-100%。
-        ///最终处理的时候，会根据这个值来进行抉择，可以理解为，当这个值超过1的时候，buff就可以认为这次攻击暴击了。
-        ///</summary>
-        public float criticalRate;
-
-        ///<summary>
         ///是否命中，是否命中与是否暴击并不直接相关，都是单独的算法
         ///作为一个射击游戏，子弹命中敌人是一种技巧，所以在这里设计命中了还会miss是愚蠢的
         ///因此这里的hitRate始终是2，就是必定命中的，之所以把这个属性放着，也是为了说明问题，而不是这个属性真的对这个游戏有用。
@@ -62,13 +57,11 @@ namespace Damage
         public DamageInfo(GameObject      attacker,
                           GameObject      defender,
                           Damage          damage,
-                          float           baseCriticalRate,
                           DamageInfoTag[] tags)
         {
             this.attacker     = attacker;
             this.defender     = defender;
             this.damage       = damage;
-            this.criticalRate = baseCriticalRate;
             this.tags         = new DamageInfoTag[tags.Length];
 
             for (int i = 0; i < tags.Length; i++)
@@ -77,17 +70,28 @@ namespace Damage
             }
         }
 
-        ///<summary>
-        ///从策划脚本获得最终的伤害值
-        ///</summary>
-        public int DamageValue(bool asHeal)
-        {
-            // todo 调整
-            bool isCrit = Random.Range(0.00f, 1.00f) <= this.criticalRate;
-
-            return Mathf.CeilToInt(this.damage.Overall(asHeal) *
-                                   (isCrit == true ? 1.80f : 1.00f)); //暴击1.8倍（就这么设定的别问为啥，我是数值策划我说了算）
-        }
+        // ///<summary>
+        // ///从策划脚本获得最终的伤害值 todo 换个位置
+        // ///</summary>
+        // public int DamageValue(bool asHeal)
+        // {
+        //     var   attckEntity     = attacker.GetComponent<Entity>();
+        //     float critProbability = attckEntity.GetAttribute(AttributeType.CriticalProbability);
+        //     float critDamage = attckEntity.GetAttribute(AttributeType.CriticalDamage);
+        //
+        //     bool isCrit = Random.Range(0.00f, 1.00f) <= critProbability;
+        //
+        //     if (!asHeal)
+        //     {
+        //         return Mathf.CeilToInt(damage.Overall(asHeal) *
+        //                                (isCrit == true ? critDamage : 1.00f));
+        //     }
+        //     else
+        //     {
+        //         // todo 治疗不暴击
+        //         return Mathf.CeilToInt(damage.Overall(asHeal));
+        //     }
+        // }
 
         ///<summary>
         ///根据tag判断，这是否是一次治疗，那些tag算是治疗，当然是策划定义了才算数的

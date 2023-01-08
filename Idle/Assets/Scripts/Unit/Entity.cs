@@ -268,7 +268,31 @@ namespace IdleGame
                     break;
             }
 
+            if (this.resourceNumeric.Get(ResourceType.Hp) <= 0)
+            {
+                this.Kill();
+            }
+
             ActOnResourceChanged?.Invoke();
+        }
+
+        ///<summary>
+        ///杀死这个角色
+        ///</summary>
+        public void Kill()
+        {
+            this.dead = true;
+
+            // todo 死亡动画
+            // if (unitAnim)
+            // {
+            //     unitAnim.Play("Dead");
+            // }
+
+            // //如果不是主角，尸体就会消失
+            // if (this.gameObject != SceneVariants.MainActor())
+            //     this.gameObject.AddComponent<UnitRemover>().duration = 5.0f;
+            Destroy(gameObject);
         }
 
         #endregion
@@ -321,14 +345,14 @@ namespace IdleGame
 
         #endregion
 
-        public bool CanBeKilledByDamageInfo(DamageInfo damageInfo)
+        public bool CanBeKilledByDamageInfo(DamageInfo damageInfo, int value)
         {
             if (this.immuneTime > 0 || damageInfo.isHeal() == true) return false;
-            int dValue = damageInfo.DamageValue(false);
+            // int dValue = damageInfo.DamageValue(false);
 
             // return dValue >= this.resource.hp;
-            return dValue >= resourceNumeric.Get(ResourceType.Hp);
-
+            // return dValue >= resourceNumeric.Get(ResourceType.Hp);
+            return value >= resourceNumeric.Get(ResourceType.Hp);
         }
     }
 }

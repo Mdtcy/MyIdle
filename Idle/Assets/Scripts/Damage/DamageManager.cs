@@ -81,8 +81,29 @@ namespace Damage
                 buffObj.model.OnBeHurt(buffObj, ref dInfo, dInfo.attacker);
             }
 
+            // 计算实际的伤害和治疗量
+            bool isHeal = dInfo.isHeal();
+            int  dVal;
+
+            var   attckEntity     = dInfo.attacker.GetComponent<Entity>();
+            float critProbability = attckEntity.GetAttribute(AttributeType.CriticalProbability);
+            float critDamage      = attckEntity.GetAttribute(AttributeType.CriticalDamage);
+
+            bool isCrit = Random.Range(0.00f, 1.00f) <= critProbability;
+
+            if (!isHeal)
+            {
+                dVal = Mathf.CeilToInt(dInfo.damage.Overall(isHeal) *
+                                       (isCrit == true ? critDamage : 1.00f));
+            }
+            else
+            {
+                // todo 治疗不暴击
+                dVal = Mathf.CeilToInt(dInfo.damage.Overall(isHeal));
+            }
+
             //如果角色可能被杀死，就会走OnKill和OnBeKilled，这个游戏里面没有免死金牌之类的技能，所以只要判断一次就好
-            if (defenderChaState.CanBeKilledByDamageInfo(dInfo) == true)
+            if (defenderChaState.CanBeKilledByDamageInfo(dInfo, dVal) == true)
             {
                 if (attackerChaState != null)
                 {
@@ -100,10 +121,6 @@ namespace Damage
                 }
             }
 
-            //最后根据结果处理：如果是治疗或者角色非无敌，才会对血量进行调整。
-            bool isHeal = dInfo.isHeal();
-            int  dVal   = dInfo.DamageValue(isHeal);
-
             if (isHeal == true || defenderChaState.immuneTime <= 0)
             {
                 // todo 受伤效果
@@ -113,10 +130,11 @@ namespace Damage
                 //     if (ua) ua.Play("Hurt");
                 // }
 
+                // todo 这里扣血在OnKill OnBeKilled之后 是否会出现问题
                 defenderChaState.ModifyResource(ResourceType.Hp, -dVal, ModifyNumericType.Add);
 
                 //按游戏设计的规则跳数字，如果要有暴击，也可以丢在策划脚本函数（lua可以返回多参数）也可以随便怎么滴
-                popUpTextManager.PopUpNumberOnCharacter(dInfo.defender, Mathf.Abs(dVal), isHeal);
+                popUpTextManager.PopUpNumberOnCharacter(dInfo.defender, Mathf.Abs(dVal), isHeal, isCrit);
             }
 
             //伤害流程走完，添加buff
@@ -148,7 +166,7 @@ namespace Damage
                              float           criticalRate,
                              DamageInfoTag[] tags)
         {
-            this.damageInfos.Add(new DamageInfo(attacker, target, damage, criticalRate, tags));
+            damageInfos.Add(new DamageInfo(attacker, target, damage, tags));
         }
     }
 }
