@@ -3,18 +3,15 @@
  * @email [ tktetb@163.com ]
  * @create date  2022年12月24日
  * @modify date 2022年12月24日
- * @desc [任务组UI]
+ * @desc []
  */
 
 #pragma warning disable 0649
 using System;
 using Damage;
-using DamageNumbersPro;
 using HM;
 using Numeric;
-using Sirenix.OdinInspector;
 using UnityEngine;
-using Random = UnityEngine.Random;
 
 namespace IdleGame
 {
@@ -32,6 +29,7 @@ namespace IdleGame
         public BuffComponent BuffComponent;
 
         // local
+
         // 属性
         private AttributesNumeric attributesNumeric;
 
@@ -353,6 +351,28 @@ namespace IdleGame
             // return dValue >= this.resource.hp;
             // return dValue >= resourceNumeric.Get(ResourceType.Hp);
             return value >= resourceNumeric.Get(ResourceType.Hp);
+        }
+
+        // todo 弄成计算状态吧 属性外部修改?
+        public void AttrRecheck()
+        {
+            // todo 状态暂时不改
+            // _controlState.Origin();
+        //     this._prop.Zero();
+        //
+        //     for (var i = 0; i < BuffComponent.Buffs.Count; i++) buffProp[i].Zero();
+        //
+        //     for (int i = 0; i < this.buffs.Count; i++)
+        //     {
+        //         for (int j = 0; j < Mathf.Min(buffProp.Length, buffs[i].model.propMod.Length); j++)
+        //         {
+        //             buffProp[j] += buffs[i].model.propMod[j] * buffs[i].stack;
+        //         }
+        //
+        //         _controlState += buffs[i].model.stateMod;
+        //     }
+        //
+        //     this._prop = (this.baseProp + this.equipmentProp + this.buffProp[0]) * this.buffProp[1];
         }
     }
 }

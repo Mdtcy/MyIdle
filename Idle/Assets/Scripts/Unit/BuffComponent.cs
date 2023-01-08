@@ -7,6 +7,7 @@
  */
 
 #pragma warning disable 0649
+using System;
 using System.Collections.Generic;
 using IdleGame.Buff;
 using UnityEngine;
@@ -20,6 +21,8 @@ namespace IdleGame
 
         public List<BuffObj> Buffs = new();
 
+        private Entity owener;
+
         #endregion
 
         #region PROPERTIES
@@ -27,6 +30,11 @@ namespace IdleGame
         #endregion
 
         #region PUBLIC METHODS
+
+        public void Init(Entity entity)
+        {
+            owener = entity;
+        }
 
         /// <summary>
         /// 获取指定目标给施加的Buff, 意味着不同目标给的相同Buff会被分别计算
@@ -129,7 +137,7 @@ namespace IdleGame
                 addBuffInfo.buffModel.OnOccur(toAddBuff, modStack);
             }
 
-            AttrRecheck();
+            owener.AttrRecheck();
         }
 
         private int SortBuff(BuffObj x, BuffObj y)
@@ -225,15 +233,9 @@ namespace IdleGame
                         Buffs.Remove(buffToRemove);
                     }
 
-                    AttrRecheck();
+                    owener.AttrRecheck();
                 }
             }
-        }
-
-        // 计算属性
-        private void AttrRecheck()
-        {
-            // todo
         }
 
         #endregion
