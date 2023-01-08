@@ -16,7 +16,7 @@ namespace IdleGame.Buff.BuffModels
     {
         public static List<BuffModel> ModelsList = new List<BuffModel>()
         {
-            new Add100AtkSpeedBuffModel(),
+            new AddAtkSpeedBuffModel(),
         };
 
         #region FIELDS

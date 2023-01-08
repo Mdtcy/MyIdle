@@ -207,13 +207,20 @@ namespace IdleGame
                     // 如果是固定一段时间触发的Buff 则每隔一段时间处理一次
                     if (buff.model.tickTime > 0)
                     {
-                        // float取模不精准，所以用x1000后的整数来
-                        if (Mathf.RoundToInt(buff.timeElapsed * 1000) %
-                            Mathf.RoundToInt(buff.model.tickTime    * 1000) == 0)
+                        if (buff.timeElapsed > (buff.ticked + 1) * buff.model.tickTime)
                         {
                             buff.model.OnTick(buff);
                             buff.ticked += 1;
                         }
+
+                        // // float取模不精准，所以用x1000后的整数来
+                        //     if (Mathf.RoundToInt(buff.timeElapsed    * 1000) %
+                        //         Mathf.RoundToInt(buff.model.tickTime * 1000) ==
+                        //         0)
+                        //     {
+                        //         buff.model.OnTick(buff);
+                        //         buff.ticked += 1;
+                        //     }
                     }
 
                     // 只要duration <= 0，不管是否是permanent都移除掉

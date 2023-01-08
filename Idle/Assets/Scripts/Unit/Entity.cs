@@ -252,13 +252,27 @@ namespace IdleGame
             {
                 case ModifyNumericType.Add:
                 {
-                    resourceNumeric.Add(resourceType, value);
+                    if (resourceNumeric.Get(ResourceType.Hp) + value > attributesNumeric.Get(AttributeType.MaxHp))
+                    {
+                        resourceNumeric.Set(ResourceType.Hp,attributesNumeric.Get(AttributeType.MaxHp));
+                    }
+                    else
+                    {
+                        resourceNumeric.Add(resourceType, value);
+                    }
 
                     break;
                 }
                 case ModifyNumericType.Set:
                 {
-                    resourceNumeric.Set(resourceType, value);
+                    if (value > attributesNumeric.Get(AttributeType.MaxHp))
+                    {
+                        resourceNumeric.Set(ResourceType.Hp, attributesNumeric.Get(AttributeType.MaxHp));
+                    }
+                    else
+                    {
+                        resourceNumeric.Set(resourceType, value);
+                    }
 
                     break;
                 }

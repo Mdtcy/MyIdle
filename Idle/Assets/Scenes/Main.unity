@@ -376,6 +376,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Entity1: {fileID: 1045258622}
   Entity2: {fileID: 1565621171}
+  stack: 10
+  Entity: {fileID: 1045258622}
 --- !u!1001 &998305814
 PrefabInstance:
   m_ObjectHideFlags: 0

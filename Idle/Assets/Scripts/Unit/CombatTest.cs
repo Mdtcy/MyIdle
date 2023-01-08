@@ -32,19 +32,6 @@ namespace IdleGame
 
         #region PUBLIC METHODS
 
-        [Button]
-        public void Entity1Attack2()
-        {
-            // Entity1.Attack(Entity2);
-        }
-
-        [Button]
-        public void Entity2Attack1()
-        {
-            // Entity2.Attack(Entity1);
-        }
-
-
         // [Button]
         // public void AddAddCriticalProbabilityWhenHpLower30ToEntity1()
         // {
@@ -54,21 +41,93 @@ namespace IdleGame
         //     Entity1.BuffComponent.AddBuff(buff, null, Entity1.gameObject ,1, true);
         // }
 
+        public int stack = 10;
+
+        public Entity Entity;
+
         [Button]
-        public void AddAdd100AtkSpeedBuff()
+        public void AddAddAtkSpeedBuff()
         {
             var addBuffInfo = new AddBuffInfo(
-                                              new Add100AtkSpeedBuffModel(),
+                                              new AddAtkSpeedBuffModel(),
                                               null,
                                               null,
-                                              1,
+                                              stack,
                                               5f,
                                               true,
                                               true,
                                               null);
 
             // diContainer.Inject(buff);
-            Entity1.BuffComponent.AddBuff(addBuffInfo);
+            Entity.BuffComponent.AddBuff(addBuffInfo);
+        }
+
+        [Button]
+        public void AddAddAtkBuff()
+        {
+            var addBuffInfo = new AddBuffInfo(
+                                              new AddAtkBuffModel(),
+                                              null,
+                                              null,
+                                              stack,
+                                              5f,
+                                              true,
+                                              true,
+                                              null);
+
+            // diContainer.Inject(buff);
+            Entity.BuffComponent.AddBuff(addBuffInfo);
+        }
+
+        [Button]
+        public void AddAddCriticalChanceBuff()
+        {
+            var addBuffInfo = new AddBuffInfo(
+                                              new AddCriticalChanceBuffModel(),
+                                              null,
+                                              null,
+                                              stack,
+                                              5f,
+                                              true,
+                                              true,
+                                              null);
+
+            // diContainer.Inject(buff);
+            Entity.BuffComponent.AddBuff(addBuffInfo);
+        }
+
+        [Button]
+        public void AddAddCriticalDamageBuff()
+        {
+            var addBuffInfo = new AddBuffInfo(
+                                              new AddCriticalDamageBuffModel(),
+                                              null,
+                                              null,
+                                              stack,
+                                              5f,
+                                              true,
+                                              true,
+                                              null);
+
+            // diContainer.Inject(buff);
+            Entity.BuffComponent.AddBuff(addBuffInfo);
+        }
+
+        [Button]
+        public void AddHealOverTimePoint3()
+        {
+            var addBuffInfo = new AddBuffInfo(
+                                              new HealOverTimePoint3(),
+                                              null,
+                                              null,
+                                              stack,
+                                              5f,
+                                              true,
+                                              true,
+                                              null);
+
+            // diContainer.Inject(buff);
+            Entity.BuffComponent.AddBuff(addBuffInfo);
         }
 
         [Button]
@@ -85,7 +144,7 @@ namespace IdleGame
                                               null);
 
             // diContainer.Inject(buff);
-            Entity1.BuffComponent.AddBuff(addBuffInfo);
+            Entity.BuffComponent.AddBuff(addBuffInfo);
         }
 
 

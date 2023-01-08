@@ -19,6 +19,7 @@ namespace Numeric
 
         CriticalDamage = 3100,
 
+        // todo 还没实现
         DodgeChance = 4000,
 
         // todo 20-700

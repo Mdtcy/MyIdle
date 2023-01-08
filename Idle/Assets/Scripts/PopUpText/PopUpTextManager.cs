@@ -35,15 +35,15 @@ namespace PopUpText
         {
             if (asHeal)
             {
-                healDamage.Spawn(cha.transform.position + new Vector3(0, 0.6f, 0), $"miss");
+                healDamage.Spawn(cha.transform.position + new Vector3(0, 0.6f, 0), $"+{value}");
             }
             else if (asCritical)
             {
-                criticalDamage.Spawn(cha.transform.position + new Vector3(0, 0.6f, 0), $"{value}!");
+                criticalDamage.Spawn(cha.transform.position + new Vector3(0, 0.6f, 0), $"-{value}!");
             }
             else
             {
-                normalDamage.Spawn(cha.transform.position + new Vector3(0, 0.5f, 0), $"{value}");
+                normalDamage.Spawn(cha.transform.position + new Vector3(0, 0.5f, 0), $"-{value}");
             }
         }
     }
