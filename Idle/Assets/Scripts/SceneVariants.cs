@@ -26,11 +26,10 @@ namespace DefaultNamespace
         public static void CreateDamage(GameObject      attacker,
                                         GameObject      target,
                                         Damage.Damage   damage,
-                                        float           criticalRate,
                                         DamageInfoTag[] tags)
         {
             GameObject.FindObjectOfType<DamageManager>()
-                      .DoDamage(attacker, target, damage, criticalRate, tags);
+                      .DoDamage(attacker, target, damage, tags);
         }
     }
 }

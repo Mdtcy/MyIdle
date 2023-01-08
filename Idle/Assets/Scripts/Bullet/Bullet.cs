@@ -88,7 +88,6 @@ namespace IdleGame
                 SceneVariants.CreateDamage(caster.gameObject,
                                            target.gameObject,
                                            new Damage.Damage(Mathf.CeilToInt(caster.GetAttribute(AttributeType.Atk))),
-                                           0,
                                            new DamageInfoTag[] {DamageInfoTag.directDamage,}
                                           );
                 Destroy(gameObject);

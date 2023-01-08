@@ -3,7 +3,7 @@
  * @email [ tktetb@163.com ]
  * @create date  2023年1月8日
  * @modify date 2023年1月8日
- * @desc [任务组UI]
+ * @desc []
  */
 
 #pragma warning disable 0649
@@ -163,7 +163,6 @@ namespace Damage
         public void DoDamage(GameObject      attacker,
                              GameObject      target,
                              Damage          damage,
-                             float           criticalRate,
                              DamageInfoTag[] tags)
         {
             damageInfos.Add(new DamageInfo(attacker, target, damage, tags));
