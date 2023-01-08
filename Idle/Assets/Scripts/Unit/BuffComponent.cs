@@ -8,8 +8,7 @@
 
 #pragma warning disable 0649
 using System.Collections.Generic;
-using Event;
-using HM.Extensions;
+using IdleGame.Buff;
 using UnityEngine;
 using UnityEngine.Pool;
 
@@ -19,7 +18,7 @@ namespace IdleGame
     {
         #region FIELDS
 
-        public List<Buff> Buffs = new();
+        public List<BuffObj> Buffs = new();
 
         #endregion
 
@@ -29,133 +28,145 @@ namespace IdleGame
 
         #region PUBLIC METHODS
 
-        public Buff GetBuff(string id, GameObject caster)
-        {
-            foreach (var buff in Buffs)
-            {
-                if (id.Equals(buff.Id()) && caster == buff.Caster)
-                {
-                    return buff;
-                }
-            }
-
-            return null;
-        }
-
-        // todo 限定一个人身上只能有一个相同的buff  不要有不同人给的相同buff
-        public Buff GetBuff(string id)
-        {
-            foreach (var buff in Buffs)
-            {
-                if (id.Equals(buff.Id()))
-                {
-                    return buff;
-                }
-            }
-
-            return null;
-        }
-
-
-        public void RemoveBuff(Buff buff)
-        {
-            AddBuff(buff, -buff.Stack);
-        }
-
-        public void RemoveBuff(string id)
-        {
-            var buff = GetBuff(id);
-            RemoveBuff(buff);
-        }
-
         /// <summary>
-        /// 为角色添加buff，当然，删除也是走这个的
+        /// 获取指定目标给施加的Buff, 意味着不同目标给的相同Buff会被分别计算
         /// </summary>
-        public void AddBuff(Buff buff, int stack = 1, bool durationSetTo = true)
+        /// <param name="id"></param>
+        /// <param name="caster"></param>
+        /// <returns></returns>
+        public BuffObj GetBuffById(string id, GameObject caster)
         {
-            Buff hasOne    = GetBuff(buff.Id(), buff.Caster);
-            int  modStack  = stack;
-            bool toRemove  = false;
-            Buff toAddBuff = null;
+            for (int i = 0; i < Buffs.Count; i++)
+            {
+                if (Buffs[i].model.id == id &&
+                    (caster == Buffs[i].caster))
+                {
+                    return Buffs[i];
+                }
+            }
+
+            return null;
+        }
+
+        // // todo 限定一个人身上只能有一个相同的buff  不要有不同人给的相同buff
+        // public Buff GetBuff(string id)
+        // {
+        //     foreach (var buff in Buffs)
+        //     {
+        //         if (id.Equals(buff.Id()))
+        //         {
+        //             return buff;
+        //         }
+        //     }
+        //
+        //     return null;
+        // }
+
+
+        // public void RemoveBuff(Buff buff)
+        // {
+        //     AddBuff(buff, -buff.Stack);
+        // }
+        //
+        // public void RemoveBuff(string id)
+        // {
+        //     var buff = GetBuff(id);
+        //     RemoveBuff(buff);
+        // }
+
+        public void AddBuff(AddBuffInfo addBuffInfo)
+        {
+            var     buffCaster = addBuffInfo.caster;
+            BuffObj hasOne    = GetBuffById(addBuffInfo.buffModel.id, buffCaster);
+            int     modStack   = addBuffInfo.addStack;
+            bool    toRemove   = false;
+            BuffObj toAddBuff  = null;
 
             if (hasOne != null)
             {
-                // 如果不是永久的Buff,需要更新持续时间
-                if (!hasOne.Permanent)
+                //已经存在
+                hasOne.buffParam = new Dictionary<string, object>();
+
+                if (addBuffInfo.buffParam != null)
                 {
-                    hasOne.Duration = durationSetTo ? buff.Duration : (buff.Duration + hasOne.Duration);
+                    foreach (KeyValuePair<string, object> kv in addBuffInfo.buffParam)
+                    {
+                        hasOne.buffParam[kv.Key] = kv.Value;
+                    }
                 }
 
-                int afterAdd = hasOne.Stack + modStack;
-                modStack = afterAdd >= hasOne.MaxStack
-                    ? (hasOne.MaxStack - hasOne.Stack)
-                    : (afterAdd <= 0 ? (0 - hasOne.Stack) : modStack);
-                hasOne.Stack     += modStack;
-                hasOne.Permanent =  buff.Permanent;
-                toAddBuff        =  hasOne;
-                toRemove         =  hasOne.Stack <= 0;
+                hasOne.duration = (addBuffInfo.durationSetTo == true)
+                    ? addBuffInfo.duration
+                    : (addBuffInfo.duration + hasOne.duration);
+                int afterAdd = hasOne.stack + modStack;
+                modStack = afterAdd >= hasOne.model.maxStack
+                    ? (hasOne.model.maxStack - hasOne.stack)
+                    : (afterAdd <= 0 ? (0 - hasOne.stack) : modStack);
+                hasOne.stack     += modStack;
+                hasOne.permanent =  addBuffInfo.permanent;
+                toAddBuff            =  hasOne;
+                toRemove             =  hasOne.stack <= 0;
             }
             else
             {
                 //新建
-                toAddBuff = buff;
+                toAddBuff = new BuffObj(
+                                        addBuffInfo.buffModel,
+                                        addBuffInfo.caster,
+                                        this.gameObject,
+                                        addBuffInfo.duration,
+                                        addBuffInfo.addStack,
+                                        addBuffInfo.permanent,
+                                        addBuffInfo.buffParam
+                                       );
                 Buffs.Add(toAddBuff);
-                Buffs.Sort();
+                Buffs.Sort(SortBuff);
             }
 
+            // 如果不是在移除Buff, 触发OnOccur
             if (toRemove == false)
             {
-                toAddBuff.OnOccur(modStack);
+                addBuffInfo.buffModel.OnOccur(toAddBuff, modStack);
             }
 
             AttrRecheck();
         }
 
-        public Buff GetBuffByTag(string tag)
+        private int SortBuff(BuffObj x, BuffObj y)
         {
-            foreach (var buff in Buffs)
-            {
-                if (buff.Tag.Equals(tag))
-                {
-                    return buff;
-                }
-            }
-
-            return null;
+            return x.model.priority.CompareTo(y.model.priority);
         }
 
-        public void RemoveBuffByTag(string tag)
-        {
-            for (int i = Buffs.Count - 1; i >= 0; i--)
-            {
-                if (Buffs[i].Tag.Equals(tag))
-                {
-                    Buffs.RemoveAt(i);
-                    Buffs[i].OnRemoved();
-                }
-            }
-        }
-
-
-        public void RemoveBuff()
-        {
-            // todo 直接Remove 如果此时轮询时轮询到，是否会出现错误 一个做法是先复制一份？
-        }
-
-        public void TriggerEvent<T>(T tEvent) where T : Event.EEvent
-        {
-            var list = HM.GameBase.ListPool<Buff>.Claim();
-            list.AddRange(Buffs);
-            foreach (var buff in list)
-            {
-                if (buff is IListenEvent<T> t)
-                {
-                    t.Trigger(tEvent);
-                }
-            }
-
-            list.ReleaseToPool();
-        }
+        // public Buff GetBuffByTag(string tag)
+        // {
+        //     foreach (var buff in Buffs)
+        //     {
+        //         if (buff.Tag.Equals(tag))
+        //         {
+        //             return buff;
+        //         }
+        //     }
+        //
+        //     return null;
+        // }
+        //
+        // public void RemoveBuffByTag(string tag)
+        // {
+        //     for (int i = Buffs.Count - 1; i >= 0; i--)
+        //     {
+        //         if (Buffs[i].Tag.Equals(tag))
+        //         {
+        //             Buffs.RemoveAt(i);
+        //             Buffs[i].OnRemoved();
+        //         }
+        //     }
+        // }
+        //
+        //
+        // public void RemoveBuff()
+        // {
+        //     // todo 直接Remove 如果此时轮询时轮询到，是否会出现错误 一个做法是先复制一份？
+        // }
 
         #endregion
 
@@ -167,41 +178,41 @@ namespace IdleGame
 
         private void FixedUpdate()
         {
+            // todo 死了不应该继续
             float timePassed = Time.fixedDeltaTime;
 
-            using ( ListPool<Buff>.Get(out List<Buff> buffsToRemove))
+            using (ListPool<BuffObj>.Get(out List<BuffObj> buffsToRemove))
             {
                 for (int i = 0; i < Buffs.Count; i++)
                 {
-
                     var buff = Buffs[i];
 
                     // 更新Buff剩余时间
-                    if (buff.Permanent == false)
+                    if (buff.permanent == false)
                     {
-                        buff.Duration -= Time.deltaTime;
+                        buff.duration -= Time.deltaTime;
                     }
 
                     // 更新Buff持续时间
-                    buff.TimeElapsed += timePassed;
+                    buff.timeElapsed += timePassed;
 
                     // 如果是固定一段时间触发的Buff 则每隔一段时间处理一次
-                    if (buff.TickTime > 0)
+                    if (buff.model.tickTime > 0)
                     {
                         // float取模不精准，所以用x1000后的整数来
-                        if (Mathf.RoundToInt(buff.TimeElapsed * 1000) %
-                            Mathf.RoundToInt(buff.TickTime    * 1000) ==
-                            0)
+                        if (Mathf.RoundToInt(buff.timeElapsed * 1000) %
+                            Mathf.RoundToInt(buff.model.tickTime    * 1000) == 0)
                         {
-                            buff.OnTick();
+                            buff.model.OnTick(buff);
+                            buff.ticked += 1;
                         }
                     }
 
                     // 只要duration <= 0，不管是否是permanent都移除掉
                     // Stack为0也会被移除掉
-                    if (buff.Duration <= 0 || buff.Stack <= 0)
+                    if (buff.duration <= 0 || buff.stack <= 0)
                     {
-                        buff.OnRemoved();
+                        buff.model.OnRemoved(buff);
                         buffsToRemove.Add(buff);
                     }
                 }

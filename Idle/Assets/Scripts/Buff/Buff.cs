@@ -11,9 +11,9 @@ using UnityEngine;
 
 #pragma warning disable 0649
 
-namespace IdleGame
+namespace IdleGame.Buff
 {
-    public abstract class Buff : IComparable<Buff>
+    public abstract class Buff
     {
         public abstract string Id();
 
@@ -33,6 +33,8 @@ namespace IdleGame
 
         public GameObject Caster;
 
+        public GameObject Target;
+
         public int Priority;
 
         public virtual void OnOccur(int modStack)
@@ -49,12 +51,6 @@ namespace IdleGame
         {
 
         }
-
-        public int CompareTo(Buff other)
-        {
-            return Priority.CompareTo(other.Priority);
-        }
-
     }
 }
 #pragma warning restore 0649

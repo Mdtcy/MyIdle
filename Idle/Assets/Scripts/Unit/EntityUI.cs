@@ -3,7 +3,7 @@
  * @email [ tktetb@163.com ]
  * @create date  2022年12月25日
  * @modify date 2022年12月25日
- * @desc [任务组UI]
+ * @desc []
  */
 
 #pragma warning disable 0649
@@ -101,7 +101,7 @@ namespace IdleGame
 
             foreach (var buff in Entity.BuffComponent.Buffs)
             {
-                Instantiate(pfbText, buffRoot).GetComponent<Text>().text = buff.Id();
+                Instantiate(pfbText, buffRoot).GetComponent<Text>().text = buff.model.id;
             }
         }
 

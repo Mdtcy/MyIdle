@@ -8,8 +8,8 @@
 
 #pragma warning disable 0649
 using System;
+using Damage;
 using DamageNumbersPro;
-using Event;
 using HM;
 using Numeric;
 using Sirenix.OdinInspector;
@@ -21,18 +21,6 @@ namespace IdleGame
     public class Entity : MonoBehaviour
     {
         #region FIELDS
-
-        [BoxGroup("Floating Text")]
-        [SerializeField]
-        private DamageNumber normalDamage;
-
-        [BoxGroup("Floating Text")]
-        [SerializeField]
-        private DamageNumber criticalDamage;
-
-        [BoxGroup("Floating Text")]
-        [SerializeField]
-        private DamageNumber missDamage;
 
         public string name;
 
@@ -64,7 +52,6 @@ namespace IdleGame
             if (Random.Range(0f, 1f) <= attributesNumeric.Get(AttributeType.DodgeProbability))
             {
                 other.OnMiss();
-                missDamage.Spawn(other.transform.position + new Vector3(0, 0.5f, 0), $"miss");
             }
             // 命中敌人
             else
@@ -80,13 +67,11 @@ namespace IdleGame
 
                 if (isCritical)
                 {
-                    BuffComponent.TriggerEvent(new EEventOnCrit());
-
-                    criticalDamage.Spawn(other.transform.position + new Vector3(0, 0.5f, 0), $"-{damage}");
+                    // criticalDamage.Spawn(other.transform.position + new Vector3(0, 0.5f, 0), $"-{damage}");
                 }
                 else
                 {
-                    normalDamage.Spawn(other.transform.position + new Vector3(0, 0.5f, 0), $"-{damage}");
+                    // normalDamage.Spawn(other.transform.position + new Vector3(0, 0.5f, 0), $"-{damage}");
                 }
 
                 other.OnHurt(damage);
@@ -109,18 +94,18 @@ namespace IdleGame
         {
             float hp    = resourceNumeric.Get(ResourceType.Hp);
             float maxHp = attributesNumeric.Get(AttributeType.MaxHp);
-
-            float hpRatioBeforeHpChanged = hp             / maxHp;
-            float hpRatioAfterHpChanged  = (hp + changed) / maxHp;
+            //
+            // float hpRatioBeforeHpChanged = hp             / maxHp;
+            // float hpRatioAfterHpChanged  = (hp + changed) / maxHp;
             ModifyResource(ResourceType.Hp, changed, ModifyNumericType.Add);
-            if (hpRatioBeforeHpChanged < 0.3f && hpRatioAfterHpChanged >= 0.3f)
-            {
-                BuffComponent.TriggerEvent(new EEventHpHigher30Percent());
-            }
-            else if (hpRatioBeforeHpChanged >= 0.3f && hpRatioAfterHpChanged < 0.3f)
-            {
-                BuffComponent.TriggerEvent(new EEventHpLower30Percent());
-            }
+            // if (hpRatioBeforeHpChanged < 0.3f && hpRatioAfterHpChanged >= 0.3f)
+            // {
+            //     BuffComponent.TriggerEvent(new EEventHpHigher30Percent());
+            // }
+            // else if (hpRatioBeforeHpChanged >= 0.3f && hpRatioAfterHpChanged < 0.3f)
+            // {
+            //     BuffComponent.TriggerEvent(new EEventHpLower30Percent());
+            // }
         }
 
         public void OnDeath()
@@ -139,7 +124,21 @@ namespace IdleGame
 
         public float shootTimer;
 
-        public bool canShoot;
+        public  bool canShoot;
+        public  bool dead;
+
+        ///<summary>
+        ///角色的无敌状态持续时间，如果在无敌状态中，子弹不会碰撞，DamageInfo处理无效化
+        ///单位：秒
+        ///</summary>
+        public float immuneTime
+        {
+            get { return _immuneTime; }
+            set { _immuneTime = Mathf.Max(_immuneTime, value); }
+        }
+
+        private float _immuneTime = 0.00f;
+
         private void Update()
         {
             if (!canShoot)
@@ -321,6 +320,16 @@ namespace IdleGame
         #region STATIC METHODS
 
         #endregion
+
+        public bool CanBeKilledByDamageInfo(DamageInfo damageInfo)
+        {
+            if (this.immuneTime > 0 || damageInfo.isHeal() == true) return false;
+            int dValue = damageInfo.DamageValue(false);
+
+            // return dValue >= this.resource.hp;
+            return dValue >= resourceNumeric.Get(ResourceType.Hp);
+
+        }
     }
 }
 #pragma warning restore 0649
