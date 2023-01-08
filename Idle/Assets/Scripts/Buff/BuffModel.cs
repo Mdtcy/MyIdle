@@ -53,10 +53,10 @@ namespace IdleGame.Buff
         // ///</summary>
         // public ChaProperty[] propMod;
 
-        /// <summary>
-        /// buff会给角色添加的属性
-        /// </summary>
-        public AttributesNumeric AttributesNumeric;
+        // /// <summary>
+        // /// buff会给角色添加的属性
+        // /// </summary>
+        // public AttributesNumeric AttributesNumeric;
 
         // ///<summary>
         // ///buff对于角色的ChaControlState的影响

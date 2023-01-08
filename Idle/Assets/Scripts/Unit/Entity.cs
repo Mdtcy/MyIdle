@@ -310,6 +310,8 @@ namespace IdleGame
         // 初始
         private void Init()
         {
+            BuffComponent.Init(this);
+
             InitAttr();
             InitResource();
 

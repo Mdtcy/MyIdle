@@ -56,6 +56,7 @@ namespace IdleGame
             if (target == null)
             {
                 Destroy(gameObject);
+                return;
             }
 
             // dir

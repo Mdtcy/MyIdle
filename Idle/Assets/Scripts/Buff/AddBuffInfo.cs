@@ -67,7 +67,7 @@ namespace IdleGame.Buff
             int                        stack,
             float                      duration,
             bool                       durationSetTo = true,
-            bool                       permanent     = false,
+            bool                       permanent     = true,
             Dictionary<string, object> buffParam     = null
         )
         {

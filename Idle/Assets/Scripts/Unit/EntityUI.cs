@@ -101,7 +101,7 @@ namespace IdleGame
 
             foreach (var buff in Entity.BuffComponent.Buffs)
             {
-                Instantiate(pfbText, buffRoot).GetComponent<Text>().text = buff.model.id;
+                Instantiate(pfbText, buffRoot).GetComponent<Text>().text = buff.model.name + " " +buff.stack;
             }
         }
 
