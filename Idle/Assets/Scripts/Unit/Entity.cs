@@ -11,6 +11,7 @@ using System;
 using Damage;
 using HM;
 using Numeric;
+using Sirenix.OdinInspector;
 using Unit;
 using UnityEngine;
 
@@ -23,6 +24,9 @@ namespace IdleGame
         public string name;
 
         public Side side;
+
+        [ReadOnly]
+        public bool dead;
 
         public Action ActOnAttributeChanged;
         public Action ActOnResourceChanged;
@@ -42,6 +46,8 @@ namespace IdleGame
         #endregion
 
         #region PROPERTIES
+
+        public ChaControlState ControlState => controlState;
 
         #endregion
 
@@ -120,13 +126,6 @@ namespace IdleGame
         //     Debug.Log($"{name} Miss");
         // }
 
-        [SerializeField]
-        private Transform pfbBullet;
-
-        public float shootTimer;
-
-        public  bool dead;
-
         ///<summary>
         ///角色的无敌状态持续时间，如果在无敌状态中，子弹不会碰撞，DamageInfo处理无效化
         ///单位：秒
@@ -138,58 +137,6 @@ namespace IdleGame
         }
 
         private float _immuneTime = 0.00f;
-
-        private void Update()
-        {
-            if (!controlState.canAttack)
-            {
-                return;
-            }
-
-            shootTimer -= Time.deltaTime;
-            while (shootTimer <= 0)
-            {
-                var entitys = FindObjectsOfType<Entity>();
-
-                if (entitys.Length > 0)
-                {
-                    foreach (var entity in entitys)
-                    {
-                        if (entity.side != side)
-                        {
-                            Shoot(entity);
-
-                            break;
-                        }
-                    }
-                }
-
-                ResetShootTimer();
-            }
-        }
-
-        private void ResetShootTimer()
-        {
-            float attackSpeed      = GetAttribute(AttributeType.AttackSpeed);
-            float baseFireInterval = GetAttribute(AttributeType.BaseFireInterval);
-            // todo 每次攻击的时间 = BAT / [(初始攻击速度 + IAS) × 0.01] = 1 / (每秒攻击的次数) 100 是基础攻速
-            // todo https://dota2.fandom.com/zh/wiki/%E6%94%BB%E5%87%BB%E9%80%9F%E5%BA%A6?variant=zh
-            float fireInterval     = baseFireInterval / ((attackSpeed + 100) * 0.01f);
-            shootTimer = fireInterval;
-        }
-
-        public void Shoot(Entity entity)
-        {
-            // 生成子弹
-            var bulletTransform = Instantiate(pfbBullet);
-            bulletTransform.transform.position = transform.position;
-
-            var bullet = bulletTransform.GetComponent<Bullet>();
-
-            // 将bullet向敌人射过去
-
-            bullet.Init(this, entity);
-        }
 
         /// <summary>
         /// 获取属性
@@ -317,21 +264,13 @@ namespace IdleGame
 
         #region PRIVATE METHODS
 
-        // todo 换个地方初始化吧
-        private void Awake()
-        {
-            Init();
-        }
-
         // 初始
-        private void Init()
+        public void Init()
         {
             BuffComponent.Init(this);
 
             InitAttr();
             InitResource();
-
-            ResetShootTimer();
         }
 
         // 初始属性
