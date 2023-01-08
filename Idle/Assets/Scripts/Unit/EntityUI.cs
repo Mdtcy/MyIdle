@@ -26,6 +26,9 @@ namespace IdleGame
         private Text txtMaxHp;
 
         [SerializeField]
+        private Text txtAtk;
+
+        [SerializeField]
         private Slider hpBar;
 
         [SerializeField]
@@ -82,6 +85,7 @@ namespace IdleGame
             txtHp.text                  = $"当前生命值 : {Entity.GetResource(ResourceType.Hp)}";
             hpBar.maxValue              = Entity.GetAttribute(AttributeType.MaxHp);
             hpBar.value                 = Entity.GetResource(ResourceType.Hp);
+            txtAtk.text                 = $"攻击力 : {Entity.GetAttribute(AttributeType.Atk)}";
             txtCriticalProbability.text = $"暴击概率 : {Entity.GetAttribute(AttributeType.CriticalChance)}";
             txtCriticalDamage.text      = $"暴击伤害 : {Entity.GetAttribute(AttributeType.CriticalDamage)}";
             txtDodgeProbability.text    = $"闪避概率 : {Entity.GetAttribute(AttributeType.DodgeChance)}";
