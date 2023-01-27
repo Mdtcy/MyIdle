@@ -13,5 +13,5 @@ MonoBehaviour:
   m_Name: WaveData
   m_EditorClassIdentifier: 
   Waves:
-  - Count: 0
-    Prefab: {fileID: 0}
+  - Count: 1
+    Prefab: {fileID: 1367446174141648417, guid: ef41150a9b8e1794dbf59c318ad44c30, type: 3}
