@@ -9,8 +9,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e1be19fc3858e524fa17a5518e8c4d39, type: 3}
-  m_Name: Read Me v7.3
+  m_Script: {fileID: 11500000, guid: 6d83c2e9bb0e4cee9c242d739da028d9, type: 3}
+  m_Name: WaveData
   m_EditorClassIdentifier: 
-  _ExamplesFolder: {fileID: 102900000, guid: 833bcac93994ed2459b0b7f61940e220, type: 3}
-  _DontShowOnStartup: 1
+  Waves:
+  - Count: 0
+    Prefab: {fileID: 0}
