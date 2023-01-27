@@ -8,6 +8,7 @@
 
 #pragma warning disable 0649
 using System.Collections.Generic;
+using System.Linq;
 using IdleGame;
 using Numeric;
 using PopUpText;
@@ -89,7 +90,9 @@ namespace Damage
             float critProbability = attckEntity.GetAttribute(AttributeType.CriticalChance);
             float critDamage      = attckEntity.GetAttribute(AttributeType.CriticalDamage);
 
-            bool isCrit = Random.Range(0.00f, 1.00f) <= critProbability;
+            // todo 直接伤害才可以暴击
+            bool isCrit = Random.Range(0.00f, 1.00f) <= critProbability &&
+                          dInfo.tags.Contains(DamageInfoTag.directDamage);
 
             if (!isHeal)
             {

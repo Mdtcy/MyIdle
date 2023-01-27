@@ -9,6 +9,7 @@
 #pragma warning disable 0649
 using IdleGame.Buff;
 using IdleGame.Buff.BuffModels;
+using IdleGame.Buff.BuffModels.PoisonSkills;
 using Sirenix.OdinInspector;
 using UnityEngine;
 
@@ -146,6 +147,24 @@ namespace IdleGame
             // diContainer.Inject(buff);
             Entity.BuffComponent.AddBuff(addBuffInfo);
         }
+
+        [Button]
+        public void AddPoison()
+        {
+            var addBuffInfo = new AddBuffInfo(
+                                              new PoisonBuffModel(),
+                                              Entity.gameObject,
+                                              Entity.gameObject,
+                                              1,
+                                              3f,
+                                              true,
+                                              true,
+                                              null);
+
+            // diContainer.Inject(buff);
+            Entity.BuffComponent.AddBuff(addBuffInfo);
+        }
+
 
 
         // [Button]

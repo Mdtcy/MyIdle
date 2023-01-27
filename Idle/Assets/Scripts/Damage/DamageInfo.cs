@@ -142,8 +142,9 @@ namespace Damage
     public enum DamageInfoTag
     {
         directDamage  = 0,   //直接伤害
-        periodDamage  = 1,   //间歇性伤害
-        reflectDamage = 2,   //反噬伤害
+        // periodDamage  = 1,   //间歇性伤害
+        // reflectDamage = 2,   //反噬伤害
+        poisonDamage  = 3,   //中毒伤害
         directHeal    = 10,  //直接治疗
         periodHeal    = 11,  //间歇性治疗
         monkeyDamage  = 9999 //这个类型的伤害在目前这个demo中没有意义，只是告诉你可以随意扩展，仅仅比string严肃些。
