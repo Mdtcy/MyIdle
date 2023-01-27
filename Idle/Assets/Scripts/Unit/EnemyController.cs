@@ -7,10 +7,8 @@
  */
 
 #pragma warning disable 0649
-using System;
 using Damage;
 using DefaultNamespace;
-using HM;
 using IdleGame;
 using Numeric;
 using Sirenix.OdinInspector;
@@ -34,9 +32,8 @@ namespace Unit
         [SerializeField]
         private float moveSpeed = 5;
 
-
+        // local
         private float shootTimer;
-
 
         #endregion
 
@@ -83,7 +80,7 @@ namespace Unit
                     rb.velocity = Vector2.zero;
 
                     Attack(tower.Entity);
-                    ResetShootTimer();
+                    shootTimer = entity.GetFireInterval();
                 }
             }
             else
@@ -97,7 +94,6 @@ namespace Unit
         [Button]
         private void Attack(Entity target)
         {
-            HMLog.LogDebug("Attack");
             // todo 攻击动画
             animator.SetTrigger("attack");
             // 实际攻击
@@ -107,17 +103,6 @@ namespace Unit
                                        new DamageInfoTag[] {DamageInfoTag.directDamage,}
                                       );
         }
-
-        private void ResetShootTimer()
-                {
-                    float attackSpeed      = entity.GetAttribute(AttributeType.AttackSpeed);
-                    float baseFireInterval = entity.GetAttribute(AttributeType.BaseFireInterval);
-
-                    // todo 每次攻击的时间 = BAT / [(初始攻击速度 + IAS) × 0.01] = 1 / (每秒攻击的次数) 100 是基础攻速
-                    // todo https://dota2.fandom.com/zh/wiki/%E6%94%BB%E5%87%BB%E9%80%9F%E5%BA%A6?variant=zh
-                    float fireInterval = baseFireInterval / ((attackSpeed + 100) * 0.01f);
-                    shootTimer = fireInterval;
-                }
 
         #endregion
 

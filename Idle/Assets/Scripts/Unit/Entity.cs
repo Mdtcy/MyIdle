@@ -149,6 +149,22 @@ namespace IdleGame
         }
 
         /// <summary>
+        /// 攻击间隔
+        /// </summary>
+        /// <returns></returns>
+        public float GetFireInterval()
+        {
+            float attackSpeed      = GetAttribute(AttributeType.AttackSpeed);
+            float baseFireInterval = GetAttribute(AttributeType.BaseFireInterval);
+
+            // todo 每次攻击的时间 = BAT / [(初始攻击速度 + IAS) × 0.01] = 1 / (每秒攻击的次数) 100 是基础攻速
+            // todo https://dota2.fandom.com/zh/wiki/%E6%94%BB%E5%87%BB%E9%80%9F%E5%BA%A6?variant=zh
+            float fireInterval = baseFireInterval / ((attackSpeed + 100) * 0.01f);
+
+            return fireInterval;
+        }
+
+        /// <summary>
         /// 获取资源
         /// </summary>
         /// <param name="resourceType"></param>

@@ -8,7 +8,6 @@
 
 #pragma warning disable 0649
 using IdleGame;
-using Numeric;
 using Sirenix.OdinInspector;
 using UnityEngine;
 
@@ -46,7 +45,7 @@ namespace Unit
         private void Awake()
         {
             Entity.Init();
-            ResetShootTimer();
+            shootTimer = Entity.GetFireInterval();
         }
 
         private void FixedUpdate()
@@ -75,19 +74,8 @@ namespace Unit
                     }
                 }
 
-                ResetShootTimer();
+                shootTimer = Entity.GetFireInterval();
             }
-        }
-
-        private void ResetShootTimer()
-        {
-            float attackSpeed      = Entity.GetAttribute(AttributeType.AttackSpeed);
-            float baseFireInterval = Entity.GetAttribute(AttributeType.BaseFireInterval);
-
-            // todo 每次攻击的时间 = BAT / [(初始攻击速度 + IAS) × 0.01] = 1 / (每秒攻击的次数) 100 是基础攻速
-            // todo https://dota2.fandom.com/zh/wiki/%E6%94%BB%E5%87%BB%E9%80%9F%E5%BA%A6?variant=zh
-            float fireInterval = baseFireInterval / ((attackSpeed + 100) * 0.01f);
-            shootTimer = fireInterval;
         }
 
         private void Shoot(Entity entity)
