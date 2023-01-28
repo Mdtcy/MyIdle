@@ -7,7 +7,8 @@
  */
 
 #pragma warning disable 0649
-using QFramework;
+using System.Collections.Generic;
+using HM.Extensions;
 using Sirenix.OdinInspector;
 using UnityEngine;
 
@@ -17,11 +18,12 @@ namespace Game.Wave
     {
         #region FIELDS
 
+        [InlineEditor(InlineEditorModes.FullEditor)]
         [SerializeField]
         private WaveData waveData;
 
         [SerializeField]
-        private Transform spawnPoint;
+        private List<Transform> spawnPoints;
 
         #endregion
 
@@ -49,7 +51,7 @@ namespace Game.Wave
         {
             for (int i = 0; i < waveData.Waves[0].Count; i++)
             {
-                Instantiate(waveData.Waves[0].Prefab, spawnPoint);
+                Instantiate(waveData.Waves[0].Prefab, spawnPoints.Random().position, Quaternion.identity);
             }
         }
 
