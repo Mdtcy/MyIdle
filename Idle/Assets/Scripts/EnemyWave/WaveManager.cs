@@ -7,10 +7,18 @@
  */
 
 #pragma warning disable 0649
+using System;
 using System.Collections.Generic;
+using System.Runtime.CompilerServices;
+using DefaultNamespace.Events;
 using HM.Extensions;
+using IdleGame;
+using QFramework;
+using QFramework.Example;
 using Sirenix.OdinInspector;
 using UnityEngine;
+using Zenject;
+using Random = UnityEngine.Random;
 
 namespace Game.Wave
 {
@@ -25,6 +33,11 @@ namespace Game.Wave
         [SerializeField]
         private List<Transform> spawnPoints;
 
+        private List<Entity> enemies = new List<Entity>();
+
+        // local
+        private int currentWave = -1;
+
         #endregion
 
         #region PROPERTIES
@@ -32,6 +45,7 @@ namespace Game.Wave
         #endregion
 
         #region PUBLIC METHODS
+
 
         #endregion
 
@@ -43,15 +57,48 @@ namespace Game.Wave
 
         private void Start()
         {
-            Spawn();
+            NextWave();
+            TypeEventSystem.Global.Register<WaveFinishedEvent>(e => { NextWave();})
+                           .UnRegisterWhenGameObjectDestroyed(gameObject);
         }
 
-        [Button]
-        void Spawn()
+        private void Update()
         {
-            for (int i = 0; i < waveData.Waves[0].Count; i++)
+            for (int index = enemies.Count - 1; index >= 0; index--)
             {
-                Instantiate(waveData.Waves[0].Prefab, spawnPoints.Random().position, Quaternion.identity);
+                var enemy = enemies[index];
+
+                if (enemy == null || enemy.dead)
+                {
+                    enemies.Remove(enemy);
+                }
+            }
+
+            if (enemies.Count == 0 && currentWave < waveData.Waves.Count)
+            {
+                UIKit.OpenPanel<UISelectSkill>();
+            }
+        }
+
+        [SerializeField]
+        private float offset = 0;
+
+
+
+        private void NextWave()
+        {
+            currentWave++;
+            if(currentWave >= waveData.Waves.Count)
+            {
+                Debug.Log("游戏结束");
+                return;
+            }
+
+            for (int i = 0; i < waveData.Waves[currentWave].Count; i++)
+            {
+                Vector3 s = new Vector3(Random.Range(-offset, offset), Random.Range(-offset, offset), 0);
+                var enemy = Instantiate(waveData.Waves[currentWave].Prefab, spawnPoints.Random().position + s, Quaternion.identity);
+                enemies.Add(enemy.GetComponent<Entity>());
             }
         }
 
@@ -61,5 +108,6 @@ namespace Game.Wave
 
         #endregion
     }
+
 }
 #pragma warning restore 0649

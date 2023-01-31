@@ -154,6 +154,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6104f415acee4fd8b9ee3309578d61e8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  entityConfig: {fileID: 11400000, guid: 2b215402458a6c14dac8c5a8e9b53fbf, type: 2}
   entity: {fileID: 1367446174141648426}
   animator: {fileID: 1367446172961676016}
   rb: {fileID: 1367446174141648427}

@@ -20,6 +20,9 @@ namespace Unit
         public Entity Entity;
 
         [SerializeField]
+        private EntityConfig entityConfig;
+
+        [SerializeField]
         private Transform pfbBullet;
 
         [ShowInInspector]
@@ -44,7 +47,7 @@ namespace Unit
 
         private void Awake()
         {
-            Entity.Init();
+            Entity.Init(entityConfig);
             shootTimer = Entity.GetFireInterval();
         }
 

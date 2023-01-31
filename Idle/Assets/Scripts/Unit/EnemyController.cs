@@ -21,6 +21,9 @@ namespace Unit
         #region FIELDS
 
         [SerializeField]
+        private EntityConfig entityConfig;
+
+        [SerializeField]
         private Entity entity;
 
         [SerializeField]
@@ -53,14 +56,11 @@ namespace Unit
 
         private void Awake()
         {
-            entity.Init();
-            // ResetShootTimer();
+            entity.Init(entityConfig);
         }
 
         private void FixedUpdate()
         {
-            // return;
-
             if (entity.dead)
             {
                 return;

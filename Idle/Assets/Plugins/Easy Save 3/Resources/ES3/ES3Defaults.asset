@@ -34,6 +34,7 @@ MonoBehaviour:
     - Animancer.Examples
     - DOTweenPro.Scripts
     - EasySave3
+    - Assembly-CSharp
     - QFramework.CoreKit
     - UniTask.Linq
     - StompyRobot.SRF
@@ -41,7 +42,6 @@ MonoBehaviour:
     - MoreMountains.Tools
     - StompyRobot.SRDebugger
     - ResKit
-    - Assembly-CSharp
     - OSA
     - MoreMountains.Feedbacks
     - DamageNumbersPro

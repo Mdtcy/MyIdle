@@ -15,3 +15,7 @@ MonoBehaviour:
   Waves:
   - Count: 3
     Prefab: {fileID: 1367446174141648417, guid: ef41150a9b8e1794dbf59c318ad44c30, type: 3}
+  - Count: 4
+    Prefab: {fileID: 1367446174141648417, guid: ef41150a9b8e1794dbf59c318ad44c30, type: 3}
+  - Count: 5
+    Prefab: {fileID: 1367446174141648417, guid: ef41150a9b8e1794dbf59c318ad44c30, type: 3}

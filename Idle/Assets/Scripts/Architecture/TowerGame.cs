@@ -11,7 +11,7 @@ using QFramework;
 
 namespace IdleGame
 {
-    public class Game : Architecture<Game>
+    public class TowerGame : Architecture<TowerGame>
     {
         protected override void Init()
         {

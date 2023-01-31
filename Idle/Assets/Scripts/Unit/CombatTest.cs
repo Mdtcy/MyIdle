@@ -7,9 +7,12 @@
  */
 
 #pragma warning disable 0649
+using System;
 using IdleGame.Buff;
 using IdleGame.Buff.BuffModels;
 using IdleGame.Buff.BuffModels.PoisonSkills;
+using QFramework;
+using QFramework.Example;
 using Sirenix.OdinInspector;
 using UnityEngine;
 
@@ -184,6 +187,17 @@ namespace IdleGame
         //     // diContainer.Inject(buff);
         //     Entity1.BuffComponent.AddBuff(buff, null, Entity1.gameObject, 1, true);
         // }
+
+        [Button]
+        public void TestSelectSkill()
+        {
+            UIKit.OpenPanel<UISelectSkill>();
+        }
+
+        private void Start()
+        {
+            ResKit.Init();
+        }
 
         #endregion
 

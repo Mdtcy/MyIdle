@@ -134,6 +134,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Entity: {fileID: 2254818197933588390}
+  entityConfig: {fileID: 11400000, guid: e268109798873844b81472717369e97d, type: 2}
   pfbBullet: {fileID: 1709408753970918826, guid: 5b038694c64932844ae612718c8f8cb7, type: 3}
 --- !u!114 &2254818197933588390
 MonoBehaviour:

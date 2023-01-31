@@ -281,26 +281,23 @@ namespace IdleGame
         #region PRIVATE METHODS
 
         // 初始
-        public void Init()
+        public void Init(EntityConfig entityConfig)
         {
             BuffComponent.Init(this);
 
-            InitAttr();
+            InitAttr(entityConfig);
             InitResource();
         }
 
         // 初始属性
-        private void InitAttr()
+        private void InitAttr(EntityConfig entityConfig)
         {
             attributesNumeric = new AttributesNumeric();
-            // todo 从配置中读取
-            ModifyAttribute(AttributeType.Atk, 10, ModifyNumericType.Set);
-            ModifyAttribute(AttributeType.MaxHp, 2000, ModifyNumericType.Set);
-            ModifyAttribute(AttributeType.CriticalChance, 0.3f, ModifyNumericType.Set);
-            ModifyAttribute(AttributeType.CriticalDamage, 1.5f, ModifyNumericType.Set);
-            ModifyAttribute(AttributeType.DodgeChance, 0.1f, ModifyNumericType.Set);
-            ModifyAttribute(AttributeType.AttackSpeed, 0, ModifyNumericType.Set);
-            ModifyAttribute(AttributeType.BaseFireInterval, 1, ModifyNumericType.Set);
+
+            foreach (var attrValue in entityConfig.InitAttrs)
+            {
+                ModifyAttribute(attrValue.AttributeType, attrValue.Value, ModifyNumericType.Set);
+            }
         }
 
         // 初始资源
