@@ -7,9 +7,7 @@
  */
 
 #pragma warning disable 0649
-using System;
 using System.Collections.Generic;
-using System.Runtime.CompilerServices;
 using DefaultNamespace.Events;
 using HM.Extensions;
 using IdleGame;
@@ -17,7 +15,6 @@ using QFramework;
 using QFramework.Example;
 using Sirenix.OdinInspector;
 using UnityEngine;
-using Zenject;
 using Random = UnityEngine.Random;
 
 namespace Game.Wave
