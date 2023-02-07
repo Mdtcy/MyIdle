@@ -194,11 +194,6 @@ namespace IdleGame
             UIKit.OpenPanel<UISelectSkill>();
         }
 
-        private void Start()
-        {
-            ResKit.Init();
-        }
-
         #endregion
 
         #region PROTECTED METHODS

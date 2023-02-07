@@ -9,7 +9,6 @@
 #pragma warning disable 0649
 using System;
 using Damage;
-using HM;
 using Numeric;
 using Sirenix.OdinInspector;
 using Unit;
@@ -195,7 +194,7 @@ namespace IdleGame
                     break;
                 }
                 default:
-                    HMLog.LogError("未定义的ModifyNumericType");
+                    Debug.LogError("未定义的ModifyNumericType");
                     break;
             }
 
@@ -240,7 +239,7 @@ namespace IdleGame
                     break;
                 }
                 default:
-                    HMLog.LogError("未定义的ModifyNumericType");
+                    Debug.LogError("未定义的ModifyNumericType");
 
                     break;
             }
