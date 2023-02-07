@@ -13,9 +13,8 @@ using IdleGame;
 using QFramework;
 using QFramework.Example;
 using Sirenix.OdinInspector;
-using SRF;
 using UnityEngine;
-using Random = UnityEngine.Random;
+using XYZUtility.Extensions;
 
 namespace Game.Wave
 {
@@ -55,7 +54,7 @@ namespace Game.Wave
         private void Start()
         {
             NextWave();
-            TypeEventSystem.Global.Register<WaveFinishedEvent>(e => { NextWave();})
+            TypeEventSystem.Global.Register<WaveFinishedEvent>(_ => { NextWave();})
                            .UnRegisterWhenGameObjectDestroyed(gameObject);
         }
 
@@ -78,7 +77,7 @@ namespace Game.Wave
         }
 
         [SerializeField]
-        private float offset = 0;
+        private float offset;
 
 
 

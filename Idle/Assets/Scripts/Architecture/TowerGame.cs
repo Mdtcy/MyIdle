@@ -3,7 +3,7 @@
  * @email [ tktetb@163.com ]
  * @create date  2022年12月29日
  * @modify date 2022年12月29日
- * @desc [Game]
+ * @desc [IdleGame]
  */
 
 #pragma warning disable 0649
