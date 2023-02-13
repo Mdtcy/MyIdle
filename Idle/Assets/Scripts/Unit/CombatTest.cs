@@ -7,10 +7,7 @@
  */
 
 #pragma warning disable 0649
-using System;
 using IdleGame.Buff;
-using IdleGame.Buff.BuffModels;
-using IdleGame.Buff.BuffModels.PoisonSkills;
 using QFramework;
 using QFramework.Example;
 using Sirenix.OdinInspector;
@@ -48,145 +45,145 @@ namespace IdleGame
         public int stack = 10;
 
         public Entity Entity;
-
-        [Button]
-        public void AddAddAtkSpeedBuff()
-        {
-            var addBuffInfo = new AddBuffInfo(
-                                              new AddAtkSpeedBuffModel(),
-                                              null,
-                                              null,
-                                              stack,
-                                              5f,
-                                              true,
-                                              true,
-                                              null);
-
-            // diContainer.Inject(buff);
-            Entity.BuffComponent.AddBuff(addBuffInfo);
-        }
-
-        [Button]
-        public void AddAddAtkBuff()
-        {
-            var addBuffInfo = new AddBuffInfo(
-                                              new AddAtkBuffModel(),
-                                              null,
-                                              null,
-                                              stack,
-                                              5f,
-                                              true,
-                                              true,
-                                              null);
-
-            // diContainer.Inject(buff);
-            Entity.BuffComponent.AddBuff(addBuffInfo);
-        }
-
-        [Button]
-        public void AddAddCriticalChanceBuff()
-        {
-            var addBuffInfo = new AddBuffInfo(
-                                              new AddCriticalChanceBuffModel(),
-                                              null,
-                                              null,
-                                              stack,
-                                              5f,
-                                              true,
-                                              true,
-                                              null);
-
-            // diContainer.Inject(buff);
-            Entity.BuffComponent.AddBuff(addBuffInfo);
-        }
-
-        [Button]
-        public void AddAddCriticalDamageBuff()
-        {
-            var addBuffInfo = new AddBuffInfo(
-                                              new AddCriticalDamageBuffModel(),
-                                              null,
-                                              null,
-                                              stack,
-                                              5f,
-                                              true,
-                                              true,
-                                              null);
-
-            // diContainer.Inject(buff);
-            Entity.BuffComponent.AddBuff(addBuffInfo);
-        }
-
-        [Button]
-        public void AddHealOverTimePoint3()
-        {
-            var addBuffInfo = new AddBuffInfo(
-                                              new HealOverTimePoint3(),
-                                              null,
-                                              null,
-                                              stack,
-                                              5f,
-                                              true,
-                                              true,
-                                              null);
-
-            // diContainer.Inject(buff);
-            Entity.BuffComponent.AddBuff(addBuffInfo);
-        }
-
-        [Button]
-        public void AddStun()
-        {
-            var addBuffInfo = new AddBuffInfo(
-                                              new StunBuffModel(),
-                                              null,
-                                              null,
-                                              1,
-                                              3f,
-                                              true,
-                                              false,
-                                              null);
-
-            // diContainer.Inject(buff);
-            Entity.BuffComponent.AddBuff(addBuffInfo);
-        }
-
-        [Button]
-        public void AddPoison()
-        {
-            var addBuffInfo = new AddBuffInfo(
-                                              new PoisonBuffModel(),
-                                              Entity.gameObject,
-                                              Entity.gameObject,
-                                              1,
-                                              3f,
-                                              true,
-                                              true,
-                                              null);
-
-            // diContainer.Inject(buff);
-            Entity.BuffComponent.AddBuff(addBuffInfo);
-        }
-
-
-
+        //
         // [Button]
-        // public void AddAddPoint1CriticalProb()
+        // public void AddAddAtkSpeedBuff()
         // {
-        //     var buff = new AddPoint1CriticalProb(Entity1);
+        //     var addBuffInfo = new AddBuffInfo(
+        //                                       new AddAtkSpeedBuffModel(),
+        //                                       null,
+        //                                       null,
+        //                                       stack,
+        //                                       5f,
+        //                                       true,
+        //                                       true,
+        //                                       null);
         //
         //     // diContainer.Inject(buff);
-        //     Entity1.BuffComponent.AddBuff(buff, null, Entity1.gameObject, 1, true);
+        //     Entity.BuffComponent.AddBuff(addBuffInfo);
         // }
         //
         // [Button]
-        // public void AddAddSpeedOnCrit()
+        // public void AddAddAtkBuff()
         // {
-        //     var buff = new AddAtkSpeedOnCrit(Entity1);
+        //     var addBuffInfo = new AddBuffInfo(
+        //                                       new AddAtkBuffModel(),
+        //                                       null,
+        //                                       null,
+        //                                       stack,
+        //                                       5f,
+        //                                       true,
+        //                                       true,
+        //                                       null);
         //
         //     // diContainer.Inject(buff);
-        //     Entity1.BuffComponent.AddBuff(buff, null, Entity1.gameObject, 1, true);
+        //     Entity.BuffComponent.AddBuff(addBuffInfo);
         // }
+        //
+        // [Button]
+        // public void AddAddCriticalChanceBuff()
+        // {
+        //     var addBuffInfo = new AddBuffInfo(
+        //                                       new AddCriticalChanceBuffModel(),
+        //                                       null,
+        //                                       null,
+        //                                       stack,
+        //                                       5f,
+        //                                       true,
+        //                                       true,
+        //                                       null);
+        //
+        //     // diContainer.Inject(buff);
+        //     Entity.BuffComponent.AddBuff(addBuffInfo);
+        // }
+        //
+        // [Button]
+        // public void AddAddCriticalDamageBuff()
+        // {
+        //     var addBuffInfo = new AddBuffInfo(
+        //                                       new AddCriticalDamageBuffModel(),
+        //                                       null,
+        //                                       null,
+        //                                       stack,
+        //                                       5f,
+        //                                       true,
+        //                                       true,
+        //                                       null);
+        //
+        //     // diContainer.Inject(buff);
+        //     Entity.BuffComponent.AddBuff(addBuffInfo);
+        // }
+        //
+        // [Button]
+        // public void AddHealOverTimePoint3()
+        // {
+        //     var addBuffInfo = new AddBuffInfo(
+        //                                       new HealOverTimePoint3(),
+        //                                       null,
+        //                                       null,
+        //                                       stack,
+        //                                       5f,
+        //                                       true,
+        //                                       true,
+        //                                       null);
+        //
+        //     // diContainer.Inject(buff);
+        //     Entity.BuffComponent.AddBuff(addBuffInfo);
+        // }
+        //
+        // [Button]
+        // public void AddStun()
+        // {
+        //     var addBuffInfo = new AddBuffInfo(
+        //                                       new StunBuffModel(),
+        //                                       null,
+        //                                       null,
+        //                                       1,
+        //                                       3f,
+        //                                       true,
+        //                                       false,
+        //                                       null);
+        //
+        //     // diContainer.Inject(buff);
+        //     Entity.BuffComponent.AddBuff(addBuffInfo);
+        // }
+        //
+        // [Button]
+        // public void AddPoison()
+        // {
+        //     var addBuffInfo = new AddBuffInfo(
+        //                                       new PoisonBuffModel(),
+        //                                       Entity.gameObject,
+        //                                       Entity.gameObject,
+        //                                       1,
+        //                                       3f,
+        //                                       true,
+        //                                       true,
+        //                                       null);
+        //
+        //     // diContainer.Inject(buff);
+        //     Entity.BuffComponent.AddBuff(addBuffInfo);
+        // }
+        //
+        //
+        //
+        // // [Button]
+        // // public void AddAddPoint1CriticalProb()
+        // // {
+        // //     var buff = new AddPoint1CriticalProb(Entity1);
+        // //
+        // //     // diContainer.Inject(buff);
+        // //     Entity1.BuffComponent.AddBuff(buff, null, Entity1.gameObject, 1, true);
+        // // }
+        // //
+        // // [Button]
+        // // public void AddAddSpeedOnCrit()
+        // // {
+        // //     var buff = new AddAtkSpeedOnCrit(Entity1);
+        // //
+        // //     // diContainer.Inject(buff);
+        // //     Entity1.BuffComponent.AddBuff(buff, null, Entity1.gameObject, 1, true);
+        // // }
 
         [Button]
         public void TestSelectSkill()

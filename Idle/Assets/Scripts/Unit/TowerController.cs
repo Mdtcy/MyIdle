@@ -47,7 +47,7 @@ namespace Unit
 
         private void Awake()
         {
-            Entity.Init(entityConfig);
+            // Entity.Init();
             shootTimer = Entity.GetFireInterval();
         }
 

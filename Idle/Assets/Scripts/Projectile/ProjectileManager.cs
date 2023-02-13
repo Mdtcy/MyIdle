@@ -7,8 +7,8 @@
  */
 
 #pragma warning disable 0649
+using QFramework;
 using UnityEngine;
-using Zenject;
 
 namespace Game.Projectile
 {
@@ -17,7 +17,7 @@ namespace Game.Projectile
         #region FIELDS
 
         // todo 注入接口
-        [Inject]
+        [Zenject.Inject]
         private ProjectilePool projectilePool;
 
         [SerializeField]

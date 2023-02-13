@@ -7,7 +7,6 @@
  */
 
 using Damage;
-using Numeric;
 using Unit;
 using UnityEngine;
 

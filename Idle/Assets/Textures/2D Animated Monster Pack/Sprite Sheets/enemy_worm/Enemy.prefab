@@ -175,6 +175,14 @@ MonoBehaviour:
   side: 0
   dead: 0
   BuffComponent: {fileID: 1367446174141648423}
+  atk: 1
+  critChance: 0
+  critDamage: 0
+  dodgeChance: 0
+  attackSpeed: 0
+  baseFireRate: 1
+  hp: 5
+  maxHp: 5
 --- !u!114 &1367446174141648423
 MonoBehaviour:
   m_ObjectHideFlags: 0

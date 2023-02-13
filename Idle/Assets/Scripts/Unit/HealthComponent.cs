@@ -1,24 +1,26 @@
 /**
  * @author BoLuo
  * @email [ tktetb@163.com ]
- * @create date  2023年1月8日
- * @modify date 2023年1月8日
+ * @create date  2023年2月13日
+ * @modify date 2023年2月13日
  * @desc [任务组UI]
  */
 
 #pragma warning disable 0649
-using System.Collections.Generic;
 using UnityEngine;
 
-namespace IdleGame.Buff.BuffModels
+namespace Unit
 {
-    public class BuffModels
+    public class HealthComponent : MonoBehaviour
     {
-        public static List<BuffModel> ModelsList = new List<BuffModel>()
-        {
-        };
-
         #region FIELDS
+
+        public float CurrentHealth;
+
+        public float InitialHealth = 10;
+        public float MaximumHealth = 10;
+
+        public bool ImmuneToDamage = false;
 
         #endregion
 

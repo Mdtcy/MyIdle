@@ -9,7 +9,6 @@
 #pragma warning disable 0649
 using Damage;
 using DefaultNamespace;
-using Numeric;
 using UnityEngine;
 
 namespace IdleGame
@@ -85,7 +84,7 @@ namespace IdleGame
             {
                 SceneVariants.CreateDamage(caster.gameObject,
                                            target.gameObject,
-                                           new Damage.Damage(Mathf.CeilToInt(caster.GetAttribute(AttributeType.Atk))),
+                                           new Damage.Damage((int)caster.atk),
                                            new DamageInfoTag[] {DamageInfoTag.directDamage,}
                                           );
                 Destroy(gameObject);

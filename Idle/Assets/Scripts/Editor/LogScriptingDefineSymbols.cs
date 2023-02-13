@@ -33,7 +33,7 @@ namespace NewLife.EditorTool
         /// <summary>
         /// 禁用所有日志脚本宏定义。
         /// </summary>
-        [MenuItem("Tools/Log Scripting Define Symbols/Disable All Logs", false, 30)]
+        [MenuItem("XYZ/Log级别设置/Disable All Logs", false, 30)]
         public static void DisableAllLogs()
         {
             foreach (string specifyLogScriptingDefineSymbol in SpecifyLogScriptingDefineSymbols)
@@ -45,7 +45,7 @@ namespace NewLife.EditorTool
         /// <summary>
         /// 开启Verbose及以上级别的日志脚本宏定义。
         /// </summary>
-        [MenuItem("Tools/Log Scripting Define Symbols/Enable Verbose And Above Logs", false, 32)]
+        [MenuItem("XYZ/Log级别设置/Enable Verbose And Above Logs", false, 32)]
         public static void EnableVerboseAndAboveLogs()
         {
             DisableAllLogs();
@@ -55,7 +55,7 @@ namespace NewLife.EditorTool
         /// <summary>
         /// 开启调试及以上级别的日志脚本宏定义。
         /// </summary>
-        [MenuItem("Tools/Log Scripting Define Symbols/Enable Debug And Above Logs", false, 33)]
+        [MenuItem("XYZ/Log级别设置/Enable Debug And Above Logs", false, 33)]
         public static void EnableDebugAndAboveLogs()
         {
             DisableAllLogs();
@@ -65,7 +65,7 @@ namespace NewLife.EditorTool
         /// <summary>
         /// 开启信息及以上级别的日志脚本宏定义。
         /// </summary>
-        [MenuItem("Tools/Log Scripting Define Symbols/Enable Info And Above Logs", false, 34)]
+        [MenuItem("XYZ/Log级别设置/Enable Info And Above Logs", false, 34)]
         public static void EnableInfoAndAboveLogs()
         {
             DisableAllLogs();
@@ -75,7 +75,7 @@ namespace NewLife.EditorTool
         /// <summary>
         /// 开启警告及以上级别的日志脚本宏定义。
         /// </summary>
-        [MenuItem("Tools/Log Scripting Define Symbols/Enable Warning And Above Logs", false, 35)]
+        [MenuItem("XYZ/Log级别设置/Enable Warning And Above Logs", false, 35)]
         public static void EnableWarningAndAboveLogs()
         {
             DisableAllLogs();
@@ -85,7 +85,7 @@ namespace NewLife.EditorTool
         /// <summary>
         /// 开启错误及以上级别的日志脚本宏定义。
         /// </summary>
-        [MenuItem("Tools/Log Scripting Define Symbols/Enable Error And Above Logs", false, 36)]
+        [MenuItem("XYZ/Log级别设置/Enable Error And Above Logs", false, 36)]
         public static void EnableErrorAndAboveLogs()
         {
             DisableAllLogs();

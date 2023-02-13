@@ -50,7 +50,6 @@ MonoBehaviour:
     - Animancer
     - Animancer.FSM
     - UniTask.DOTween
-    - CodeMonkey_HealthSystem
     - XNode
     - Assembly-CSharp-firstpass
     - DOTween.Modules
@@ -80,7 +79,6 @@ MonoBehaviour:
     - MoreMountains.Tools.Feedbacks.Editor
     - UniTask.Editor
     - DOTweenPro.EditorScripts
-    - CodeMonkey_HealthSystem_Editor
     - NativeShare.Editor
     - Sirenix.OdinInspector.Modules.UnityMathematics
     showAdvancedSettings: 0

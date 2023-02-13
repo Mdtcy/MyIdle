@@ -7,7 +7,6 @@
  */
 
 #pragma warning disable 0649
-using Numeric;
 using UnityEngine;
 using UnityEngine.UI;
 using Zenject;
@@ -82,21 +81,21 @@ namespace IdleGame
 
         private void RefreshUI()
         {
-            txtMaxHp.text               = $"最大生命值 : {Entity.GetAttribute(AttributeType.MaxHp)}";
-            txtHp.text                  = $"当前生命值 : {Entity.GetResource(ResourceType.Hp)}";
-            hpBar.maxValue              = Entity.GetAttribute(AttributeType.MaxHp);
-            hpBar.value                 = Entity.GetResource(ResourceType.Hp);
-            txtAtk.text                 = $"攻击力 : {Entity.GetAttribute(AttributeType.Atk)}";
-            txtCriticalProbability.text = $"暴击概率 : {Entity.GetAttribute(AttributeType.CriticalChance)}";
-            txtCriticalDamage.text      = $"暴击伤害 : {Entity.GetAttribute(AttributeType.CriticalDamage)}";
-            txtDodgeProbability.text    = $"闪避概率 : {Entity.GetAttribute(AttributeType.DodgeChance)}";
-            txtAttackSpeed.text         = $"攻速 : {Entity.GetAttribute(AttributeType.AttackSpeed)}";
+            // txtMaxHp.text               = $"最大生命值 : {Entity.GetAttribute(AttributeType.MaxHp)}";
+            // txtHp.text                  = $"当前生命值 : {Entity.GetResource(ResourceType.Hp)}";
+            // hpBar.maxValue              = Entity.GetAttribute(AttributeType.MaxHp);
+            // hpBar.value                 = Entity.GetResource(ResourceType.Hp);
+            // txtAtk.text                 = $"攻击力 : {Entity.GetAttribute(AttributeType.Atk)}";
+            // txtCriticalProbability.text = $"暴击概率 : {Entity.GetAttribute(AttributeType.CriticalChance)}";
+            // txtCriticalDamage.text      = $"暴击伤害 : {Entity.GetAttribute(AttributeType.CriticalDamage)}";
+            // txtDodgeProbability.text    = $"闪避概率 : {Entity.GetAttribute(AttributeType.DodgeChance)}";
+            // txtAttackSpeed.text         = $"攻速 : {Entity.GetAttribute(AttributeType.AttackSpeed)}";
+            //
+            // float attackSpeed      = Entity.GetAttribute(AttributeType.AttackSpeed);
+            // float baseFireInterval = Entity.GetAttribute(AttributeType.BaseFireInterval);
+            // float fireInterval     = baseFireInterval / ((attackSpeed + 100) * 0.01f);
 
-            float attackSpeed      = Entity.GetAttribute(AttributeType.AttackSpeed);
-            float baseFireInterval = Entity.GetAttribute(AttributeType.BaseFireInterval);
-            float fireInterval     = baseFireInterval / ((attackSpeed + 100) * 0.01f);
-
-            txtFireInterval.text        = $"攻击间隔 : {fireInterval}秒一次";
+            // txtFireInterval.text        = $"攻击间隔 : {fireInterval}秒一次";
 
 
             for (int i = buffRoot.childCount - 1; i >= 0; i--)

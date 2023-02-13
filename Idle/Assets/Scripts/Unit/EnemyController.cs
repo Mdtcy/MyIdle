@@ -10,7 +10,6 @@
 using Damage;
 using DefaultNamespace;
 using IdleGame;
-using Numeric;
 using Sirenix.OdinInspector;
 using UnityEngine;
 
@@ -69,6 +68,11 @@ namespace Unit
             // Find the player todo
             var tower = FindObjectOfType<TowerController>();
 
+            if (tower == null)
+            {
+                return;
+            }
+
             float distance = Vector3.Distance(tower.transform.position, transform.position);
 
             if (distance <= 4 * GetComponent<CircleCollider2D>().radius)
@@ -99,7 +103,7 @@ namespace Unit
             // 实际攻击
             SceneVariants.CreateDamage(gameObject,
                                        target.gameObject,
-                                       new Damage.Damage(Mathf.CeilToInt(entity.GetAttribute(AttributeType.Atk))),
+                                       new Damage.Damage(Mathf.CeilToInt(entity.atk)),
                                        new DamageInfoTag[] {DamageInfoTag.directDamage,}
                                       );
         }

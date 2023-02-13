@@ -10,7 +10,6 @@
 using System.Collections.Generic;
 using System.Linq;
 using IdleGame;
-using Numeric;
 using PopUpText;
 using UnityEngine;
 
@@ -87,8 +86,8 @@ namespace Damage
             int  dVal;
 
             var   attckEntity     = dInfo.attacker.GetComponent<Entity>();
-            float critProbability = attckEntity.GetAttribute(AttributeType.CriticalChance);
-            float critDamage      = attckEntity.GetAttribute(AttributeType.CriticalDamage);
+            float critProbability = attckEntity.critChance;
+            float critDamage      = attckEntity.critDamage;
 
             // todo 直接伤害才可以暴击
             bool isCrit = Random.Range(0.00f, 1.00f) <= critProbability &&
@@ -134,8 +133,7 @@ namespace Damage
                 // }
 
                 // todo 这里扣血在OnKill OnBeKilled之后 是否会出现问题
-                defenderChaState.ModifyResource(ResourceType.Hp, -dVal, ModifyNumericType.Add);
-
+                defenderChaState.TakeDamage(dVal);
                 //按游戏设计的规则跳数字，如果要有暴击，也可以丢在策划脚本函数（lua可以返回多参数）也可以随便怎么滴
                 popUpTextManager.PopUpNumberOnCharacter(dInfo.defender, Mathf.Abs(dVal), isHeal, isCrit);
             }
