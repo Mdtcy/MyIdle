@@ -120,12 +120,6 @@ namespace IdleGame
 
         #region PRIVATE METHODS
 
-        // 初始
-        public void Init(EntityConfig entityConfig)
-        {
-            // BuffComponent.Init(this);
-        }
-
 
         #endregion
 

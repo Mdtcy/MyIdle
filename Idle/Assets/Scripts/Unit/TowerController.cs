@@ -20,9 +20,6 @@ namespace Unit
         public Entity Entity;
 
         [SerializeField]
-        private EntityConfig entityConfig;
-
-        [SerializeField]
         private Transform pfbBullet;
 
         [ShowInInspector]
@@ -70,7 +67,7 @@ namespace Unit
                     {
                         if (entity.side != Entity.side)
                         {
-                            Shoot(entity);
+                            ShootTrackBullet(entity);
 
                             break;
                         }
@@ -81,16 +78,16 @@ namespace Unit
             }
         }
 
-        private void Shoot(Entity entity)
+        // 发射追踪子弹
+        private void ShootTrackBullet(Entity entity)
         {
             // 生成子弹
             var bulletTransform = Instantiate(pfbBullet);
             bulletTransform.transform.position = transform.position;
 
-            var bullet = bulletTransform.GetComponent<Bullet>();
+            var bullet = bulletTransform.GetComponent<TrackBullet>();
 
             // 将bullet向敌人射过去
-
             bullet.Init(Entity, entity);
         }
 

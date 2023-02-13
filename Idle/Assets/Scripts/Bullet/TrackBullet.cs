@@ -13,12 +13,12 @@ using UnityEngine;
 
 namespace IdleGame
 {
-    public class Bullet : MonoBehaviour
+    public class TrackBullet : MonoBehaviour
     {
         #region FIELDS
 
-        private Entity    caster;
-        private Entity    target;
+        private Entity caster;
+        private Entity target;
 
         public Rigidbody2D Rb2D;
 
@@ -65,10 +65,6 @@ namespace IdleGame
             // move
             Vector3 dir = transform.TransformDirection(Vector3.right);
             Rb2D.velocity = dir * speed;
-
-            // Vector3 dir = (Target.position - transform.position).normalized;
-            // transform.position += dir * speed * Time.deltaTime;
-
         }
 
         private void OnTriggerEnter2D(Collider2D other)
