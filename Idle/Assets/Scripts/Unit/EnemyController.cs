@@ -100,6 +100,7 @@ namespace Unit
             SceneVariants.CreateDamage(gameObject,
                                        target.gameObject,
                                        new Damage.Damage(Mathf.CeilToInt(entity.atk)),
+                                       transform.eulerAngles.z,
                                        new DamageInfoTag[] {DamageInfoTag.directDamage,}
                                       );
         }

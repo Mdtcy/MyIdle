@@ -123,7 +123,7 @@ namespace Damage
                 }
             }
 
-            if (isHeal == true || defenderChaState.immuneTime <= 0)
+            if (isHeal == true || defenderChaState.ImmuneTime <= 0)
             {
                 // todo 受伤效果
                 // if (dInfo.requireDoHurt() == true && defenderChaState.CanBeKilledByDamageInfo(dInfo) == false)
@@ -149,7 +149,6 @@ namespace Damage
                     toChaState.BuffComponent.AddBuff(dInfo.addBuffs[i]);
                 }
             }
-
         }
 
         ///<summary>
@@ -164,9 +163,10 @@ namespace Damage
         public void DoDamage(GameObject      attacker,
                              GameObject      target,
                              Damage          damage,
+                             float           damageDegree,
                              DamageInfoTag[] tags)
         {
-            damageInfos.Add(new DamageInfo(attacker, target, damage, tags));
+            damageInfos.Add(new DamageInfo(attacker, target, damage, damageDegree, tags));
         }
     }
 }

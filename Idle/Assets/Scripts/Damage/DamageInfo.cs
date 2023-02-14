@@ -48,6 +48,11 @@ namespace Damage
         public float hitRate;
 
         ///<summary>
+        ///伤害的角度，作为伤害打向角色的入射角度，比如子弹，就是它当前的飞行角度
+        ///</summary>
+        public float degree;
+
+        ///<summary>
         ///伤害过后，给角色添加的buff
         ///</summary>
         public List<AddBuffInfo> addBuffs = new List<AddBuffInfo>();
@@ -55,12 +60,14 @@ namespace Damage
         public DamageInfo(GameObject      attacker,
                           GameObject      defender,
                           Damage          damage,
+                          float           damageDegree,
                           DamageInfoTag[] tags)
         {
-            this.attacker     = attacker;
-            this.defender     = defender;
-            this.damage       = damage;
-            this.tags         = new DamageInfoTag[tags.Length];
+            this.attacker = attacker;
+            this.defender = defender;
+            this.damage   = damage;
+            this.degree   = damageDegree;
+            this.tags     = new DamageInfoTag[tags.Length];
 
             for (int i = 0; i < tags.Length; i++)
             {

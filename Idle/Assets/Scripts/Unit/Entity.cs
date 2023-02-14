@@ -90,13 +90,13 @@ namespace IdleGame
         ///角色的无敌状态持续时间，如果在无敌状态中，子弹不会碰撞，DamageInfo处理无效化
         ///单位：秒
         ///</summary>
-        public float immuneTime
+        public float ImmuneTime
         {
-            get { return _immuneTime; }
-            set { _immuneTime = Mathf.Max(_immuneTime, value); }
+            get { return immuneTime; }
+            set { immuneTime = Mathf.Max(immuneTime, value); }
         }
 
-        private float _immuneTime = 0.00f;
+        private float immuneTime = 0.00f;
 
         /// <summary>
         /// 攻击间隔

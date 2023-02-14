@@ -7,12 +7,13 @@
  */
 
 #pragma warning disable 0649
+using IdleGame;
 using UnityEngine;
 using UnityEngine.Pool;
 
 namespace Game.Projectile
 {
-    public class ProjectilePool : MonoBehaviour
+    public class TrackBulletPool : MonoBehaviour
     {
         #region FIELDS
 
@@ -21,13 +22,13 @@ namespace Game.Projectile
         public int  maxPoolSize      = 10;
 
         [SerializeField]
-        private Transform pfbProjectile1;
+        private Transform pfbBullet;
 
-        IObjectPool<Projectile> pool;
+        IObjectPool<TrackBullet> pool;
 
-        public IObjectPool<Projectile> Pool =>
-            pool ??= new ObjectPool<Projectile>(CreatePooledItem, OnTakeFromPool, OnReturnedToPool,
-                                                OnDestroyPoolObject, collectionChecks, 100, maxPoolSize);
+        public IObjectPool<TrackBullet> Pool =>
+            pool ??= new ObjectPool<TrackBullet>(CreatePooledItem, OnTakeFromPool, OnReturnedToPool,
+                                                 OnDestroyPoolObject, collectionChecks, 100, maxPoolSize);
 
         #endregion
 
@@ -37,7 +38,7 @@ namespace Game.Projectile
 
         #region PUBLIC METHODS
 
-        public Projectile Get()
+        public TrackBullet Get()
         {
             return Pool.Get();
         }
@@ -50,29 +51,29 @@ namespace Game.Projectile
 
         #region PRIVATE METHODS
 
-        private void OnDestroyPoolObject(Projectile projectile)
+        private void OnDestroyPoolObject(TrackBullet bullet)
         {
-            Destroy(projectile.gameObject);
+            Destroy(bullet.gameObject);
         }
 
-        private void OnReturnedToPool(Projectile projectile)
+        private void OnReturnedToPool(TrackBullet bullet)
         {
             // todo 进行回收
-            projectile.gameObject.SetActive(false);
+            bullet.gameObject.SetActive(false);
         }
 
-        private void OnTakeFromPool(Projectile projectile)
+        private void OnTakeFromPool(TrackBullet bullet)
         {
             // todo 进行一些初始化
-            projectile.gameObject.SetActive(true);
+            bullet.gameObject.SetActive(true);
         }
 
-        private Projectile CreatePooledItem()
+        private TrackBullet CreatePooledItem()
         {
-            var go         = Instantiate(pfbProjectile1);
-            var projectile = go.GetComponent<Projectile>();
+            var go         = Instantiate(pfbBullet);
+            var bullet = go.GetComponent<TrackBullet>();
 
-            return projectile;
+            return bullet;
         }
 
         #endregion
