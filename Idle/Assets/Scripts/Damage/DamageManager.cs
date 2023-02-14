@@ -62,24 +62,24 @@ namespace Damage
 
             Entity attackerChaState = null;
 
-            // 先走一遍所有攻击者的onHit
-            if (dInfo.attacker)
-            {
-                attackerChaState = dInfo.attacker.GetComponent<Entity>();
-
-                for (int i = 0; i < attackerChaState.BuffComponent.Buffs.Count; i++)
-                {
-                    var buffObj = attackerChaState.BuffComponent.Buffs[i];
-                    buffObj.model.OnHit(buffObj, ref dInfo, dInfo.defender);
-                }
-            }
-
-            // 然后走一遍挨打者的beHurt
-            for (int i = 0; i < defenderChaState.BuffComponent.Buffs.Count; i++)
-            {
-                var buffObj = defenderChaState.BuffComponent.Buffs[i];
-                buffObj.model.OnBeHurt(buffObj, ref dInfo, dInfo.attacker);
-            }
+            // // 先走一遍所有攻击者的onHit
+            // if (dInfo.attacker)
+            // {
+            //     attackerChaState = dInfo.attacker.GetComponent<Entity>();
+            //
+            //     for (int i = 0; i < attackerChaState.BuffComponent.Buffs.Count; i++)
+            //     {
+            //         var buffObj = attackerChaState.BuffComponent.Buffs[i];
+            //         buffObj.model.OnHit(buffObj, ref dInfo, dInfo.defender);
+            //     }
+            // }
+            //
+            // // 然后走一遍挨打者的beHurt
+            // for (int i = 0; i < defenderChaState.BuffComponent.Buffs.Count; i++)
+            // {
+            //     var buffObj = defenderChaState.BuffComponent.Buffs[i];
+            //     buffObj.model.OnBeHurt(buffObj, ref dInfo, dInfo.attacker);
+            // }
 
             // 计算实际的伤害和治疗量
             bool isHeal = dInfo.isHeal();
@@ -109,17 +109,17 @@ namespace Damage
             {
                 if (attackerChaState != null)
                 {
-                    for (int i = 0; i < attackerChaState.BuffComponent.Buffs.Count; i++)
-                    {
-                        var buffObj = attackerChaState.BuffComponent.Buffs[i];
-                        buffObj.model.OnKill(buffObj, dInfo, dInfo.defender);
-                    }
+                    // for (int i = 0; i < attackerChaState.BuffComponent.Buffs.Count; i++)
+                    // {
+                    //     var buffObj = attackerChaState.BuffComponent.Buffs[i];
+                    //     buffObj.model.OnKill(buffObj, dInfo, dInfo.defender);
+                    // }
                 }
 
                 for (int i = 0; i < defenderChaState.BuffComponent.Buffs.Count; i++)
                 {
                     var buffObj = defenderChaState.BuffComponent.Buffs[i];
-                    buffObj.model.OnBeKilled(buffObj, dInfo, dInfo.attacker);
+                    // buffObj.model.OnBeKilled(buffObj, dInfo, dInfo.attacker);
                 }
             }
 

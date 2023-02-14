@@ -17,7 +17,7 @@ namespace IdleGame.Buff
         ///<summary>
         ///这是个什么buff
         ///</summary>
-        public BuffModel model;
+        public BuffConfig model;
 
         ///<summary>
         ///剩余多久，单位：秒
@@ -50,16 +50,11 @@ namespace IdleGame.Buff
         public float timeElapsed = 0.00f;
 
         ///<summary>
-        ///buff执行了多少次onTick了，如果不会执行onTick，那将永远是0
-        ///</summary>
-        public int ticked = 0;
-
-        ///<summary>
         ///buff的一些参数，这些参数是逻辑使用的，比如wow中牧师的盾还能吸收多少伤害，就可以记录在buffParam里面
         ///</summary>
         public Dictionary<string, object> buffParam = new Dictionary<string, object>();
 
-        public BuffObj(BuffModel                  model,
+        public BuffObj(BuffConfig                  model,
                        GameObject                 caster,
                        GameObject                 carrier,
                        float                      duration,

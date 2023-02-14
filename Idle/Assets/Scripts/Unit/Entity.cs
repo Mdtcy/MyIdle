@@ -143,13 +143,13 @@ namespace IdleGame
         // 状态计算
         public void ControlStateRecheck()
         {
-            controlState.Origin();
-
-            for (int i = 0; i < this.BuffComponent.Buffs.Count; i++)
-            {
-                var buff = BuffComponent.Buffs[i];
-                controlState += buff.model.stateMod;
-            }
+            // controlState.Origin();
+            //
+            // for (int i = 0; i < this.BuffComponent.Buffs.Count; i++)
+            // {
+            //     var buff = BuffComponent.Buffs[i];
+            //     controlState += buff.model.stateMod;
+            // }
         }
     }
 }

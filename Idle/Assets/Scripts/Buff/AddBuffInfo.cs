@@ -32,7 +32,7 @@ namespace IdleGame.Buff
         ///<summary>
         ///buff的model，这里当然可以从数据里拿，也可以是逻辑脚本现生成的
         ///</summary>
-        public BuffModel buffModel;
+        public BuffConfig buffConfig;
 
         ///<summary>
         ///要添加的层数，负数则为减少
@@ -61,7 +61,7 @@ namespace IdleGame.Buff
         public Dictionary<string, object> buffParam;
 
         public AddBuffInfo(
-            BuffModel                  model,
+            BuffConfig                  config,
             GameObject                 caster,
             GameObject                 target,
             int                        stack,
@@ -71,7 +71,7 @@ namespace IdleGame.Buff
             Dictionary<string, object> buffParam     = null
         )
         {
-            this.buffModel     = model;
+            this.buffConfig     = config;
             this.caster        = caster;
             this.target        = target;
             this.addStack      = stack;

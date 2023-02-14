@@ -42,11 +42,11 @@ namespace IdleGame
         /// <param name="id"></param>
         /// <param name="caster"></param>
         /// <returns></returns>
-        public BuffObj GetBuffById(string id, GameObject caster)
+        public BuffObj GetBuffByName(string name, GameObject caster)
         {
             for (int i = 0; i < Buffs.Count; i++)
             {
-                if (Buffs[i].model.id == id &&
+                if (Buffs[i].model.Name == name &&
                     (caster == Buffs[i].caster))
                 {
                     return Buffs[i];
@@ -85,7 +85,7 @@ namespace IdleGame
         public void AddBuff(AddBuffInfo addBuffInfo)
         {
             var     buffCaster = addBuffInfo.caster;
-            BuffObj hasOne    = GetBuffById(addBuffInfo.buffModel.id, buffCaster);
+            BuffObj hasOne    = GetBuffByName(addBuffInfo.buffConfig.Name, buffCaster);
             int     modStack   = addBuffInfo.addStack;
             bool    toRemove   = false;
             BuffObj toAddBuff  = null;
@@ -107,8 +107,8 @@ namespace IdleGame
                     ? addBuffInfo.duration
                     : (addBuffInfo.duration + hasOne.duration);
                 int afterAdd = hasOne.stack + modStack;
-                modStack = afterAdd >= hasOne.model.maxStack
-                    ? (hasOne.model.maxStack - hasOne.stack)
+                modStack = afterAdd >= hasOne.model.MaxStack
+                    ? (hasOne.model.MaxStack - hasOne.stack)
                     : (afterAdd <= 0 ? (0 - hasOne.stack) : modStack);
                 hasOne.stack     += modStack;
                 hasOne.permanent =  addBuffInfo.permanent;
@@ -119,7 +119,7 @@ namespace IdleGame
             {
                 //新建
                 toAddBuff = new BuffObj(
-                                        addBuffInfo.buffModel,
+                                        addBuffInfo.buffConfig,
                                         addBuffInfo.caster,
                                         this.gameObject,
                                         addBuffInfo.duration,
@@ -128,22 +128,17 @@ namespace IdleGame
                                         addBuffInfo.buffParam
                                        );
                 Buffs.Add(toAddBuff);
-                Buffs.Sort(SortBuff);
             }
 
             // 如果不是在移除Buff, 触发OnOccur
-            if (toRemove == false)
-            {
-                addBuffInfo.buffModel.OnOccur(toAddBuff, modStack);
-            }
+            // if (toRemove == false)
+            // {
+            //     addBuffInfo.buffModel.OnOccur(toAddBuff, modStack);
+            // }
 
             owener.ControlStateRecheck();
         }
 
-        private int SortBuff(BuffObj x, BuffObj y)
-        {
-            return x.model.priority.CompareTo(y.model.priority);
-        }
 
         // public Buff GetBuffByTag(string tag)
         // {
@@ -204,30 +199,10 @@ namespace IdleGame
                     // 更新Buff持续时间
                     buff.timeElapsed += timePassed;
 
-                    // 如果是固定一段时间触发的Buff 则每隔一段时间处理一次
-                    if (buff.model.tickTime > 0)
-                    {
-                        if (buff.timeElapsed > (buff.ticked + 1) * buff.model.tickTime)
-                        {
-                            buff.model.OnTick(buff);
-                            buff.ticked += 1;
-                        }
-
-                        // // float取模不精准，所以用x1000后的整数来
-                        //     if (Mathf.RoundToInt(buff.timeElapsed    * 1000) %
-                        //         Mathf.RoundToInt(buff.model.tickTime * 1000) ==
-                        //         0)
-                        //     {
-                        //         buff.model.OnTick(buff);
-                        //         buff.ticked += 1;
-                        //     }
-                    }
-
                     // 只要duration <= 0，不管是否是permanent都移除掉
                     // Stack为0也会被移除掉
                     if (buff.duration <= 0 || buff.stack <= 0)
                     {
-                        buff.model.OnRemoved(buff);
                         buffsToRemove.Add(buff);
                     }
                 }
