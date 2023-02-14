@@ -26,9 +26,6 @@ namespace IdleGame
         [ReadOnly]
         public bool dead;
 
-        public Action ActOnAttributeChanged;
-        public Action ActOnResourceChanged;
-
         public BuffComponent BuffComponent;
 
         private ChaControlState controlState = new ChaControlState(true, true);

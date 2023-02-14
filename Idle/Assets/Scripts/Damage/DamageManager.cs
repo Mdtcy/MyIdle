@@ -21,7 +21,6 @@ namespace Damage
         [SerializeField]
         private PopUpTextManager popUpTextManager;
 
-
         private List<DamageInfo> damageInfos = new();
 
         private void FixedUpdate()

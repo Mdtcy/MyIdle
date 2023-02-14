@@ -75,8 +75,6 @@ namespace IdleGame
         {
             txtName.text = Entity.name;
             RefreshUI();
-            Entity.ActOnAttributeChanged += RefreshUI;
-            Entity.ActOnResourceChanged += RefreshUI;
         }
 
         private void RefreshUI()
