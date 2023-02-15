@@ -61,6 +61,7 @@ namespace Damage
 
             Entity attackerChaState = null;
 
+            // GlobalEventManager.Instance.OnHit(dInfo);
             // // 先走一遍所有攻击者的onHit
             // if (dInfo.attacker)
             // {

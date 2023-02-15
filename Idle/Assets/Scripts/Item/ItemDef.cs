@@ -3,7 +3,7 @@ using UnityEngine;
 
 namespace DefaultNamespace.Item
 {
-    [CreateAssetMenu(fileName = "ItemDef", menuName = "DEF/ItemDef", order = 0)]
+    [CreateAssetMenu(fileName = "ItemDef", menuName = "Config/ItemDef", order = 0)]
     public class ItemDef : ScriptableObject
     {
         public Sprite SpIcon;

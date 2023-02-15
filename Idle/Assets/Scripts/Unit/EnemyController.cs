@@ -62,14 +62,24 @@ namespace Unit
             }
 
             // Find the player todo
-            var tower = FindObjectOfType<TowerController>();
+            // var tower = FindObjectOfType<TowerController>();
+            var entities = FindObjectsOfType<Entity>();
 
-            if (tower == null)
+            Entity target = null;
+            foreach (var entity in entities)
+            {
+                if(entity.side == Side.Player)
+                {
+                    target = entity.GetComponent<Entity>();
+                }
+            }
+
+            if (target == null)
             {
                 return;
             }
 
-            float distance = Vector3.Distance(tower.transform.position, transform.position);
+            float distance = Vector3.Distance(target.transform.position, transform.position);
 
             if (distance <= 4 * GetComponent<CircleCollider2D>().radius)
             {
@@ -79,15 +89,16 @@ namespace Unit
                 {
                     rb.velocity = Vector2.zero;
 
-                    Attack(tower.Entity);
+                    Attack(target);
                     shootTimer = entity.GetFireInterval();
                 }
             }
             else
             {
                 // Move towards the player
-                Vector3 dir = tower.transform.position - transform.position;
-                rb.velocity = dir.normalized * moveSpeed;
+                Vector3 dir = target.transform.position - transform.position;
+                rb.MovePosition(transform.position      + dir.normalized * moveSpeed * Time.fixedDeltaTime);
+                // rb.velocity = dir.normalized * moveSpeed;
             }
         }
 

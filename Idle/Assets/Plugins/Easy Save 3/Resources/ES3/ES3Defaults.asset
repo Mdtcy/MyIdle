@@ -34,7 +34,7 @@ MonoBehaviour:
     - Animancer.Examples
     - DOTweenPro.Scripts
     - EasySave3
-    - Assembly-CSharp
+    - Assembly-CSharp-firstpass
     - QFramework.CoreKit
     - UniTask.Linq
     - StompyRobot.SRF
@@ -45,13 +45,13 @@ MonoBehaviour:
     - OSA
     - MoreMountains.Feedbacks
     - DamageNumbersPro
+    - Assembly-CSharp
     - MoreMountains.Feedbacks.MMTools
     - AudioKit
     - Animancer
     - Animancer.FSM
     - UniTask.DOTween
     - XNode
-    - Assembly-CSharp-firstpass
     - DOTween.Modules
     - UIGradient
     - PoolManager

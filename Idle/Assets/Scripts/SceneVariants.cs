@@ -3,11 +3,12 @@
  * @email [ tktetb@163.com ]
  * @create date  2023年1月8日
  * @modify date 2023年1月8日
- * @desc [任务组UI]
+ * @desc []
  */
 
 #pragma warning disable 0649
 using Damage;
+using DefaultNamespace.Game;
 using UnityEngine;
 
 namespace DefaultNamespace
@@ -29,8 +30,7 @@ namespace DefaultNamespace
                                         float damageDegree,
                                         DamageInfoTag[] tags)
         {
-            GameObject.FindObjectOfType<DamageManager>()
-                      .DoDamage(attacker, target, damage, damageDegree, tags);
+            GameManager.Instance.DamageManager.DoDamage(attacker, target, damage, damageDegree, tags);
         }
     }
 }

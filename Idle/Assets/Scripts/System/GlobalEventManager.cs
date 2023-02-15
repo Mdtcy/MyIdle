@@ -14,14 +14,13 @@ using UnityEngine;
 #pragma warning disable 0649
 namespace DefaultNamespace.System
 {
-    public class GlobalEventManager:MonoBehaviour
+    public class GlobalEventManager : MonoBehaviour
     {
         #region FIELDS
 
         [SerializeField]
         private float damageForce;
 
-        public static GlobalEventManager Instance;
 
         #endregion
 
@@ -31,19 +30,19 @@ namespace DefaultNamespace.System
 
         #region PUBLIC METHODS
 
-        public void OnHit(DamageInfo damageInfo, GameObject hitObject)
+        public void OnHit(DamageInfo damageInfo)
         {
             var attacker = damageInfo.attacker.GetComponent<Entity>();
             var defender = damageInfo.defender.GetComponent<Entity>();
 
-            if (defender != null)
-            {
-                var     rotation  = Quaternion.Euler(0, 0, damageInfo.degree);
-                Vector2 direction = rotation * Vector2.right.normalized;
-                defender.GetComponent<Rigidbody2D>().AddForce(direction*damageForce, ForceMode2D.Impulse);
-
-                // defender.GetComponent<TopDownController2D>().Impact(direction, damageForce);
-            }
+            // if (defender != null && defender.side == Side.Enemy)
+            // {
+            //     var     rotation  = Quaternion.Euler(0, 0, damageInfo.degree);
+            //     Vector2 direction = rotation * Vector2.right.normalized;
+            //     defender.GetComponent<Rigidbody2D>().AddForce(direction*damageForce, ForceMode2D.Impulse);
+            //
+            //     // defender.GetComponent<TopDownController2D>().Impact(direction, damageForce);
+            // }
         }
 
         #endregion
@@ -53,26 +52,6 @@ namespace DefaultNamespace.System
         #endregion
 
         #region PRIVATE METHODS
-
-        private void OnEnable()
-        {
-            if (Instance != null)
-            {
-                Debug.LogError("Only one GlobalEventManager can exist at a time.");
-
-                return;
-            }
-
-            Instance = this;
-        }
-
-        private void OnDisable()
-        {
-            if (Instance == this)
-            {
-                Instance = null;
-            }
-        }
 
         #endregion
 
