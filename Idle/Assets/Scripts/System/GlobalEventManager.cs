@@ -3,12 +3,11 @@
  * @email [ tktetb@163.com ]
  * @create date  2023年2月14日
  * @modify date 2023年2月14日
- * @desc [任务组UI]
+ * @desc []
  */
 
 using Damage;
 using IdleGame;
-using Unit;
 using UnityEngine;
 
 #pragma warning disable 0649
@@ -21,7 +20,6 @@ namespace DefaultNamespace.System
         [SerializeField]
         private float damageForce;
 
-
         #endregion
 
         #region PROPERTIES
@@ -30,20 +28,16 @@ namespace DefaultNamespace.System
 
         #region PUBLIC METHODS
 
-        public void OnHit(DamageInfo damageInfo)
+        public void OnHit(Entity attacker, Entity defender)
         {
-            var attacker = damageInfo.attacker.GetComponent<Entity>();
-            var defender = damageInfo.defender.GetComponent<Entity>();
-
-            // if (defender != null && defender.side == Side.Enemy)
-            // {
-            //     var     rotation  = Quaternion.Euler(0, 0, damageInfo.degree);
-            //     Vector2 direction = rotation * Vector2.right.normalized;
-            //     defender.GetComponent<Rigidbody2D>().AddForce(direction*damageForce, ForceMode2D.Impulse);
-            //
-            //     // defender.GetComponent<TopDownController2D>().Impact(direction, damageForce);
-            // }
+            SceneVariants.CreateDamage(attacker.gameObject,
+                                       defender.gameObject,
+                                       new Damage.Damage((int) attacker.atk),
+                                       transform.eulerAngles.z,
+                                       new DamageInfoTag[] {DamageInfoTag.directDamage,}
+                                      );
         }
+
 
         #endregion
 

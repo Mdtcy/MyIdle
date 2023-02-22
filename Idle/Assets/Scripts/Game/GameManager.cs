@@ -12,7 +12,6 @@ using DefaultNamespace.Item;
 using DefaultNamespace.System;
 using IdleGame.Buff;
 using UnityEngine;
-using UnityEngine.Serialization;
 
 namespace DefaultNamespace.Game
 {
@@ -22,6 +21,7 @@ namespace DefaultNamespace.Game
 
         public GlobalEventManager GlobalEventManager;
         public DamageManager      DamageManager;
+        public Inventory          Inventory;
 
         public ItemContent ItemContent;
         public BuffContent BuffContent;
