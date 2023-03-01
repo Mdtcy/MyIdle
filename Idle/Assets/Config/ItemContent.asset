@@ -12,5 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d579668deeea459e8a16929c7fc3f30c, type: 3}
   m_Name: ItemContent
   m_EditorClassIdentifier: 
-  ItemAtk: {fileID: 11400000, guid: 49669bc83dfebfb49914ac71203d0000, type: 2}
+  ItemHealOnHit: {fileID: 11400000, guid: 49669bc83dfebfb49914ac71203d0000, type: 2}
   ItemAtkSpeed: {fileID: 11400000, guid: f3fe8838ce31e224d99f444cbea1e03a, type: 2}
+  Item80HpAddDamage: {fileID: 11400000, guid: 54b1e5b6a88c32444b9ed4a02d531f01, type: 2}
+  Item10CritChance: {fileID: 11400000, guid: 9e68f2bc91976d04eac74264d5af006d, type: 2}
+  Item20DamageAround: {fileID: 11400000, guid: c2ee036ea0a4c474d9470f7ed74013b2, type: 2}

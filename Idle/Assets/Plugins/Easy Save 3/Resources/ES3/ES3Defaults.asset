@@ -29,55 +29,55 @@ MonoBehaviour:
     referenceMode: 2
     serializationDepthLimit: 64
     assemblyNames:
+    - QFramework.CoreKit
+    - Assembly-CSharp
     - Zenject
+    - OSA
+    - MoreMountains.Feedbacks
     - UniTask
     - Animancer.Examples
     - DOTweenPro.Scripts
     - EasySave3
-    - Assembly-CSharp-firstpass
-    - QFramework.CoreKit
-    - UniTask.Linq
     - StompyRobot.SRF
+    - Assembly-CSharp-firstpass
+    - UniTask.Linq
     - UIKit
     - MoreMountains.Tools
     - StompyRobot.SRDebugger
     - ResKit
-    - OSA
-    - MoreMountains.Feedbacks
+    - NativeShare.Runtime
     - DamageNumbersPro
-    - Assembly-CSharp
     - MoreMountains.Feedbacks.MMTools
     - AudioKit
     - Animancer
     - Animancer.FSM
+    - MoreMountains.Tools.Feedbacks
     - UniTask.DOTween
+    - com.votrubec.largenumbers
     - XNode
     - DOTween.Modules
     - UIGradient
+    - UniTask.TextMeshPro
     - PoolManager
-    - NativeShare.Runtime
     - small_zstring
+    - MEC
     - SROptions
     - QFramework
     - UniTask.Addressables
-    - MoreMountains.Tools.Feedbacks
-    - com.votrubec.largenumbers
-    - UniTask.TextMeshPro
-    - MEC
     - MoreMountains.Tools.Editor
+    - ToolbarExtender.Editor
     - UIKit.Editor
     - AssetUsageFinder
+    - XNodeEditor
     - PsdPlugin
     - ResKit.Editor
     - MoreMountains.Feedbacks.Editor
     - PoolManagerEditor
     - StompyRobot.SRF.Editor
-    - StompyRobot.SRDebugger.Editor
     - EasySave3.Editor
-    - XNodeEditor
-    - ToolbarExtender.Editor
-    - MoreMountains.Tools.Feedbacks.Editor
     - UniTask.Editor
+    - StompyRobot.SRDebugger.Editor
+    - MoreMountains.Tools.Feedbacks.Editor
     - DOTweenPro.EditorScripts
     - NativeShare.Editor
     - Sirenix.OdinInspector.Modules.UnityMathematics

@@ -8,6 +8,7 @@
 
 #pragma warning disable 0649
 using System.Collections.Generic;
+using DefaultNamespace.Item;
 using UnityEngine;
 
 namespace DefaultNamespace
@@ -38,6 +39,11 @@ namespace DefaultNamespace
             }
         }
 
+        public void AddItem(ItemDef item, int count)
+        {
+            AddItem(item.Name, count);
+        }
+
         public int GetItemCount(string item)
         {
             if (items.ContainsKey(item))
@@ -47,6 +53,12 @@ namespace DefaultNamespace
 
             return 0;
         }
+
+        public int GetItemCount(ItemDef item)
+        {
+            return GetItemCount(item.Name);
+        }
+
 
         #endregion
 

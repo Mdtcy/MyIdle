@@ -80,7 +80,7 @@ namespace IdleGame
 
             if (entity.side != caster.side)
             {
-                GameManager.Instance.GlobalEventManager.OnHit(caster, entity);
+                GameManager.Instance.GlobalEventManager.OnHitEnemy(caster, entity);
 
                 Destroy(gameObject);
             }

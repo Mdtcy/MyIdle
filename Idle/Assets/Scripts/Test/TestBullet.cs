@@ -1,3 +1,5 @@
+using DefaultNamespace.Game;
+using DefaultNamespace.Item;
 using Game.Projectile;
 using IdleGame;
 using Sirenix.OdinInspector;
@@ -27,5 +29,17 @@ public class TestBullet : MonoBehaviour
     public void Fire()
     {
         CreateBullet(entity1.transform.position, entity1, entity2);
+    }
+
+    public ItemDef ItemDef;
+
+    public int Count;
+
+    public Entity Entity;
+
+    [Button]
+    public void AddItem()
+    {
+        GameManager.Instance.Inventory.AddItem(ItemDef, Count);
     }
 }
