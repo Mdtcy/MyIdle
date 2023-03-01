@@ -48,6 +48,7 @@ MonoBehaviour:
     - NativeShare.Runtime
     - DamageNumbersPro
     - MoreMountains.Feedbacks.MMTools
+    - MoreMountains.Feedbacks.URP
     - AudioKit
     - Animancer
     - Animancer.FSM
@@ -81,6 +82,7 @@ MonoBehaviour:
     - DOTweenPro.EditorScripts
     - NativeShare.Editor
     - Sirenix.OdinInspector.Modules.UnityMathematics
+    - PPv2URPConverters
     showAdvancedSettings: 0
   addMgrToSceneAutomatically: 0
   autoUpdateReferences: 1
